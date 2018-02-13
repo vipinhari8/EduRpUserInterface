@@ -1,0 +1,202 @@
+﻿
+<div class="wrapper">
+    <div class="container">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">{{'breadcrumbOfEdurp' | translate}}</a>
+                    </li>
+                    <li>
+                        <a href="#">{{'breadcrumbOfDashboard' | translate}}</a>
+                    </li>
+                    <li class="active">
+                        {{'breadcrumb3OfExaminationType' | translate}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+       
+        <!-- end page title end breadcrumb -->
+
+        <div class="row">
+            <!-- end col -->
+            <div class="col-lg-12">
+                <div class="card-box">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h4 class="m-t-0 header-title"><b>{{'breadcrumb3OfExaminationType' | translate}}</b></h4>
+                        </div>
+                        <div class="col-lg-4 pull-right">
+                            <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" data-ng-click="addExaminationTypeContainer()">{{'examinationTypeAddBtn' | translate}}</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel-group" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab">
+                                        <h4 class="panel-title" data-ng-click="toggleFilterPanel()">
+                                            <a ng-class="!filterPanel ? 'collapsed': ''" aria-expanded="false" aria-controls="collapseThree">
+                                                {{'filters' | translate}}
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse" role="tabpanel" aria-labelledby="headingThree" data-ng-show="filterPanel">
+                                        <div class="panel-body">
+                                            <form action="#" data-parsley-validate="">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="userName">Exam Group</label>
+                                                            <textarea cols="25" rows="5" name="course_code_tobe_filtered" data-ng-model="course_code_tobe_filtered">
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="userName">Exam Name</label>
+                                                            <input type="text" name="course_name_tobe_filtered" data-ng-model="course_name_tobe_filtered" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group text-right m-b-0">
+                                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="button" data-ng-click="getFilteredData()">
+                                                        GO
+                                                    </button>
+                                                    <button type="reset" data-ng-click="toggleFilterPanel()" class="btn btn-default waves-effect m-l-5">
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- end col -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="table-responsive">
+                                        <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed table-colored table-inverse">
+                                            <thead>
+                                                <tr>
+                                                    <th ng-click="orderByField='ExamGroup'; reverseSort = !reverseSort">
+                                                        Exam Group
+                                                        <span ng-show="orderByField == 'ExamGroup'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='ExamName'; reverseSort = !reverseSort">
+                                                        Exam Name
+                                                        <span ng-show="orderByField == 'ExamName'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='MinMarks'; reverseSort = !reverseSort">
+                                                        Min Marks
+                                                        <span ng-show="orderByField == 'MinMarks'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='MaxMarks'; reverseSort = !reverseSort">
+                                                        Max Marks
+                                                        <span ng-show="orderByField == 'MaxMarks'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='FeeLabel'; reverseSort = !reverseSort">
+                                                        Fee Label
+                                                        <span ng-show="orderByField == 'FeeLabel'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+
+                                                    <th ng-click="orderByField='Amount'; reverseSort = !reverseSort">
+                                                        Amount
+                                                        <span ng-show="orderByField == 'Amount'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th>
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr data-ng-repeat="ed in filteredExaminationTypeData|orderBy:orderByField:reverseSort">
+                                                    <td>{{ ed.ExamGroup}}</td>
+                                                    <td>{{ ed.ExamName}}</td>
+                                                    <td>{{ ed.MinMarks}}</td>
+                                                    <td>{{ ed.MaxMarks}}</td>
+                                                    <td>{{ ed.FeeLabel}}</td>
+                                                    <td>{{ ed.Amount}}</td>
+                                                    <td>
+                                                        <i class="fa fa-pencil-square-o m-r-5" data-ng-click="editExaminationTypeContainer(ed)" style="cursor: pointer;"></i>
+                                                        <i class="fa fa-trash-o fa-lg" data-ng-click="deleteExaminationTypeContainer(ed)"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div> <!-- end card -->
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <div class="dataTables_length" id="datatable_length">
+                                        <label>
+                                            Show
+                                            <select name="datatable_length"
+                                                    aria-controls="datatable"
+                                                    class="form-control input-sm"
+                                                    data-ng-model="numPerPage"
+                                                    data-ng-options="x for x in showPerPageDataOptions"></select>
+                                            entries
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">
+                                        Showing {{currentPage*numPerPage - numPerPage  + 1}} to {{examinationTypeData.length > currentPage*numPerPage ? currentPage*numPerPage : examinationTypeData.length}} of {{examinationTypeData.length}} entries
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
+                                        <pagination ng-model="currentPage"
+                                                    total-items="examinationTypeData.length"
+                                                    max-size="maxSize"
+                                                    boundary-links="true"
+                                                    items-per-page="numPerPage">
+                                        </pagination>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end col -->
+
+                    </div>
+                    <!-- end row -->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

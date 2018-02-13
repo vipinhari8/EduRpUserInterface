@@ -1,0 +1,135 @@
+﻿
+
+    <div class="wrapper" style="padding-top:9px;">
+        <div class="container">
+
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <div class="btn-group pull-left">
+                            <ol class="breadcrumb hide-phone p-0 m-0">
+                                <li>
+                                    <a href="#">EduRP</a>
+                                </li>
+                                <li>
+                                    <a href="#">Dashboard</a>
+                                </li>
+                                <li class="active">
+                                    Bulkupload
+
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title end breadcrumb -->
+
+
+            <div class="row">
+                <!-- end col -->
+                <div class="col-lg-12">
+                    <div class="card-box">
+                        <div class="row">
+                            <div class="col-lg-4">
+
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+
+                            <div class="col-xs-3" align="right">
+                                <div></div>	<div></div>
+                                <h4 class="m-t-0 header-title"><b>Select Module Name </b></h4>
+                            </div>
+                            <div></div>
+                                <div class="col-lg-2">
+                                    <select class="form-control" data-ng-model="selectedModule" data-ng-options="fps.name for fps in filteredBulkmoudlefilter">
+                                        <option value="">--Select a Batch--</option>
+                                    </select>
+                                </div>   
+
+
+                            <!--<div class="col-lg-2">
+                                <button class="btn btn-teal btn-bordered waves-light waves-effect w-xl m-b-5">Go</button>
+                            </div>-->
+                        </div>
+
+
+
+
+                        <hr>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-3" align="right">
+                                <h4 class="m-t-0"><b>Upload File :</b></h4>
+                            </div>
+                            <div></div>
+                            <div class="col-xs-3">
+                                <input type="file" name="datafile" size="40">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-3" align="right">
+                                <h4><b>Comments :</b></h4>
+                            </div>
+
+                            <div class="col-xs-3">
+                                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                            </div>
+                        </div>
+
+
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-3" align="right">
+                                <h4><b>Schedule BulkLoad :</b></h4>
+                            </div>
+
+                            <div class="col-lg-2">
+                                <select id="heard" class="form-control">
+                                    <option value="1">Immediate</option>
+                                    <option value="2">Nightly job</option>
+                                    <option value="3">end of week</option>
+                                   
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-8" align="center">
+                                <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" type="submit" data-ng-click="saveTutorial(tutorial)">
+                                    Save Details
+                                </button>
+                                <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                        <!-- end col -->
+                        <!-- end col -->
+
+                        <form role="form" enctype="multipart/form-data" name="myForm">
+                            <input type="text" ng-model="fdata.UserName">
+                            <input type="text" ng-model="fdata.FirstName">
+                            <input type="file" file-model ng-model="filesArray" multiple>
+                            <button type="submit" ng-click="upload()">save</button>
+                        </form>
+
+                    </div>
+                    <!-- end row -->
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+  
+        <!-- End Footer -->
+
+    </div>
+   

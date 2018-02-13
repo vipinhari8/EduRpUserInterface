@@ -1,0 +1,20 @@
+﻿{
+  "results": [
+    {
+      "id": 1,
+      "degreeCode": "0011",
+      "degreeName": "Engineering",
+      "academic_term": 10,
+      "sks": "R",
+      "active": true
+    },
+    {
+      "id": 2,
+      "degreeCode": "0012",
+      "degreeName": "MBA",
+      "academic_term": 12,
+      "sks": "R",
+      "active": false
+    }
+  ]
+}

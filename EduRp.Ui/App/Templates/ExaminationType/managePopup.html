@@ -1,0 +1,75 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="Modals.closeExaminationTypeContainer()">x</button>
+
+    <h4 class="modal-title">
+        <span data-ng-if="modalType ==='add'">Add New ExaminationType</span>
+        <span data-ng-if="modalType ==='update'">Update ExaminationType</span>
+    </h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="p-20">
+                <form name="addEditExaminationTypeForm" novalidate>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ExamGroup">Exam Group<span class="text-danger">*</span></label>
+                                <input type="text" name="Exam_Group" parsley-trigger="change" required placeholder="Enter Exam Group" class="form-control" data-ng-model="$parent.modExaminationTypeObj.ExamGroup">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ExamName">Exam Name<span class="text-danger">*</span></label>
+                                <input type="text" name="Exam_Name" parsley-trigger="change" required placeholder="Enter Exam Name" class="form-control" data-ng-model="$parent.modExaminationTypeObj.ExamName">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="MinMarks">Min Marks<span class="text-danger">*</span></label>
+                                <input type="text" name="Min_Marks" parsley-trigger="change" required placeholder="Enter Min Marks " class="form-control" data-ng-model="$parent.modExaminationTypeObj.MinMarks">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="MaxMarks">MaxMarks<span class="text-danger">*</span></label>
+                            <input type="text" name="Max_Marks" parsley-trigger="change" required placeholder="Enter Max Marks " class="form-control" data-ng-model="$parent.modExaminationTypeObj.MaxMarks">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="FeeLabel">FeeLabel<span class="text-danger">*</span></label>
+                        <input type="text" name="Fee_Label" parsley-trigger="change" required placeholder="Enter Fee Label " class="form-control" data-ng-model="$parent.modExaminationTypeObj.FeeLabel">
+                    </div>
+                  </div>
+            <div class="form-group">
+                <label for="Amount">Amount<span class="text-danger">*</span></label>
+                <input type="text" name="Amount" parsley-trigger="change" required placeholder="Enter Amount " class="form-control" data-ng-model="$parent.modExaminationTypeObj.Amount">
+            </div>
+        </div>
+       
+
+
+                    <div class="modal-footer">
+
+
+                    </div>
+
+                    <div class="form-group m-b-0 text-right">
+                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="updateExaminationTypeDetails(addEditExaminationTypeForm)" data-ng-if="modalType ==='update'">
+                            Save Details
+                        </button>
+                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="addExaminationTypeDetails(addEditExaminationTypeForm)" data-ng-if="modalType ==='add'">
+                            Add Details
+                        </button>
+                        <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.closeExaminationTypeContainer()">Close</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+

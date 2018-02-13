@@ -1,0 +1,87 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="Modals.closeModalContainer()">x</button>
+    <h4 class="modal-title">Assign Subjects</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel-group" style="margin-bottom:0px;" id="accordionm" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThreem">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionm" href="#collapseThreem" aria-expanded="false" aria-controls="collapseThreem">
+                                Filters
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThreem" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <form action="#" data-parsley-validate="">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="userName">Subject Code</label>
+                                            <select id="heard" class="form-control" multiple>
+                                                <option value="0001">0001</option>
+                                                <option value="0002">0002</option>
+                                                <option value="003">0003</option>
+                                                <option value="other">Other..</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="userName">Subject Name</label>
+                                            <select id="heard" class="form-control" multiple>
+                                                <option value="">Choose..</option>
+                                                <option value="Computer Sciences">Computer Sciences</option>
+                                                <option value="MBA">MBA</option>
+                                                <option value="MCA">MCA</option>
+                                                <option value="other">Other..</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-right m-b-0">
+                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="submit">
+                                        GO
+                                    </button>
+                                    <button type="reset" class="btn btn-default waves-effect m-l-5">
+                                        Clear
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive" style="margin-top: -10px;">
+                <table id="datatablem" class="table table-striped table-bordered table-colored table-inverse">
+                    <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                        <th class="check"><label><input type="checkbox" id="flowcheckall" data-ng-model="selectAllNotlinkedList" data-ng-click="selectAllNotlinkedListItems()" />&nbsp;Select All</label></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-ng-repeat="notLinkedSub in notLinkedSubjects">
+                        <td>{{notLinkedSub.SubjectCode}}</td>
+                        <td>{{notLinkedSub.SubjectName}}</td>
+                        <td><input type="checkbox" data-ng-model="notLinkedSub.selected" data-ng-change="toggleNotlinkedSubject()"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- table-responsive -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-teal btn-bordered waves-light" id="btnUploadAdd" data-ng-click="addSubjectIntoList()">Save Details</button>
+                <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" id="btnUploadCancel" data-ng-click="Modals.closeModalContainer()">Close</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

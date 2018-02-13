@@ -1,0 +1,14 @@
+﻿{
+  "results": [
+    {
+      "id": 1,
+      "ProgramCode": "0011",
+      "ProgramName": "Engineering"
+    },
+    {
+      "id": 2,
+      "ProgramCode": "0012",
+      "ProgramName": "MBA"
+    }
+  ]
+}

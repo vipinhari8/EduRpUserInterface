@@ -1,0 +1,28 @@
+﻿{
+  "results": [
+    {
+      "SubjectId": 4,
+      "SubjectCode": "DBMS",
+      "SubjectName": "DBMS",
+      "SKS": 10
+    },
+    {
+      "SubjectId": 3,
+      "SubjectCode": "CSDS",
+      "SubjectName": "Discrete systems",
+      "SKS": 15
+    },
+    {
+      "SubjectId": 1,
+      "SubjectCode": "SUB1",
+      "SubjectName": "English",
+      "SKS": 15
+    },
+    {
+      "SubjectId": 2,
+      "SubjectCode": "SUB2",
+      "SubjectName": "Science",
+      "SKS": 15
+    }
+  ]
+}

@@ -1,0 +1,424 @@
+﻿<page-loading data-ng-show="!mainContent"></page-loading> 
+<div class="wrapper" data-ng-show="mainContent">
+        <div class="container">
+
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <div class="btn-group pull-left">
+                            <ol class="breadcrumb hide-phone p-0 m-0">
+                                <li>
+                                    <a href="#">{{'breadcrumb1OfCreateBatch'|translate}}</a>
+                                </li>
+                                <li>
+                                    <a href="#">{{'breadcrumb2OfCreateBatch'|translate}}</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="active">{{'breadcrumb3OfCreateBatch'|translate}}</a>
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title end breadcrumb -->
+
+
+            <div class="row">
+                <!-- end col -->
+                <div class="col-lg-12">
+                    <div class="card-box">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <h4 class="m-t-0 header-title"><b>{{'manageBatch'|translate}}</b></h4>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <select class="form-control" data-ng-model="selectedBatch" data-ng-options="fb.BatchName for fb in filteredBatchData">
+                                    <option value="">{{ 'selectABatch' | translate}}</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <button class="btn btn-teal btn-bordered waves-light waves-effect w-xl m-b-5" data-ng-click="fetchRelatedDataOfBatch()">{{'goBtn'|translate}}</button>
+                            </div>
+                            <div class="col-lg-4 pull-right">
+                                <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" data-ng-click="addBatchContainer()">{{'addNewCreateBatchBtn'|translate}}</button>
+                            </div>
+                        </div>
+                        <div data-ng-show="mainContentSubPart">
+                            <hr>
+                            <div class="row" style="background-color:#E4FAF8;" data-ng-show="filteredProgramStudyData.length === 0">
+                                <div>
+                                    {{ 'noDataUnderGrid' | translate }}
+                                </div>
+                            </div>
+                            <div class="row" style="background-color:#E4FAF8;" data-ng-show="filteredProgramStudyData.length > 0">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <h4 class="panel-title">
+                                                {{'assignedProgramStudyHeader'|translate}}
+                                            </h4>
+                                        </div>
+                                        <div class="col-lg-4 pull-right">
+                                            <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" data-toggle="modal" data-ng-click="removeSelectedProgramStudy()">{{'removeProgramStudyBtn'|translate}}</button>
+                                        </div>
+                                        <div class="col-lg-4 pull-right">
+                                            <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" data-ng-click="assignProgramStudyContainer()">{{'assignProgramStudyBtn'|translate}}</button>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="panel-group" style="margin-bottom:0px;" id="accordion" role="tablist" >
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" >
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" >
+                                                        {{'filter'|translate}}
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" >
+                                                <div class="panel-body">
+                                                    <form action="#" data-parsley-validate="">
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <div class="form-group">
+                                                                    <label for="userName">{{'courseCodeColumn'| translate}}</label>
+                                                                    <textarea></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-group">
+                                                                    <label for="userName">{{'courseNameColumn'| translate}}</label>
+                                                                    <input type="text" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group text-right m-b-0">
+                                                            <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="submit">
+                                                                {{'goBtn'|translate}}
+                                                            </button>
+                                                            <button type="reset" class="btn btn-default waves-effect m-l-5">
+                                                                {{'clearBtn'|translate}}
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                                <div class="col-lg-12" >
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="table-responsive" style="margin-top: -10px;">
+                                                <table id="datatable" class="table table-striped table-bordered table-colored table-inverse">
+                                                    <thead>
+                                                        <tr>
+                                                            <th ng-click="assignedProgramStudyCodeByField='ProgramStudyCode'; assignedProgramStudyReverseSort = !assignedProgramStudyReverseSort">
+                                                            {{'programStudyCodeColumn'| translate}}
+                                                                <span ng-show="assignedProgramStudyCodeByField == 'ProgramStudyCode'">
+                                                                    <span ng-show="!assignedProgramStudyReverseSort">^</span>
+                                                                    <span ng-show="assignedProgramStudyReverseSort">v</span>
+                                                                </span>
+                                                            </th>
+                                                            <th ng-click="assignedProgramStudyCodeByField='ProgramStudyName'; assignedProgramStudyReverseSort = !assignedProgramStudyReverseSort">
+                                                            {{'programStudyNameColumn'| translate}}
+                                                                <span ng-show="assignedProgramStudyCodeByField == 'ProgramStudyName'">
+                                                                    <span ng-show="!assignedProgramStudyReverseSort">^</span>
+                                                                    <span ng-show="assignedProgramStudyReverseSort">v</span>
+                                                                </span>
+                                                            </th>
+                                                            <th ng-click="assignedProgramStudyCodeByField='AcademicTerm'; assignedProgramStudyReverseSort = !assignedProgramStudyReverseSort">
+                                                                {{'programStudyAcademicTermColumn'| translate}}
+                                                                <span ng-show="assignedProgramStudyCodeByField == 'AcademicTerm'">
+                                                                    <span ng-show="!assignedProgramStudyReverseSort">^</span>
+                                                                    <span ng-show="assignedProgramStudyReverseSort">v</span>
+                                                                </span>
+                                                            </th>
+                                                            <th ng-click="assignedProgramStudyCodeByField='SKS'; assignedProgramStudyReverseSort = !assignedProgramStudyReverseSort">
+                                                                {{'programStudySKSColumn'| translate}}
+                                                                <span ng-show="assignedProgramStudyCodeByField == 'SKS'">
+                                                                    <span ng-show="!assignedProgramStudyReverseSort">^</span>
+                                                                    <span ng-show="assignedProgramStudyReverseSort">v</span>
+                                                                </span>
+                                                            </th>
+                                                            <th ng-click="assignedProgramStudyCodeByField='Status'; assignedProgramStudyReverseSort = !assignedProgramStudyReverseSort">
+                                                                {{'programStudyStatusColumn'| translate}}
+                                                                <span ng-show="assignedProgramStudyCodeByField == 'Status'">
+                                                                    <span ng-show="!assignedProgramStudyReverseSort">^</span>
+                                                                    <span ng-show="assignedProgramStudyReverseSort">v</span>
+                                                                </span>
+                                                            </th>
+                                                            <th><label><input type="checkbox" data-ng-model="linkedProgramStudyAllSelected" ng-change="isLinkedProgramStudyAllSelected();"/>&nbsp;{{'selectAll' | translate}}</label></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr data-ng-repeat="ps in filteredProgramStudyData|orderBy:assignedProgramStudyCodeByField:assignedProgramStudyReverseSort">
+                                                            <td>{{ ps.ProgramStudyCode}}</td>
+                                                            <td>{{ ps.ProgramStudyName}}</td>
+                                                            <td>{{ ps.AcademicTerm}}</td>
+                                                            <td>{{ ps.SKS}}</td>
+                                                            <td>{{ ps.Status}}</td>
+                                                            <td><input type="checkbox" data-ng-model="ps.Selected" ng-true-value="'true'" ng-false-value="'false'" ng-checked="linkedProgramStudyAllSelected" ng-click="isThisLinkedProgramStudySelected(ps)" /></td>
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div> <!-- end card -->
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <div class="dataTables_length" id="datatable_length">
+
+                                                <label>
+                                                    {{'show'|translate}}
+                                                    <select name="datatable_length"
+                                                            aria-controls="datatable"
+                                                            class="form-control input-sm"
+                                                            data-ng-model="programStudyNumPerPage"
+                                                            data-ng-options="x for x in showPerPageDataOptions"></select>
+                                                    {{'entries'|translate}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">
+                                                {{'showing'|translate}} 
+                                                {{programStudyCurrentPage*programStudyNumPerPage - programStudyNumPerPage  + 1}} 
+                                                {{'to'| translate}}
+                                                {{programStudyData.length > programStudyCurrentPage*programStudyNumPerPage ? programStudyCurrentPage*programStudyNumPerPage : programStudyData.length}} 
+                                                {{'of'| translate}}
+                                                {{programStudyData.length}} 
+                                                {{'entries'| translate}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
+                                                <pagination ng-model="programStudyCurrentPage"
+                                                            total-items="programStudyData.length"
+                                                            max-size="programStudyMaxSize"
+                                                            boundary-links="true"
+                                                            items-per-page="programStudyNumPerPage">
+                                                </pagination>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+
+
+
+                            </div>
+                            <!-- end row -->
+                            <hr>
+
+
+                            <div class="row" style="background-color:#F5F6E2;" data-ng-show="filteredFeesData.length === 0">
+                                <div>
+                                    {{'noDataUnderGrid' | translate}}
+                                </div>
+                            </div>
+                            <div class="row" style="background-color:#F5F6E2;" data-ng-show="filteredFeesData.length > 0">
+                                <div class="col-lg-12">
+
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <h4 class="panel-title">
+                                                {{'assignedFeesHeader' | translate}}
+                                            </h4>
+                                        </div>
+                                        <div class="col-lg-4 pull-right">
+                                            <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" data-ng-click="removeSelectedFees()">{{'removeFeesBtn' | translate}}</button>
+                                        </div>
+
+                                        <div class="col-lg-4 pull-right">
+                                            <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" data-ng-click="assignFeesContainer()">{{'assignFeesBtn' | translate}}</button>
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <div class="panel-group" style="margin-bottom:0px;" id="accordion" role="tablist" aria-multiselectable="true">
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="headingThree">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThreef" aria-expanded="false" aria-controls="collapseThreef">
+                                                        {{'filters' | translate}}
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseThreef" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                <div class="panel-body">
+                                                    <form action="#" data-parsley-validate="">
+
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <div class="form-group">
+                                                                    <label for="userName">{{'feeLabelColumn'| translate}}</label>
+                                                                    <textarea></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-group">
+                                                                    <label for="userName">{{'feeDescriptionColumn'| translate}}</label>
+                                                                    <input type="text" />
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                        <div class="form-group text-right m-b-0">
+                                                            <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="submit">
+                                                                {{'goBtn'|translate}}
+                                                            </button>
+                                                            <button type="reset" class="btn btn-default waves-effect m-l-5">
+                                                                {{'clearBtn'|translate}}
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!-- end col -->
+                                <div class="col-lg-12">
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="table-responsive" style="margin-top: -10px;">
+
+                                                <table id="datatablef" class="table table-striped table-bordered table-colored table-inverse">
+                                                    <thead>
+                                                        <tr>
+                                                            <th ng-click="assignedFeesOrderByField='FeeLabel'; assignedFeesReverseSort = !assignedFeesReverseSort">
+                                                                {{'feeLabelColumn'|translate}}
+                                                                <span ng-show="assignedFeesOrderByField == 'FeeLabel'">
+                                                                    <span ng-show="!assignedFeesReverseSort">^</span>
+                                                                    <span ng-show="assignedFeesReverseSort">v</span>
+                                                                </span>
+                                                            </th>
+                                                            <th ng-click="assignedFeesOrderByField='Amount'; assignedFeesReverseSort = !assignedFeesReverseSort">
+                                                                {{'feeAmountColumn'|translate}}
+                                                                <span ng-show="assignedFeesOrderByField == 'Amount'">
+                                                                    <span ng-show="!assignedFeesReverseSort">^</span>
+                                                                    <span ng-show="assignedFeesReverseSort">v</span>
+                                                                </span>
+                                                            </th>
+                                                            <th ng-click="assignedFeesOrderByField='FeeType'; assignedFeesReverseSort = !assignedFeesReverseSort">
+                                                                {{'feeTypeColumn'|translate}}
+                                                                <span ng-show="assignedFeesOrderByField == 'FeeType'">
+                                                                    <span ng-show="!assignedFeesReverseSort">^</span>
+                                                                    <span ng-show="assignedFeesReverseSort">v</span>
+                                                                </span>
+                                                            </th>
+                                                            <th ng-click="assignedFeesOrderByField='Description'; assignedFeesReverseSort = !assignedFeesReverseSort">
+                                                                {{'feeDescriptionColumn'|translate}}
+                                                                <span ng-show="assignedFeesOrderByField == 'Description'">
+                                                                    <span ng-show="!assignedFeesReverseSort">^</span>
+                                                                    <span ng-show="assignedFeesReverseSort">v</span>
+                                                                </span>
+                                                            </th>
+
+                                                            <th><label><input type="checkbox" data-ng-model="linkedFeesAllSelected" ng-change="isLinkedFeesAllSelected();" />&nbsp;{{'selectAll' | translate}}</label></th>
+
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr data-ng-repeat="f in filteredFeesData|orderBy:assignedFeesOrderByField:assignedFeesReverseSort">
+                                                            <td>{{ f.FeeLabel}}</td>
+                                                            <td>{{ f.Amount}}</td>
+                                                            <td>{{ f.FeeType}}</td>
+                                                            <td>{{ f.Description}}</td>
+                                                            <td><input type="checkbox" data-ng-model="f.Selected" ng-true-value="'true'" ng-false-value="'false'" ng-checked="linkedFeesAllSelected" ng-click="isThisLinkedFeeSelected(f)" /></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div> <!-- end card -->
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <div class="dataTables_length" id="datatable_length">
+
+                                                <label>
+                                                    {{'show'|translate}}
+                                                    <select name="datatable_length"
+                                                            aria-controls="datatable"
+                                                            class="form-control input-sm"
+                                                            data-ng-model="feesNumPerPage"
+                                                            data-ng-options="x for x in showPerPageDataOptions"></select>
+                                                    {{'entries'|translate}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">
+                                               {{'showing'|translate}}  
+                                                {{feesCurrentPage*feesNumPerPage - feesNumPerPage  + 1}} 
+                                                {{'to'|translate}} 
+                                                {{feesData.length > feesCurrentPage*feesNumPerPage ? feesCurrentPage*feesNumPerPage : feesData.length}} 
+                                                {{'of'|translate}}
+                                                {{feesData.length}}
+                                                {{'entries'|translate}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
+                                                <pagination ng-model="feesCurrentPage"
+                                                            total-items="feesData.length"
+                                                            max-size="feesMaxSize"
+                                                            boundary-links="true"
+                                                            items-per-page="feesNumPerPage">
+                                                </pagination>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- end col -->
+
+
+
+                            </div>
+                            <!-- end row -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+
+        </div>
+    </div>
+
+
+    
+  
+
+
+    
+
+
+
+   
+
+  

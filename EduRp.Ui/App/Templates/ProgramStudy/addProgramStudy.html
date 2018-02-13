@@ -1,0 +1,86 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" data-ng-click="Modals.close();">x</button>
+    <h4 class="modal-title">{{'addNewProgramStudyHeader'|translate}}</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+
+
+            <div class="p-20">
+                <form name="addProgramStudyForm" novalidate>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course_code">{{'fieldProgramStudyCode'|translate}}<span class="text-danger">*</span></label>
+                                <input type="text" name="course_code" required placeholder="Enter Course Code" class="form-control" data-ng-model="$parent.addPSFormObj.ProgramStudyCode" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course_name">{{'fieldProgramStudyName'|translate}}<span class="text-danger">*</span></label>
+                                <input type="text" name="course_name"  required placeholder="Enter Course Name" class="form-control" data-ng-model="$parent.addPSFormObj.ProgramStudyName" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="heard">{{'fieldAcademicTerm'|translate}}</label>
+                                <input type="text" name="academic_term"  required placeholder="Enter Academic Term" class="form-control" data-ng-model="$parent.addPSFormObj.AcademicTerm" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+
+                                <label for="course_sks">{{'fieldSKS'|translate}}<span class="text-danger">*</span></label>
+                                <input type="text" name="course_sks" parsley-trigger="change" required placeholder="Enter SKS" class="form-control" data-ng-model="$parent.addPSFormObj.SKS" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="activeStatus">
+                                    <input type="radio" data-ng-model="$parent.addPSFormObj.Status" value="1"/>
+                                    {{'fieldActive'|translate}}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inactiveStatus">
+                                    <input type="radio" data-ng-model="$parent.addPSFormObj.Status" value="0" />
+                                    {{'fieldInActive'|translate}}
+                                </label>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="modal-footer">
+
+
+                    </div>
+
+                    <div class="form-group m-b-0 text-right">
+                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="addProgramStudy(addProgramStudyForm)">
+                            {{'saveDetailsBtn'|translate}}
+                        </button>
+                        <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.close();">{{'closeBtn'|translate}}</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

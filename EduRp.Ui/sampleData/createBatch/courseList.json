@@ -1,0 +1,20 @@
+﻿{
+  "results": [
+    {
+      "id": "2",
+      "CourseCode": "CSE",
+      "CourseName": "Computer Science and Engineering",
+      "sks": "10",
+      "courseType": "R",
+      "courseGroup": "Degree"
+    },
+    {
+      "id": "3",
+      "CourseCode": "ECE",
+      "CourseName": "Electronics and Communication",
+      "sks": "20",
+      "courseType": "R",
+      "courseGroup": "Degree"
+    }
+  ]
+}

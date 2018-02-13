@@ -1,0 +1,24 @@
+﻿{
+  "results": [
+    {
+      "id": 2,
+      "BuildingCode": "CSE",
+      "BuildingName": "Computer Science and Engineering",
+      "RoomName": "R",
+      "CapasityofRoom": 10,
+      "Facility": "ewf",
+      "Status": "Active",
+      "LocationperLevel": "Degree"
+    },
+    {
+      "id": 3,
+      "BuildingCode": "ECE",
+      "BuildingName": "Electronics and Communication",
+      "RoomName": "R",
+      "CapasityofRoom": 20,
+      "Facility": "ewf",
+      "Status": "Active",
+      "LocationperLevel": "Degree"
+    }
+  ]
+}

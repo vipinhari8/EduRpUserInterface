@@ -1,0 +1,202 @@
+﻿{
+    "results": [
+                  {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+                        "AppFormFieldId": 1,
+                        "FieldName": "fldtitle",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+
+                        "AppFormFieldId": 2,
+                        "FieldName": "fldfirstname",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+                        "AppFormFieldId": 3,
+                        "FieldName": "fldlastname",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+                        "AppFormFieldId": 4,
+                        "FieldName": "fldgender",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+                        "AppFormFieldId": 5,
+                        "FieldName": "fldgovernmentid",
+                        "Value": null
+                      },
+                 {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+                        "AppFormFieldId": 6,
+                        "FieldName": "fldplaceofbirth",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+                        "AppFormFieldId": 7,
+                        "FieldName": "flddateofbirth",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+                        "AppFormFieldId": 8,
+                        "FieldName": "fldmobilenumber",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+                        "AppFormFieldId": 9,
+                        "FieldName": "fldtelephonenumber",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+                        "AppFormFieldId": 10,
+                        "FieldName": "fldemailaddress",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+                        "AppFormFieldId": 11,
+                        "FieldName": "fldpermanentaddress",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+                        "AppFormFieldId": 12,
+                        "FieldName": "fldcorrespondanceaddress",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 1,
+                    "AppFormGroupLabel": "grppersonalinfo",
+                        "AppFormFieldId": 13,
+                        "FieldName": "fldadmissionnumber",
+                        "value": null
+                  },
+                  {
+                    "AppFormGroupId": 2,
+                    "AppFormGroupLabel": "grpparentinfo",
+                        "AppFormFieldId": 13,
+                        "FieldName": "fldfathername",
+                        "Value": null
+                      },
+                      {
+  			"AppFormGroupId": 2,
+                    	"AppFormGroupLabel": "grpparentinfo",
+                        "AppFormFieldId": 14,
+                        "FieldName": "fldfatheroccupation",
+                        "Value": null
+                      },
+                      {
+  			"AppFormGroupId": 2,
+                    	"AppFormGroupLabel": "grpparentinfo",
+                        "AppFormFieldId": 15,
+                        "FieldName": "fldmothername",
+                        "Value": null
+                      },
+                      {
+  			"AppFormGroupId": 2,
+                    	"AppFormGroupLabel": "grpparentinfo",
+                        "AppFormFieldId": 16,
+                        "FieldName": "fldmotheroccupation",
+                        "Value": null
+                      },
+                      {
+  			"AppFormGroupId": 2,
+                    	"AppFormGroupLabel": "grpparentinfo",
+                        "AppFormFieldId": 17,
+                        "FieldName": "fldparentaddress",
+                        "Value": null
+                      },
+                      {
+  			"AppFormGroupId": 2,
+                    	"AppFormGroupLabel": "grpparentinfo",
+                        "AppFormFieldId": 18,
+                        "FieldName": "fldparentmobilenumber",
+                        "Value": null
+                      },
+                      {
+  			"AppFormGroupId": 2,
+                    	"AppFormGroupLabel": "grpparentinfo",
+                        "AppFormFieldId": 19,
+                        "FieldName": "fldparentemailaddress",
+                        "Value": null
+                      },
+                      {
+  			"AppFormGroupId": 2,
+                    	"AppFormGroupLabel": "grpparentinfo",
+                        "AppFormFieldId": 20,
+                        "FieldName": "fldparentgovernmentid",
+                        "Value": null
+  		},
+
+                  {
+                    "AppFormGroupId": 3,
+                    "AppFormGroupLabel": "grpprogramselect",
+                        "AppFormFieldId": 34,
+                        "FieldName": "fldbatchid",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 3,
+                    "AppFormGroupLabel": "grpprogramselect",
+                        "AppFormFieldId": 35,
+                        "FieldName": "fldprogramstudyid",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 3,
+                    "AppFormGroupLabel": "grpprogramselect",
+                        "AppFormFieldId": 21,
+                        "FieldName": "fldcourseid",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 3,
+                    "AppFormGroupLabel": "grpprogramselect",
+                        "AppFormFieldId": 22,
+                        "FieldName": "fldsubjectid",
+                        "Value": null
+                  },
+                  {
+                    "AppFormGroupId": 5,
+                    "AppFormGroupLabel": "grpfee",
+                        "AppFormFieldId": 31,
+                        "FieldName": "fldpaymentparticulars",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 5,
+                    "AppFormGroupLabel": "grpfee",
+                        "AppFormFieldId": 32,
+                        "FieldName": "fldfeeamount",
+                        "Value": null
+                      },
+                      {
+                    "AppFormGroupId": 5,
+                    "AppFormGroupLabel": "grpfee",
+                        "AppFormFieldId": 33,
+                        "FieldName": "fldtotal",
+                        "Value": null
+                  }
+                ]
+  }

@@ -1,0 +1,116 @@
+﻿<div class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div class="panel-body">
+
+        <form id="form1" action="#" data-parsley-validate="">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group m-b-0">
+                        <label class="control-label">Upload Photo</label>
+                        <input type="file" class="filestyle" data-buttonname="btn-primary" id="filestyle-4" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);"><div class="bootstrap-filestyle input-group"><input type="text" class="form-control " placeholder="" disabled=""> <span class="group-span-filestyle input-group-btn" tabindex="0"><label for="filestyle-4" class="btn btn-primary "><span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span> <span class="buttonText">Choose file</span></label></span></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group pull-right">
+                        <label for="userName">Admission Number</label>
+                        <h2> 098987</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="userName">{{jsondata.fields[0].FieldName}}<span class="text-danger">*</span></label>
+                        <select id="heard" class="form-control" required data-ng-model="modAdmissionObj.fldtitle">
+                            <option value="">Choose..</option>
+                            <option value="Mr.">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="other">Other..</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="heard">{{jsondata.fields[1].FieldName}}<span class="text-danger">*</span></label>
+                        <input type="text" name="first_name" parsley-trigger="change" required placeholder="" class="form-control" id="first_name" data-ng-model="modAdmissionObj.fldfirstname">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="heard">{{jsondata.fields[2].FieldName}}<span class="text-danger">*</span></label>
+                        <input type="text" name="last_name" parsley-trigger="change" required placeholder="" class="form-control" id="last_name" data-ng-model="modAdmissionObj.fldlastname">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="userName">{{jsondata.fields[3].FieldName}}<span class="text-danger">*</span></label>
+                        <select id="heard" class="form-control" data-ng-model="modAdmissionObj.fldgender">
+                            <option value="">Choose..</option>
+                            <option value="Male">M</option>
+                            <option value="Female">F</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="heard">{{jsondata.fields[4].FieldName}}<span class="text-danger">*</span></label>
+                        <input type="text" name="government_id" parsley-trigger="change" required placeholder="" class="form-control" id="government_id" data-ng-model="modAdmissionObj.fldgovtid">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="heard">{{jsondata.fields[5].FieldName}}<span class="text-danger">*</span></label>
+                        <input type="text" name="place_of_birth" parsley-trigger="change" required placeholder="" class="form-control" id="place_of_birth" data-ng-model="modAdmissionObj.fldplaceofbirth">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="heard">{{jsondata.fields[6].FieldName}}<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose" data-ng-model="modAdmissionObj.flddateofbirth">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="heard">{{jsondata.fields[7].FieldName}}<span class="text-danger">*</span></label>
+                        <input type="text" name="mobile" parsley-trigger="change" required placeholder="" class="form-control" id="mobile" data-ng-model="modAdmissionObj.fldmobileno">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="heard">{{jsondata.fields[8].FieldName}}</label>
+                        <input type="text" name="telephone" parsley-trigger="change" required placeholder="" class="form-control" id="telephone" data-ng-model="modAdmissionObj.fldtelephoneno">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="course_code">{{jsondata.fields[9].FieldName}}<span class="text-danger">*</span></label>
+                        <input type="text" name="budget_name" parsley-trigger="change" required placeholder="" class="form-control" id="budget" data-ng-model="modAdmissionObj.fldemailaddress">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="course_code">{{jsondata.fields[10].FieldName}}<span class="text-danger">*</span></label>
+                        <textarea id="message" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.." data-parsley-validation-threshold="10" data-ng-model="modAdmissionObj.fldpermanentaddress"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="course_code">{{jsondata.fields[10].FieldName}}<span class="text-danger">*</span></label>
+                        <textarea id="message" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.." data-parsley-validation-threshold="10" data-ng-model="modAdmissionObj.fldcorrespondanceaddress"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>

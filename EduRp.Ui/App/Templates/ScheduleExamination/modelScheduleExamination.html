@@ -1,0 +1,30 @@
+﻿
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="Modals.closeSubjectContainer()">x</button>
+        <h4 class="modal-title">
+            <span data-ng-if="modalType ==='add'">{{'subjectAddHeader'|translate}}</span>
+            <span data-ng-if="modalType ==='update'">{{'subjectUpdateHeader'|translate}}</span>
+        </h4>
+    </div>
+    <div class="modal-body" ng-app="EduRpApp">
+        <div ng-controller="scheduleExaminationController" class="row">
+            <h1>Example</h1>
+            <multiselect class="input-xlarge" multiple="true"
+                         ng-model="selectedCar"
+                         options="c.name for c in cars"
+                         change="selected()"></multiselect>
+            <div class="well well-small">
+                {{selectedCar}}
+            </div>
+            Single select:
+            <multiselect class="input-xlarge"
+                         ng-model="selectedFruit"
+                         options="c.name for c in fruits"
+                         change="selected()"></multiselect>
+            <div class="well well-small">
+                {{selectedFruit}}
+            </div>
+        </div>
+    </div>
+
+

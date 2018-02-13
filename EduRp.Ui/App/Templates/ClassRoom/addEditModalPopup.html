@@ -1,0 +1,75 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="Modals.closeClassRoomContainer()">x</button>
+    <h4 class="modal-title">
+        <span data-ng-if="modalType ==='add'">Add ClassRoom</span>
+        <span data-ng-if="modalType ==='update'">Update ClassRoom</span>
+    </h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="p-20">
+                <form name="addEditClassRoomForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course_code">Building Code<span class="text-danger">*</span></label>
+                                <input type="text" name="Building_Code" parsley-trigger="change" required placeholder="Enter Building Code" class="form-control" data-ng-model="$parent.modclassRoomObj.BuildingCode">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course_name">Building Name<span class="text-danger">*</span></label>
+                                <input type="text" name="Building_Name" parsley-trigger="change" required placeholder="Enter Building Name" class="form-control" data-ng-model="$parent.modclassRoomObj.BuildingName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="course_name">Room Code<span class="text-danger">*</span></label>
+                            <input type="text" name="Room_Code" parsley-trigger="change" required placeholder="Enter Room Code" class="form-control" data-ng-model="$parent.modclassRoomObj.RoomCode">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="course_code">Room Name<span class="text-danger">*</span></label>
+                            <input type="text" name="Room_Name" parsley-trigger="change" required placeholder="Enter Room Name" class="form-control" data-ng-model="$parent.modclassRoomObj.RoomName">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="course_code">Capacity Of Room<span class="text-danger">*</span></label>
+                            <input type="text" name="Capacity Of Room" parsley-trigger="change" required placeholder="Enter Capacity Of Room" class="form-control" data-ng-model="$parent.modclassRoomObj.CapacityOfRoom">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="course_code">Facility<span class="text-danger">*</span></label>
+                            <input type="text" name="Facility" parsley-trigger="change" required placeholder="Enter Facility" class="form-control" data-ng-model="$parent.modclassRoomObj.Facility">
+                        </div>
+                    </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="course_code">Location<span class="text-danger">*</span></label>
+                                        <input type="text" name="Location" parsley-trigger="change" required placeholder="Enter Location" class="form-control" data-ng-model="$parent.modclassRoomObj.Location">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+
+                                </div>
+                                <div class="form-group m-b-0 text-right">
+                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="updateClassRoomDetails(addEditClassRoomForm)" data-ng-if="modalType ==='update'">
+                                        Save Details
+                                    </button>
+                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="addClassRoomDetails(addEditClassRoomForm)" data-ng-if="modalType ==='add'">
+                                        Add Details
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.closeClassRoomContainer()">Close</button>
+                                </div>
+</form>
+        </div>
+    </div>
+</div>
+</div>
+
+

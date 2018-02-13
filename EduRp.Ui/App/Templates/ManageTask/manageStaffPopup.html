@@ -1,0 +1,92 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="Modals.closeModalContainer()">x</button>
+    <h4 class="modal-title">Assign Employee</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel-group" style="margin-bottom:0px;" id="accordionm" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThreem">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionm" href="#collapseThreem" aria-expanded="false" aria-controls="collapseThreem">
+                                Filters
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThreem" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <form action="#" data-parsley-validate="">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="userName">Employee Code</label>
+                                            <select id="heard" class="form-control" multiple>
+                                                <option value="EMP0012">EMP0012</option>
+                                                <option value="EMP0013">EMP0013</option>
+                                                <option value="EMP0014">EMP0014</option>
+                                                <option value="EMP0015">EMP0015</option>
+                                                <option value="EMP0016">EMP0016</option>
+                                                <option value="EMP0017">EMP0017</option>
+                                                <option value="other">Other..</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="userName">Employee Name</label>
+                                            <select id="heard" class="form-control" multiple>
+                                                <option value="">Choose..</option>
+                                                <option value="Drs. H. Bulkani, M.Pd.">Drs. H. Bulkani, M.Pd.</option>
+                                                <option value="DR. Sonedi, M.Pd.">DR. Sonedi, M.Pd.</option>
+                                                <option value="Drs. H. Supardi, M.Pd.">Drs. H. Supardi, M.Pd.</option>
+                                                <option value="Laksminarti, SH, MH">Laksminarti, SH, MH</option>
+                                                <option value="Dr. HM Yusuf, M.AP.">Dr. HM Yusuf, M.AP.</option>
+                                                <option value="other">Other..</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-right m-b-0">
+                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="submit">
+                                        GO
+                                    </button>
+                                    <button type="reset" class="btn btn-default waves-effect m-l-5">
+                                        Clear
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive" style="margin-top: -10px;">
+                <table id="datatablem" class="table table-striped table-bordered table-colored table-inverse">
+                    <thead>
+                        <tr>
+                            <th>Employee Code</th>
+                            <th>Employee Name</th>
+                            <th class="check"><label><input type="checkbox" id="flowcheckall" data-ng-model="selectAllNotlinkedList" data-ng-click="selectAllNotlinkedListItems()" />&nbsp;Select All</label></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="notLinkedEmp in notLinkedEmployee">
+                            <td>{{notLinkedEmp.EmployeeCode}}</td>
+                            <td>{{notLinkedEmp.EmployeeName}}</td>
+                            <td><input type="checkbox" data-ng-model="notLinkedEmp.selected" data-ng-change="toggleNotlinkedEmployee()"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- table-responsive -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-teal btn-bordered waves-light" id="btnUploadAdd" data-ng-click="addEmployeeIntoList()">Save Details</button>
+                <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" id="btnUploadCancel" data-ng-click="Modals.closeModalContainer()">Close</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

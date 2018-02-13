@@ -1,0 +1,46 @@
+﻿{
+  "ExamSchedule": [
+    {
+      "startDate": "2018-02-10T09:00:00",
+      "endDate": "2018-02-10T12:30:00",
+      "subject": "Computer Science"
+    },
+    {
+      "startDate": "2018-02-14T10:30:00",
+      "endDate": "2018-02-14T13:45:00",
+      "subject": "Electronics"
+    },
+    {
+      "startDate": "2018-03-14T10:30:00",
+      "endDate": "2018-03-14T13:45:00",
+      "subject": "Electronics2"
+    },
+    {
+      "startDate": "2018-02-14T14:30:00",
+      "endDate": "2018-02-14T17:45:00",
+      "subject": "Electronics"
+    },
+    {
+      "startDate": "2018-02-14T14:30:00",
+      "endDate": "2018-02-14T17:45:00",
+      "subject": "IT"
+    }
+  ]
+}
+//{
+  
+//  "results": [
+//    {
+//      "ExaminationTypeId": 1,
+//      "ExamGroup": "UGMIDEXAM",
+//      "ExamName": "OS",
+//      "ExaminationScheduleId": 1,
+//      "ExaminationDate": "2018-02-10T00:00:00",
+//      "StartTime": "09:00:00",
+//      "EndTime": "12:30:00",
+//      "UniversityId": null,
+//      "UserId": null,
+//      "TokenId": null
+//    }
+//  ]
+//}

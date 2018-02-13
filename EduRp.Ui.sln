@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EduRp.Ui", "EduRp.Ui\", "{1C631FD8-52CB-4441-9162-88B5251CD4BE}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_60924"
+		Debug.AspNetCompiler.PhysicalPath = "EduRp.Ui\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60924\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_60924"
+		Release.AspNetCompiler.PhysicalPath = "EduRp.Ui\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60924\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "60924"
+		SlnRelativePath = "EduRp.Ui\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C631FD8-52CB-4441-9162-88B5251CD4BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C631FD8-52CB-4441-9162-88B5251CD4BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {723D0D16-A01E-46E4-A0D5-3B5DD74180E4}
+	EndGlobalSection
+EndGlobal

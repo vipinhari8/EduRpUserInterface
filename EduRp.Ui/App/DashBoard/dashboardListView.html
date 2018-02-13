@@ -1,0 +1,83 @@
+<!--<div class="panel panel-success"
+     ng-controller="DashBoardListCtrl as vm">
+    <div class="panel-heading"
+         style="font-size:large">
+        Product List : you must be logged in to view this list
+    </div>
+
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <td>UserId</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>RoleId</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in vm.products">
+                    <td>{{product.UserId}}</td>
+                    <td>{{product.UserName }}</td>
+                    <td>{{product.EmailAddress  }}</td>
+                    <td>{{product.UserRoleId }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>-->
+
+<body ng-controller="DashBoardListCtrl as vm">
+    <div class="container body-content">
+        <!-- Navigation Bar-->
+        
+        <!-- End Navigation Bar-->
+        <!-- <nav class="navbar"> --->
+        <!-- Navbar content -->
+        <!--<ul>
+                <li class="nav-item">
+                     <a class="btn" ng-click="vm.goToPage('/Admin/ProgramStudy')">Program Study</a>
+                    <a class="btn" ng-click="vm.goToPage('/Admin/CourseList/')">Show Course</a>
+                <a class="btn" ng-click="vm.goToPage('/Admin/Subject')">Subjects</a>
+                    <a class="btn" ng-click="vm.goToPage('/Admin/Task')">Task</a>
+
+                    <a class="btn" ng-click="vm.goToPage('/Admin/AcademicBatch')">Academic Batch</a>
+
+                    <a class="btn" ng-click="vm.goToPage('/Admin/CreateBatch')">Create Batch</a>
+                    <a class="btn" ng-click="vm.goToPage('/Admin/ClassRoom')">Class Room</a>
+                    <a class="btn" ng-click="vm.goToPage('/Admin/Employees')">Employees</a>
+                    <a class="btn" ng-click="vm.goToPage('/Admin/ExaminationType')">Examination Type</a>
+                    <a class="btn" ng-click="vm.goToPage('/Admin/Fees')">Fees</a>
+                    <a class="btn" ng-click="vm.goToPage('/Admin/NotificationType')">Notification Type</a>
+                    <a class="btn" ng-click="vm.goToPage('/Admin/Chapters')">Chapters</a>
+                    <a class="btn" ng-click="vm.goToPage('/Admin/BulkUpload')">BulkUpload</a>
+                    <a class="btn" ng-click="vm.goToPage('/StudentAdmissionForm')">Student Admission Form</a>
+                    <a class="btn" ng-click="vm.goToPage('/ScheduleExamination')">Schedule Examination</a>
+                    <a class="btn" ng-click="vm.goToPage('/ManageExamination')">Manage Examination</a>
+                    <a class="btn" ng-click="vm.goToPage('/ManageCourses')">Manage Courses</a>
+                    <a class="btn" ng-click="vm.goToPage('/ManageTask')">Manage Task</a>
+                    <a class="btn" ng-click="vm.goToPage('/ManageStudentCounsellingDetail')">Manage Student Counselling Detail</a>
+                    <a class="btn" ng-click="vm.goToPage('/StudentDashboard')">Student Dashboard</a>
+                    <a class="btn" ng-click="vm.goToPage('/ReviewAndApprove')">Review And Approve</a>
+                </li>
+            </ul>
+        </nav>-->
+        <ng-view>
+
+        </ng-view>
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-5">
+                    </div>
+                    <div class="col-md-4">
+                        EDuRP - Education ERP Management System &copy;2018. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <br />
+    </div>
+
+</body>

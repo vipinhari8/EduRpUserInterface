@@ -1,0 +1,59 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="Modals.closeChaptersContainer()">x</button>
+    <h4 class="modal-title">
+        <span data-ng-if="modalType ==='add'">Add New Chapter</span>
+        <span data-ng-if="modalType ==='update'">Update Chapter</span>
+    </h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="p-20">
+                <form name="addEditChapterForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Chapter_Number">Chapter Number<span class="text-danger">*</span></label>
+                                <input type="text" name="Chapter_Number" parsley-trigger="change" required placeholder="Enter Chapter Number" class="form-control" data-ng-model="$parent.modChaptersObj.ChapterNumber">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Chapter_Title">Chapter Title<span class="text-danger">*</span></label>
+                                <input type="text" name="Chapter_Title" parsley-trigger="change" required placeholder="Enter Chapter Title" class="form-control" data-ng-model="$parent.modChaptersObj.ChapterTitle">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ModeOf_Teaching">Mode Of Teaching<span class="text-danger">*</span></label>
+                                <input type="text" name="ModeOf_Teaching" parsley-trigger="change" required placeholder="Enter Mode Of Teaching" class="form-control" data-ng-model="$parent.modChaptersObj.ModeOfTeaching">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Chapter_Details">Chapter Details<span class="text-danger">*</span></label>
+                                <input type="text" name="Chapter_Details" parsley-trigger="change" required placeholder="Enter SKS" class="form-control" data-ng-model="$parent.modChaptersObj.ChapterDetails">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="SKS">SKS<span class="text-danger">*</span></label>
+                            <input type="text" name="SKS" parsley-trigger="change" required placeholder="Enter SKS" class="form-control" data-ng-model="$parent.modChaptersObj.SKS">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                    <div class="form-group m-b-0 text-right">
+                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="updateChaptersDetails(addEditChapterForm)" data-ng-if="modalType ==='update'">
+                            Save Details
+                        </button>
+                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="addChaptersDetails(addEditChapterForm)" data-ng-if="modalType ==='add'">
+                            Add Details
+                        </button>
+                        <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.closeChaptersContainer()">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

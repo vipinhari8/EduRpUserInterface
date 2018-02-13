@@ -1,0 +1,405 @@
+﻿
+<div class="wrapper">
+    <div class="container">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="btn-group pull-left">
+                        <ol class="breadcrumb hide-phone p-0 m-0">
+                            <li>
+                                <a href="#">EDuRP</a>
+                            </li>
+                            <li>
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                Fees
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page title end breadcrumb -->
+
+        <div class="row">
+            <!-- end col -->
+            <div class="col-lg-12">
+                <div class="card-box">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h4 class="m-t-0 header-title"><b>Employees</b></h4>
+                        </div>
+                        <div class="col-lg-4 pull-right">
+                            <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" data-ng-click="addEmployeesContainer()">Add Employee</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel-group" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab">
+                                        <h4 class="panel-title" data-ng-click="toggleFilterPanel()">
+                                            <a ng-class="!filterPanel ? 'collapsed': ''" aria-expanded="false" aria-controls="collapseThree">
+                                                Filters
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse" role="tabpanel" aria-labelledby="headingThree" data-ng-show="filterPanel">
+                                        <div class="panel-body">
+                                            <form action="#" data-parsley-validate="">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="userName">EmployeeNumber</label>
+                                                            <textarea cols="25" rows="5" name="course_code_tobe_filtered" data-ng-model="course_code_tobe_filtered">
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="userName">FullName</label>
+                                                            <input type="text" name="course_name_tobe_filtered" data-ng-model="course_name_tobe_filtered" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group text-right m-b-0">
+                                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="button" data-ng-click="getFilteredData()">
+                                                        GO
+                                                    </button>
+                                                    <button type="reset" data-ng-click="toggleFilterPanel()" class="btn btn-default waves-effect m-l-5">
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- end col -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="table-responsive">
+                                        <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed table-colored table-inverse">
+                                            <thead>
+                                                <tr>
+                                                    <th ng-click="orderByField='EmployeeNumber'; reverseSort = !reverseSort">
+                                                        Employee Number
+                                                        <span ng-show="orderByField == 'EmployeeNumber'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='FullName'; reverseSort = !reverseSort">
+                                                        FullName
+                                                        <span ng-show="orderByField == 'FullName'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='NIDN'; reverseSort = !reverseSort">
+                                                        NIDN
+                                                        <span ng-show="orderByField == 'NIDN'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='NIP'; reverseSort = !reverseSort">
+                                                        NIP
+                                                        <span ng-show="orderByField == 'NIP'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='HP'; reverseSort = !reverseSort">
+                                                        HP
+                                                        <span ng-show="orderByField == 'HP'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='StatusId'; reverseSort = !reverseSort">
+                                                        StatusId
+                                                        <span ng-show="orderByField == 'StatusId'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='DateofBirth'; reverseSort = !reverseSort">
+                                                        Date of Birth
+                                                        <span ng-show="orderByField == 'DateofBirth'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='GenderId'; reverseSort = !reverseSort">
+                                                        GenderId
+                                                        <span ng-show="orderByField == 'GenderId'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='BloodGroupId'; reverseSort = !reverseSort">
+                                                        BloodGroupId
+                                                        <span ng-show="orderByField == 'BloodGroupId'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='ReligionId'; reverseSort = !reverseSort">
+                                                        ReligionId
+                                                        <span ng-show="orderByField == 'ReligionId'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='MaritalStatusId'; reverseSort = !reverseSort">
+                                                        MaritalStatusId
+                                                        <span ng-show="orderByField == 'MaritalStatusId'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='NationalityId'; reverseSort = !reverseSort">
+                                                        NationalityId
+                                                        <span ng-show="orderByField == 'NationalityId'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='PhoneNumber'; reverseSort = !reverseSort">
+                                                        PhoneNumber
+                                                        <span ng-show="orderByField == 'PhoneNumber'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='LandLineNumber'; reverseSort = !reverseSort">
+                                                        LandLineNumber
+                                                        <span ng-show="orderByField == 'LandLineNumber'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='DateofJoining'; reverseSort = !reverseSort">
+                                                        DateofJoining
+                                                        <span ng-show="orderByField == 'DateofJoining'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='NoOfYearsOfService'; reverseSort = !reverseSort">
+                                                        NoOfYearsOfService
+                                                        <span ng-show="orderByField == 'NoOfYearsOfService'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='IncludeInPayroll'; reverseSort = !reverseSort">
+                                                        IncludeInPayroll
+                                                        <span ng-show="orderByField == 'IncludeInPayroll'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='DepartmentId'; reverseSort = !reverseSort">
+                                                        DepartmentId
+                                                        <span ng-show="orderByField == 'DepartmentId'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='IsActive'; reverseSort = !reverseSort">
+                                                        IsActive
+                                                        <span ng-show="orderByField == 'IsActive'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='DocumentMasterId'; reverseSort = !reverseSort">
+                                                        DocumentMasterId
+                                                        <span ng-show="orderByField == 'DocumentMasterId'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='Achievements'; reverseSort = !reverseSort">
+                                                        Achievements
+                                                        <span ng-show="orderByField == 'Achievements'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='PANNumber'; reverseSort = !reverseSort">
+                                                        PANNumber
+                                                        <span ng-show="orderByField == 'PANNumber'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='PFNumber'; reverseSort = !reverseSort">
+                                                        PFNumber
+                                                        <span ng-show="orderByField == 'PFNumber'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='EmployeeLastDate'; reverseSort = !reverseSort">
+                                                        EmployeeLastDate
+                                                        <span ng-show="orderByField == 'EmployeeLastDate'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='IsEmploymentConfirmed'; reverseSort = !reverseSort">
+                                                        IsEmploymentConfirmed
+                                                        <span ng-show="orderByField == 'IsEmploymentConfirmed'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='IsUnderProbation'; reverseSort = !reverseSort">
+                                                        IsUnderProbation
+                                                        <span ng-show="orderByField == 'IsUnderProbation'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='ProbationEndDate'; reverseSort = !reverseSort">
+                                                        ProbationEndDate
+                                                        <span ng-show="orderByField == 'ProbationEndDate'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='ReportingManagerId'; reverseSort = !reverseSort">
+                                                        ReportingManagerId
+                                                        <span ng-show="orderByField == 'ReportingManagerId'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='ApplyTax'; reverseSort = !reverseSort">
+                                                        ApplyTax
+                                                        <span ng-show="orderByField == 'ApplyTax'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='InvitationSent'; reverseSort = !reverseSort">
+                                                        InvitationSent
+                                                        <span ng-show="orderByField == 'InvitationSent'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='EmailId'; reverseSort = !reverseSort">
+                                                        EmailId
+                                                        <span ng-show="orderByField == 'EmailId'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+
+                                                    <th>
+
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr data-ng-repeat="ed in filteredemployeesData|orderBy:orderByField:reverseSort">
+                                                    <td>{{ ed.EmployeeNumber}}</td>
+                                                    <td>{{ ed.FullName}}</td>
+                                                    <td>{{ ed.NIDN}}</td>
+                                                    <td>{{ ed.NIP}}</td>
+                                                    <td>{{ ed.HP}}</td>
+                                                    <td>{{ ed.StatusId}}</td>
+                                                    <td>{{ ed.DateofBirth}}</td>
+                                                    <td>{{ ed.GenderId}}</td>
+                                                    <td>{{ ed.BloodGroupId}}</td>
+                                                    <td>{{ ed.ReligionId}}</td>
+                                                    <td>{{ ed.MaritalStatusId}}</td>
+                                                    <td>{{ ed.NationalityId}}</td>
+                                                    <td>{{ ed.PhoneNumber}}</td>
+                                                    <td>{{ ed.LandLineNumber}}</td>
+                                                    <td>{{ ed.DateofJoining}}</td>
+                                                    <td>{{ ed.NoOfYearsOfService}}</td>
+                                                    <td>{{ ed.IncludeInPayroll}}</td>
+                                                    <td>{{ ed.DepartmentId}}</td>
+                                                    <td>{{ ed.IsActive}}</td>
+                                                    <td>{{ ed.DocumentMasterId}}</td>
+                                                    <td>{{ ed.Achievements}}</td>
+                                                    <td>{{ ed.PANNumber}}</td>
+                                                    <td>{{ ed.PFNumber}}</td>
+                                                    <td>{{ ed.EmployeeLastDate}}</td>
+                                                    <td>{{ ed.PFNumber}}</td>
+                                                    <td>{{ ed.IsEmploymentConfirmed}}</td>
+                                                    <td>{{ ed.IsUnderProbation }}</td>
+                                                    <td>{{ ed.ProbationEndDate}}</td>
+                                                    <td>{{ ed.ReportingManagerId}}</td>
+                                                    <td>{{ ed.ApplyTax}}</td>
+                                                    <td>{{ ed.InvitationSent}}</td>
+                                                    <td>{{ ed.EmailId}}</td>
+
+
+                                                    <td><i class="fa fa-pencil-square-o m-r-5" data-ng-click="editEmployeesContainer(ed)" style="cursor: pointer;"></i></td>
+                                                    <td><i class="fa fa-trash-o fa-lg" data-ng-click="deleteEmployeesContainer(ed)"></i></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div> <!-- end card -->
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <div class="dataTables_length" id="datatable_length">
+                                        <label>
+                                            Show
+                                            <select name="datatable_length"
+                                                    aria-controls="datatable"
+                                                    class="form-control input-sm"
+                                                    data-ng-model="numPerPage"
+                                                    data-ng-options="x for x in showPerPageDataOptions"></select>
+                                            entries
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">
+                                        Showing {{currentPage*numPerPage - numPerPage  + 1}} to {{employeesData.length > currentPage*numPerPage ? currentPage*numPerPage : employeesData.length}} of {{employeesData.length}} entries
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
+                                        <pagination ng-model="currentPage"
+                                                    total-items="employeesData.length"
+                                                    max-size="maxSize"
+                                                    boundary-links="true"
+                                                    items-per-page="numPerPage">
+                                        </pagination>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end col -->
+
+                    </div>
+                    <!-- end row -->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

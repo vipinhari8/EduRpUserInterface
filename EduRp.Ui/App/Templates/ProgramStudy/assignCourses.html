@@ -1,0 +1,132 @@
+﻿
+            <div class="modal-header">
+                <button type="button" class="close" data-ng-click="Modals.close();">x</button>
+                <h4 class="modal-title">{{'assignCoursesHeader'|translate}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12" data-ng-show="$parent.unlinkedCoursesOfPSList.length > 0">
+                        <div class="panel-group" style="margin-bottom:0px;" id="accordion" role="tablist" aria-multiselectable="true">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThreeff">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThreeff" aria-expanded="false" aria-controls="collapseThreeff">
+                                            {{'filter'|translate}}
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThreeff" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThreeff">
+                                    <div class="panel-body">
+                                        <form action="#" data-parsley-validate="">
+
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="userName">{{'courseCodeColumn'| translate}}</label>
+                                                       <textarea></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="userName">{{'courseNameColumn'| translate}}</label>
+                                                        <input type="text" />
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                            <div class="form-group text-right m-b-0">
+                                                <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="submit">
+                                                    {{'goBtn'|translate}}
+                                                </button>
+                                                <button type="reset" class="btn btn-default waves-effect m-l-5">
+                                                    {{'clearBtn'|translate}}
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="table-responsive" style="margin-top: -10px;">
+
+
+                            <table id="datatablem" class="table table-striped table-bordered table-colored table-inverse">
+
+                                <thead>
+                                    <tr>
+
+                                        <th ng-click="$parent.nonAssignedCoursesOrderByField='CourseCode'; $parent.nonAssignedCoursesReverseSort = !$parent.nonAssignedCoursesReverseSort">
+                                            {{'courseCodeColumn'| translate}}
+                                            <span ng-show="$parent.nonAssignedCoursesOrderByField == 'CourseCode'">
+                                                <span ng-show="!$parent.nonAssignedCoursesReverseSort">^</span>
+                                                <span ng-show="$parent.nonAssignedCoursesReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th ng-click="nonAssignedCoursesOrderByField='CourseName'; nonAssignedCoursesReverseSort = !nonAssignedCoursesReverseSort">
+                                            {{'courseNameColumn'| translate}}
+                                            <span ng-show="nonAssignedCoursesOrderByField == 'CourseName'">
+                                                <span ng-show="!nonAssignedCoursesReverseSort">^</span>
+                                                <span ng-show="nonAssignedCoursesReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th ng-click="nonAssignedCoursesOrderByField='CourseType'; nonAssignedCoursesReverseSort = !nonAssignedCoursesReverseSort">
+                                            {{'courseTypeColumn'| translate}}
+                                            <span ng-show="nonAssignedCoursesOrderByField == 'CourseType'">
+                                                <span ng-show="!nonAssignedCoursesReverseSort">^</span>
+                                                <span ng-show="nonAssignedCoursesReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th ng-click="nonAssignedCoursesOrderByField='CourseGroup'; nonAssignedCoursesReverseSort = !nonAssignedCoursesReverseSort">
+                                            {{'courseGroupColumn'| translate}}
+                                            <span ng-show="nonAssignedCoursesOrderByField == 'CourseGroup'">
+                                                <span ng-show="!nonAssignedCoursesReverseSort">^</span>
+                                                <span ng-show="nonAssignedCoursesReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th class="check">
+                                        <label>
+                                            <input type="checkbox" id="flowcheckallco" value="" data-ng-model="$parent.unlinkedCoursesAllSelected" ng-change="isUnlinkedCoursesAllSelected();" />
+                                            &nbsp;{{'selectAll' | translate}}
+                                        </label>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr data-ng-repeat="uc in $parent.unlinkedCoursesOfPSList | orderBy:nonAssignedCoursesOrderByField:nonAssignedCoursesReverseSort">
+
+                                        <td>{{uc.CourseCode}}</td>
+                                        <td>{{uc.CourseName}} </td>
+                                        <td>{{ uc.CourseType}}</td>
+                                        <td>{{ uc.CourseGroup}}</td>
+
+                                        <td><input  type="checkbox" data-ng-model="uc.Selected" ng-true-value="'true'" ng-false-value="'false'" ng-checked="unlinkedCoursesAllSelected" ng-click="isThisUnlinkedCourseSelected(uc)" /></td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div> <!-- table-responsive -->
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-teal btn-bordered waves-light" id="btnUploadAdd" data-ng-click="assignUnlinkedCourses();">{{'saveDetailsBtn'|translate}}</button>
+                            <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.close();">{{'closeBtn'|translate}}</button>
+                        </div>
+
+
+                    </div>
+                    <div data-ng-show="$parent.unlinkedCoursesOfPSList.length === 0">{{'noDataUnderGrid' | translate}}</div>
+                </div>
+            </div>
+<!-- /.modal -->

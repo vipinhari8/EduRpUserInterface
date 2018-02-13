@@ -1,0 +1,60 @@
+﻿
+{
+    "results": [
+        {
+            "AdmissionNumber": "000105",
+            "ApplicationFormId": 5,
+            "Name": "",
+            "Batch": null,
+            "ProgramStudy": null,
+            "Course": null,
+            "Status": null,
+            "Approve": "Approved",
+            "ApplicationCreatedDate": "2018-01-27T20:11:06.467"
+        },
+        {
+            "AdmissionNumber": "000101",
+            "ApplicationFormId": 1,
+            "Name": "Bhaskar Chalam",
+            "Batch": null,
+            "ProgramStudy": "Graduate",
+            "Course": "Computer Science and Engineering",
+            "Status": "Saved",
+            "Approve": "Approved",
+            "ApplicationCreatedDate": null
+        },
+        {
+            "AdmissionNumber": "000102",
+            "ApplicationFormId": 2,
+            "Name": "",
+            "Batch": null,
+            "ProgramStudy": null,
+            "Course": null,
+            "Status": null,
+            "Approve": "Approved",
+            "ApplicationCreatedDate": null
+        },
+        {
+            "AdmissionNumber": "000103",
+            "ApplicationFormId": 3,
+            "Name": "",
+            "Batch": null,
+            "ProgramStudy": null,
+            "Course": null,
+            "Status": null,
+            "Approve": "Approved",
+            "ApplicationCreatedDate": null
+        },
+        {
+            "AdmissionNumber": "000104",
+            "ApplicationFormId": 4,
+            "Name": "",
+            "Batch": null,
+            "ProgramStudy": null,
+            "Course": null,
+            "Status": null,
+            "Approve": "Approved",
+            "ApplicationCreatedDate": null
+        }
+    ]
+}

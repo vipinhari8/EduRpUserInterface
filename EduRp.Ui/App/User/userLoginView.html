@@ -1,0 +1,274 @@
+﻿<!--<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-success">
+            <div class="panel-heading center-block">
+                <span>REGISTER A NEW USER</span>
+            </div>
+            <div class="panel-body">
+                <form ng-hide="vm.isLoggedIn()" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <input type="text"
+                               class="form-control"
+                               placeholder="username (email)"
+                               ng-model="vm.newUserEmail">
+                    </div>
+                    <div class="form-group">
+                        <input type="password"
+                               class="form-control col-md-10"
+                               placeholder="password"
+                               ng-model="vm.newUserPassword">
+                    </div>
+                    <div class="form-group">
+                        <input type="password"
+                               class="form-control col-md-10"
+                               placeholder="ConfirmPassword"
+                               ng-model="vm.confirmUserPassword"> 
+                    </div>
+                    <button type="submit"
+                            class="btn btn-default"
+                            ng-click="vm.registerUser()">
+                        Register
+                    </button>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <div class="alert-danger" ng-show="vm.registerErrorData">{{vm.registerErrorData}}</div>
+                <div class="alert-success" ng-show="vm.responseData">{{vm.responseData}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-success">
+            <div class="panel-heading center-block">
+                <span>LOGIN IN</span>
+            </div>
+            <div class="panel-body">
+                <form ng-hide="vm.isLoggedIn()" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <input type="text"
+                               class="form-control col-md-10"
+                               placeholder="username (email)"
+                               ng-model="vm.userEmail">
+                    </div>
+                    <div class="form-group">
+                        <input type="password"
+                               class="form-control col-md-10"
+                               placeholder="password"
+                               ng-model="vm.userPassword">
+                    </div>
+                    <button type="submit"
+                            class="btn btn-default"
+                            ng-click="vm.login()">
+                        Login
+                    </button>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <div class="alert-danger" ng-show="vm.loginErrorData">{{vm.loginErrorData}}</div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Education erp system.">
+    <meta name="author" content="EDuRP">
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../../Assets/images/favicon.ico">
+    <!-- App title -->
+    <title>EduRP Login - Education ERP System</title>
+
+    <!-- App css -->
+    <link href="../../Assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/Styles/edurp/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Assets/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/css/components.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+
+    <![endif]-->
+
+    <script src="../../Assets/js/modernizr.min.js"></script>
+
+</head>
+
+
+<body class="bg-transparent">
+
+    <!-- HOME -->
+    <section>
+        <div class="container-alt">
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="header">
+                        <nav class="navbar navbar-fixed-top lazar-bg" id="nav" role="navigation" style="margin-bottom: 0; background-color:white">
+
+                            <ul class="nav navbar-top-links navbar-center">
+
+                                <li class="dropdown pull-right">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                        <span class="pl15"> Language</span>
+                                        <span class="caret caret-tp"></span>
+                                    </a>
+                                    <ul class="dropdown-menu animated m-t-xs">
+                                        <li><a href="#" class="animated animated-short fadeInUp"><i class="fa fa-user "></i> English</a></li>
+                                        <li><a href="#" class="animated animated-short fadeInUp"><i class="fa fa-group"></i> Bahasa</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <br>
+                    <br>
+
+                    <h2 class="font-bold">Welcome to EDuRP</h2>
+                    <p>
+                        An ERP e-governance solution for all types of educational institutions. Our aim is to provide a solution that enables institutions to meet the varying demand of education sector.
+
+
+
+                        Below are some of the reasons why you have to pick EDuRP.
+
+                    </p>
+                    <p>&nbsp;</p>
+                    <p class="homeimage">
+                        <img src="../../Assets/images/iPad_screen.png" class="img-responsive" />
+                    </p>
+                    <p>&nbsp;</p>
+                    <div class="row googleicons col-sm-offset-2">
+                        <div class="col-md-4">
+                            <img src="../../Assets/images/appstore.png" style="max-width: 150px" class="img-responsive" />
+                        </div>
+                        <div class="col-md-4">
+                            <img src="../../Assets/images/googleplay.png" style="max-width: 150px" class="img-responsive" />
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-sm-4">
+                    <br>
+                    <div class="wrapper-page">
+
+                        <div class="m-t-40 account-pages">
+                            <div class="text-center account-logo-box">
+
+                                <h2 class="text-uppercase">
+                                    <a href="index.html" class="text-success">
+                                        <span><img src="../../Assets/images/logo.png" alt="" height="36"></span>
+                                    </a>
+                                </h2>
+                                <!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
+                            </div>
+                            <div class="account-content">
+                                <form ng-hide="vm.isLoggedIn()" class="form-horizontal" role="form">
+
+                                    <div class="form-group ">
+                                        <div class="col-xs-12">
+                                            <input class="form-control" type="text" required="" placeholder="Username" ng-model="vm.userEmail">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <input class="form-control" type="password" required="" placeholder="Password" ng-model="vm.userPassword">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <div class="col-xs-12">
+                                            <div class="checkbox checkbox-success">
+                                                <input id="checkbox-signup" type="checkbox" checked>
+                                                <label for="checkbox-signup">
+                                                    Remember me
+
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group text-center m-t-30">
+                                        <div class="col-sm-12">
+                                            <a href="page-recoverpw.html" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot your password?</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group account-btn text-center m-t-10">
+                                        <div class="col-xs-12">
+                                            <button class="btn w-md btn-bordered btn-success waves-effect waves-light" type="submit" ng-click="vm.login()">Log In</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                                <div class="alert-danger" ng-show="vm.loginErrorData">
+                                    {{vm.loginErrorData}}
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- end card-box-->
+                    </div>
+
+
+
+
+                    <div class="row m-t-50">
+                        <div class="col-sm-12 text-center">
+                            <p class="text-muted">Don't have an account? <a href="page-register.html" class="text-primary m-l-5"><b>Sign Up</b></a></p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end wrapper -->
+
+            </div>
+        </div>
+
+    </section>
+    <!-- END HOME -->
+
+    <script>
+
+        var resizefunc = [];
+
+    </script>
+
+    <!-- jQuery  -->
+    <script src="../../Assets/js/jquery.min.js"></script>
+    <script src="../../Assets/js/bootstrap.min.js"></script>
+    <script src="../../Assets/js/detect.js"></script>
+    <script src="../../Assets/js/fastclick.js"></script>
+    <script src="../../Assets/js/jquery.blockUI.js"></script>
+    <script src="../../Assets/js/waves.js"></script>
+    <script src="../../Assets/js/jquery.slimscroll.js"></script>
+    <script src="../../Assets/js/jquery.scrollTo.min.js"></script>
+
+    <!-- App js -->
+    <script src="../../Assets/js/jquery.core.js"></script>
+    <script src="../../Assets/js/jquery.app.js"></script>
+
+</body>
+</html>

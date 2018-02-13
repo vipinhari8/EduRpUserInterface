@@ -1,0 +1,22 @@
+﻿{
+  "results": [
+    {
+      "ExaminationTypeId": 1,
+      "ExamGroup": "erty",
+      "ExamName": "qwerty",
+      "MinMarks": 30,
+      "MaxMarks": 100,
+      "FeeLabel": "asdfgh",
+      "Amount": 200
+    },
+    {
+      "ExaminationTypeId": 1,
+      "ExamGroup": "erty",
+      "ExamName": "qwerty",
+      "MinMarks": 30,
+      "MaxMarks": 100,
+      "FeeLabel": "asdfgh",
+      "Amount": 200
+    }
+  ]
+}

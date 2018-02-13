@@ -1,0 +1,129 @@
+﻿
+            <div class="modal-header">
+                <button type="button" class="close" data-ng-click="Modals.close();">x</button>
+                <h4 class="modal-title">{{'assignFeesHeader'|translate}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel-group" style="margin-bottom:0px;" id="accordion" role="tablist" aria-multiselectable="true">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThreee" aria-expanded="false" aria-controls="collapseThreee">
+                                            {{'filters'|translate}}
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThreee" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <form action="#" data-parsley-validate="">
+
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="userName">{{'feeLabelColumn'|translate}}</label>
+                                                        <textarea></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="userName">{{'feeDescriptionColumn'|translate}}</label>
+                                                        <input type="text"/>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                            <div class="form-group text-right m-b-0">
+                                                <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="submit">
+                                                    {{'goBtn'|translate}}
+                                                </button>
+                                                <button type="reset" class="btn btn-default waves-effect m-l-5">
+                                                    {{'clearBtn'|translate}}
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+
+
+                            <table id="datatablem" class="table table-striped table-bordered table-colored table-inverse">
+
+                                <thead>
+                                    <tr>
+
+                                        <th ng-click="nonAssignedFeesOrderByField='FeeLabel'; nonAssignedFeesReverseSort = !nonAssignedFeesReverseSort">
+                                            {{'feeLabelColumn'| translate}}
+                                            <span ng-show="nonAssignedFeesOrderByField == 'FeeLabel'">
+                                                <span ng-show="!nonAssignedFeesReverseSort">^</span>
+                                                <span ng-show="nonAssignedFeesReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th ng-click="nonAssignedFeesOrderByField='Amount'; nonAssignedFeesReverseSort = !nonAssignedFeesReverseSort">
+                                            {{'feeAmountColumn'| translate}}
+                                            <span ng-show="nonAssignedFeesOrderByField == 'Amount'">
+                                                <span ng-show="!nonAssignedFeesReverseSort">^</span>
+                                                <span ng-show="nonAssignedFeesReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th ng-click="nonAssignedFeesOrderByField='FeeType'; nonAssignedFeesReverseSort = !nonAssignedFeesReverseSort">
+                                            {{'feeTypeColumn'| translate}}
+                                            <span ng-show="nonAssignedFeesOrderByField == 'FeeType'">
+                                                <span ng-show="!nonAssignedFeesReverseSort">^</span>
+                                                <span ng-show="nonAssignedFeesReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th ng-click="nonAssignedFeesOrderByField='Description'; nonAssignedFeesReverseSort = !nonAssignedFeesReverseSort">
+                                            {{'feeDescriptionColumn'| translate}}
+                                            <span ng-show="nonAssignedFeesOrderByField == 'Description'">
+                                                <span ng-show="!nonAssignedFeesReverseSort">^</span>
+                                                <span ng-show="nonAssignedFeesReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th class="check">
+                                            <label>
+                                                <input type="checkbox" id="flowcheckallco" value="" data-ng-model="$parent.unlinkedFeesAllSelected" ng-change="isUnlinkedFeesAllSelected();" />
+                                                &nbsp;{{'selectAll' | translate}}
+                                            </label>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr data-ng-repeat="uf in $parent.unlinkedFeesOfPSList | orderBy:nonAssignedFeesOrderByField:nonAssignedFeesReverseSort">
+
+                                        <td>{{ uf.FeeLabel}}</td>
+                                        <td>{{ uf.Amount}}</td>
+                                        <td>{{ uf.FeeType}}</td>
+                                        <td>{{ uf.Description}}</td>
+                                        <td>
+                                            <input type="checkbox" data-ng-model="uf.Selected" ng-true-value="'true'" ng-false-value="'false'" ng-checked="unlinkedFeesAllSelected" ng-click="isThisUnlinkedFeeSelected(uf)" />
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div> <!-- table-responsive -->
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-teal btn-bordered waves-light" data-ng-click="assignUnlinkedFees();">{{'saveDetailsBtn'|translate}}</button>
+                            <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.close();">{{'closeBtn'|translate}}</button>
+                        </div>
+
+
+                    </div>
+                    <div data-ng-show="$parent.unlinkedFeesOfPSList.length === 0">{{'noDataUnderGrid' | translate}}</div>
+                </div>
+            </div><!-- /.modal -->
+        

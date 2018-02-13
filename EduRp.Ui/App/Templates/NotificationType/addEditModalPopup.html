@@ -1,0 +1,46 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="Modals.closeCourseContainer()">x</button>
+
+    <h4 class="modal-title">
+        <span data-ng-if="modalType ==='add'">Add New Notification / Grade</span>
+        <span data-ng-if="modalType ==='update'">Update Notification / Grade</span>
+    </h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="p-20">
+                <form name="addEditCourseForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course_code">Notification Code<span class="text-danger">*</span></label>
+                                <input type="text" name="Notification_code" parsley-trigger="change" required placeholder="Enter Notification Code" class="form-control" data-ng-model="$parent.modCourseObj.CourseCode">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course_name">Notification Name<span class="text-danger">*</span></label>
+                                <input type="text" name="Notification_name" parsley-trigger="change" required placeholder="Enter Notification Name" class="form-control" data-ng-model="$parent.modCourseObj.CourseName">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+
+                    </div>
+                    <div class="form-group m-b-0 text-right">
+                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="updateNotificationTypeDetails(addEditCourseForm)" data-ng-if="modalType ==='update'">
+                            Save Details
+                        </button>
+                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="addNotificationTypeDetails(addEditCourseForm)" data-ng-if="modalType ==='add'">
+                            Add Details
+                        </button>
+                        <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.closeCourseContainer()">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

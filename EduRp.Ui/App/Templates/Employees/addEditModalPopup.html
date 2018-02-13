@@ -1,0 +1,205 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="Modals.closeEmployeesContainer()">x</button>
+    <h4 class="modal-title">
+        <span data-ng-if="modalType ==='add'">Add New Employee</span>
+        <span data-ng-if="modalType ==='update'">Update Employee</span>
+    </h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="p-20">
+                <form name="addEditEmployeesForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="EmployeeNumber">Employee Number<span class="text-danger">*</span></label>
+                                <input type="text" name="EmployeeNumber" parsley-trigger="change" required placeholder="Enter EmployeeNumber" class="form-control" data-ng-model="$parent.modEmployeesObj.EmployeeNumber">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="FullName">FullName<span class="text-danger">*</span></label>
+                                <input type="text" name="FullName" parsley-trigger="change" required placeholder="Enter FullName" class="form-control" data-ng-model="$parent.modEmployeesObj.FullName">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="NIDN">NIDN<span class="text-danger">*</span></label>
+                                <input type="text" name="NIDN" parsley-trigger="change" required placeholder="Enter NIDN" class="form-control" data-ng-model="$parent.modEmployeesObj.NIDN">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="NIP">NIP<span class="text-danger">*</span></label>
+                                <input type="text" name="NIP" parsley-trigger="change" required placeholder="Enter NIP" class="form-control" data-ng-model="$parent.modEmployeesObj.NIP">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="HP">HP<span class="text-danger">*</span></label>
+                                <input type="text" name="HP" parsley-trigger="change" required placeholder="Enter HP" class="form-control" data-ng-model="$parent.modEmployeesObj.HP">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="StatusId">StatusId<span class="text-danger">*</span></label>
+                                <input type="text" name="StatusId" parsley-trigger="change" required placeholder="Enter StatusId" class="form-control" data-ng-model="$parent.modEmployeesObj.StatusId">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="DateofBirth">DateofBirth<span class="text-danger">*</span></label>
+                                <input type="text" name="DateofBirth" parsley-trigger="change" required placeholder="Enter DateofBirth" class="form-control" data-ng-model="$parent.modEmployeesObj.DateofBirth">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="GenderId">GenderId<span class="text-danger">*</span></label>
+                                <input type="text" name="GenderId" parsley-trigger="change" required placeholder="Enter GenderId" class="form-control" data-ng-model="$parent.modEmployeesObj.GenderId">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="BloodGroupId">BloodGroupId<span class="text-danger">*</span></label>
+                                <input type="text" name="BloodGroupId" parsley-trigger="change" required placeholder="Enter BloodGroupId" class="form-control" data-ng-model="$parent.modEmployeesObj.BloodGroupId">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ReligionId">ReligionId<span class="text-danger">*</span></label>
+                                <input type="text" name="ReligionId" parsley-trigger="change" required placeholder="Enter ReligionId" class="form-control" data-ng-model="$parent.modEmployeesObj.ReligionId">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="MaritalStatusId">MaritalStatusId<span class="text-danger">*</span></label>
+                                <input type="text" name="MaritalStatusId" parsley-trigger="change" required placeholder="Enter MaritalStatusId" class="form-control" data-ng-model="$parent.modEmployeesObj.MaritalStatusId">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="NationalityId">NationalityId<span class="text-danger">*</span></label>
+                                <input type="text" name="NationalityId" parsley-trigger="change" required placeholder="Enter NationalityId" class="form-control" data-ng-model="$parent.modEmployeesObj.NationalityId">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PhoneNumber">PhoneNumber<span class="text-danger">*</span></label>
+                                <input type="text" name="PhoneNumber" parsley-trigger="change" required placeholder="Enter PhoneNumber" class="form-control" data-ng-model="$parent.modEmployeesObj.PhoneNumber">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="LandLineNumber">LandLineNumber<span class="text-danger">*</span></label>
+                                <input type="text" name="LandLineNumber" parsley-trigger="change" required placeholder="Enter LandLineNumber" class="form-control" data-ng-model="$parent.modEmployeesObj.LandLineNumber">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="DateofJoining">DateofJoining<span class="text-danger">*</span></label>
+                                <input type="text" name="DateofJoining" parsley-trigger="change" required placeholder="Enter DateofJoining" class="form-control" data-ng-model="$parent.modEmployeesObj.DateofJoining">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="NoOfYearsOfService">NoOfYearsOfService<span class="text-danger">*</span></label>
+                                <input type="text" name="NoOfYearsOfService" parsley-trigger="change" required placeholder="Enter NoOfYearsOfService" class="form-control" data-ng-model="$parent.modEmployeesObj.NoOfYearsOfService">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="IncludeInPayroll">IncludeInPayroll<span class="text-danger">*</span></label>
+                                <input type="text" name="IncludeInPayroll" parsley-trigger="change" required placeholder="Enter IncludeInPayroll" class="form-control" data-ng-model="$parent.modEmployeesObj.Description">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="DepartmentId">DepartmentId<span class="text-danger">*</span></label>
+                                <input type="text" name="DepartmentId" parsley-trigger="change" required placeholder="Enter DepartmentId" class="form-control" data-ng-model="$parent.modEmployeesObj.DepartmentId">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="IsActive">IsActive<span class="text-danger">*</span></label>
+                                <input type="text" name="IsActive" parsley-trigger="change" required placeholder="Enter IsActive" class="form-control" data-ng-model="$parent.modEmployeesObj.IsActive">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="DocumentMasterId">DocumentMasterId<span class="text-danger">*</span></label>
+                                <input type="text" name="DocumentMasterId" parsley-trigger="change" required placeholder="Enter DocumentMasterId" class="form-control" data-ng-model="$parent.modEmployeesObj.DocumentMasterId">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Achievements">Achievements<span class="text-danger">*</span></label>
+                                <input type="text" name="Achievements" parsley-trigger="change" required placeholder="Enter Achievements" class="form-control" data-ng-model="$parent.modEmployeesObj.Achievements">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PANNumber">PANNumber<span class="text-danger">*</span></label>
+                                <input type="text" name="PANNumber" parsley-trigger="change" required placeholder="Enter PANNumber" class="form-control" data-ng-model="$parent.modEmployeesObj.PANNumber">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="PFNumber">PFNumber<span class="text-danger">*</span></label>
+                                <input type="text" name="PFNumber" parsley-trigger="change" required placeholder="Enter PFNumber" class="form-control" data-ng-model="$parent.modEmployeesObj.PFNumber">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="EmployeeLastDate">EmployeeLastDate<span class="text-danger">*</span></label>
+                                <input type="text" name="EmployeeLastDate" parsley-trigger="change" required placeholder="Enter EmployeeLastDate" class="form-control" data-ng-model="$parent.modEmployeesObj.EmployeeLastDate">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="IsEmploymentConfirmed">IsEmploymentConfirmed<span class="text-danger">*</span></label>
+                                <input type="text" name="IsEmploymentConfirmed" parsley-trigger="change" required placeholder="Enter IsEmploymentConfirmed" class="form-control" data-ng-model="$parent.modEmployeesObj.IsEmploymentConfirmed">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="IsUnderProbation">IsUnderProbation<span class="text-danger">*</span></label>
+                            <input type="text" name="IsUnderProbation" parsley-trigger="change" required placeholder="Enter IsUnderProbation" class="form-control" data-ng-model="$parent.modEmployeesObj.IsUnderProbation">
+                        </div>
+                        <div class="form-group">
+                            <label for="ProbationEndDate">ProbationEndDate<span class="text-danger">*</span></label>
+                            <input type="text" name="ProbationEndDate" parsley-trigger="change" required placeholder="Enter ProbationEndDate" class="form-control" data-ng-model="$parent.modEmployeesObj.ProbationEndDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="ReportingManagerId">ReportingManagerId<span class="text-danger">*</span></label>
+                            <input type="text" name="ReportingManagerId" parsley-trigger="change" required placeholder="Enter ReportingManagerId" class="form-control" data-ng-model="$parent.modEmployeesObj.ReportingManagerId">
+                        </div>
+                        <div class="form-group">
+                            <label for="ApplyTax">ApplyTax<span class="text-danger">*</span></label>
+                            <input type="text" name="ApplyTax" parsley-trigger="change" required placeholder="Enter ApplyTax" class="form-control" data-ng-model="$parent.modEmployeesObj.ApplyTax">
+                        </div>
+                        <div class="form-group">
+                            <label for="Fee_name">InvitationSent<span class="text-danger">*</span></label>
+                            <input type="text" name="InvitationSent" parsley-trigger="change" required placeholder="Enter InvitationSent" class="form-control" data-ng-model="$parent.modEmployeesObj.InvitationSent">
+                        </div>
+                        <div class="form-group">
+                            <label for="EmailId">EmailId<span class="text-danger">*</span></label>
+                            <input type="text" name="EmailId" parsley-trigger="change" required placeholder="Enter EmailId" class="form-control" data-ng-model="$parent.modEmployeesObj.EmailId">
+                        </div>
+                    </div>
+                </form>
+            </div>           
+        </div>        
+    </div>    
+</div>
+
+        
+<div class="modal-footer"></div>
+<div class="form-group m-b-0 text-right">
+    <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="updateEmployeesDetails(addEditEmployeesForm)" data-ng-if="modalType ==='update'">
+        Save Details
+    </button>
+    <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="addEmployeesDetails(addEditEmployeesForm)" data-ng-if="modalType ==='add'">
+        Add Details
+    </button>
+    <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.closeEmployeesContainer()">Close</button>
+</div>

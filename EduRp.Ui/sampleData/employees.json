@@ -1,0 +1,41 @@
+﻿{
+  "results": [
+    {
+      "id": 2,
+      "StaffName": "Vipin",
+      "NIDN": "12dsad",
+      "NIP": 10,
+      "Religion": "R",
+      "DateofBirth": "02/02/1993",
+      "HomePhone": "098662",
+      "Status": "Active",
+      "Homebase": "dwd",
+      "Gender": "M",
+      "IsActive": "true",
+      "Program Study": "",
+      "AcademicYear": "",
+      "DateofAssignmentLetter": "",
+      "Address": "",
+      "Designation": ""
+
+    },
+    {
+      "id": 2,
+      "StaffName": "Hari",
+      "NIDN": "123q",
+      "NIP": 10,
+      "Religion": "R",
+      "DateofBirth": "02/02/1993",
+      "HomePhone": "098662",
+      "Status": "Active",
+      "Homebase": "dwd",
+      "Gender": "M",
+      "IsActive": "true",
+      "Program Study": "",
+      "AcademicYear": "",
+      "DateofAssignmentLetter": "",
+      "Address": "",
+      "Designation": ""
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="Modals.closeCourseContainer()">x</button>
+
+    <h4 class="modal-title">
+        <span data-ng-if="modalType ==='add'">Add Task</span>
+        <span data-ng-if="modalType ==='update'">Update Task</span>
+    </h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="p-20">
+                <form name="addEditTaskForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course_code">Task Name<span class="text-danger">*</span></label>
+                                <input type="text" name="Task_name" parsley-trigger="change" required placeholder="Enter Task Name" class="form-control" data-ng-model="$parent.modtaskObj.TaskName">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="course_name">Task Description<span class="text-danger">*</span></label>
+                                <input type="text" name="Task_description" parsley-trigger="change" required placeholder="Enter Task Description" class="form-control" data-ng-model="$parent.modtaskObj.TaskDescription">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="course_name">Task Duration<span class="text-danger">*</span></label>
+                            <input type="text" name="Task_duration" parsley-trigger="change" required placeholder="Enter Task Duration" class="form-control" data-ng-model="$parent.modtaskObj.TaskDuration">
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+            <div class="form-group m-b-0 text-right">
+                <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="updateTaskDetails(addEditTaskForm)" data-ng-if="modalType ==='update'">
+                    Save Details
+                </button>
+                <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="addTaskDetails(addEditTaskForm)" data-ng-if="modalType ==='add'">
+                    Add Details
+                </button>
+                <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.closeTaskContainer()">Close</button>
+            </div>
+            </form>
+        </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+

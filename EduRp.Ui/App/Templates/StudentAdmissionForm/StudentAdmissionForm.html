@@ -1,0 +1,355 @@
+﻿<div class="wrapper">
+    <div class="container">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+
+                <ul class="breadcrumb">
+                    <li><a href="#">EduRP</a></li>
+                    <li><a href="#"></a>Dashboard</li>
+                    <li class="active">Student Admission Form</li>
+                </ul>
+            </div>
+        </div>
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <!-- end col -->
+            <div class="col-lg-12">
+                <div class="card-box">
+                    <accordion close-others="oneAtATime">
+                        <accordion-group ng-repeat="jsondata in admissionFormData" heading="{{jsondata.AppFormGroupLabel}}" is-open="jsondata.open">
+                            <div class="panel">
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        <form id="form1" action="#" data-parsley-validate="">
+                                            <div class="row"> 
+                                                <div class="col-md-4" data-ng-repeat="fields in jsondata.fields" >  
+
+                                                    <div class="col-md-5">
+                                                        <div class="form-group" data-ng-if="fields.FieldName ==='fldtitle'">
+                                                            <label for="userName">Title<span class="text-danger">*</span></label>
+                                                            <select id="heard" class="form-control" required data-ng-model="modAdmissionObj.fldtitle">
+                                                                <option value="">Choose..</option>
+                                                                <option value="Mr.">Mr.</option>
+                                                                <option value="Mrs">Mrs</option>
+                                                                <option value="other">Other..</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldfirstname'">
+                                                        <label for="heard">First Name<span class="text-danger">*</span></label>
+                                                        <input type="text" name="first_name" parsley-trigger="change" required placeholder="" class="form-control" id="first_name"  data-ng-model="modAdmissionObj.fldfirstname">
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldlastname'">
+                                                        <label for="heard">LastName<span class="text-danger">*</span></label>
+                                                        <input type="text" name="first_name" parsley-trigger="change" required placeholder="" class="form-control" id="first_name" data-ng-model="modAdmissionObj.fldlastname">
+                                                    </div>
+
+                                                    <div class="col-md-2">
+                                                        <div class="form-group" data-ng-if="fields.FieldName ==='fldgender'">
+                                                            <label for="userName">Gender<span class="text-danger">*</span></label>
+                                                            <select id="heard" class="form-control" data-ng-model="modAdmissionObj.fldgender">
+                                                                <option value="">Choose..</option>
+                                                                <option value="Male">M</option>
+                                                                <option value="Female">F</option>
+                                                                <option value="other">Other</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldgovernmentid'">
+                                                        <label for="heard">Government ID<span class="text-danger">*</span></label>
+                                                        <input type="text" name="government_id" parsley-trigger="change" required placeholder="" class="form-control" id="government_id" data-ng-model="modAdmissionObj.fldgovtid">
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldplaceofbirth'">
+                                                        <label for="heard">Place of Birth<span class="text-danger">*</span></label>
+                                                        <input type="text" name="place_of_birth" parsley-trigger="change" required placeholder="" class="form-control" id="place_of_birth" data-ng-model="modAdmissionObj.fldplaceofbirth">
+                                                    </div>
+
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='flddateofbirth'">
+                                                        <label for="heard">Date of Birth<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose" data-ng-model="modAdmissionObj.flddateofbirth">
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldmobilenumber'">
+                                                        <label for="heard">Mobile Number<span class="text-danger">*</span></label>
+                                                        <input type="text" name="mobile" parsley-trigger="change" required placeholder="" class="form-control" id="mobile" data-ng-model="modAdmissionObj.fldmobileno">
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldtelephonenumber'">
+                                                        <label for="heard">Telephone Number</label>
+                                                        <input type="text" name="telephone" parsley-trigger="change" required placeholder="" class="form-control" id="telephone" data-ng-model="modAdmissionObj.fldtelephoneno">
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldemailaddress'">
+                                                        <label for="heard">Email Address</label>
+                                                        <input type="text" name="telephone" parsley-trigger="change" required placeholder="" class="form-control" id="studentemailaddress">
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldpermanentaddress'">
+                                                        <label for="course_code">Permanent Address<span class="text-danger">*</span></label>
+                                                        <textarea class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.." data-parsley-validation-threshold="10"></textarea>
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldcorrespondanceaddress'">
+                                                        <label for="course_code">Correspondance Address<span class="text-danger">*</span></label>
+                                                        <textarea id="message" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.." data-parsley-validation-threshold="10"></textarea>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group pull-right" data-ng-if="fields.FieldName ==='fldadmissionnumber'">
+                                                            <label for="userName">Admission Number</label>
+                                                            <h2>098987</h2>
+                                                        </div>
+                                                    </div>
+                                                    <!--End of Accordion 1-->
+
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldfathername'">
+                                                        <label for="heard">Father's Name<span class="text-danger">*</span></label>
+                                                        <input type="text" name="father_name" parsley-trigger="change" required placeholder="" class="form-control" id="father_name">
+
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldfatheroccupation'">
+                                                        <label for="heard">Father Occupation<span class="text-danger">*</span></label>
+                                                        <input type="text" name="father_occupation" parsley-trigger="change" required placeholder="" class="form-control" id="father_occupation">
+
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldmothername'">
+                                                        <label for="heard">Mother Name<span class="text-danger">*</span></label>
+                                                        <input type="text" name="mother_name" parsley-trigger="change" required placeholder="" class="form-control" id="mother_name">
+
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldmotheroccupation'">
+                                                        <label for="heard">Mother Occupation<span class="text-danger">*</span></label>
+                                                        <input type="text" name="mother_occupation" parsley-trigger="change" required placeholder="" class="form-control" id="mother_occupation">
+
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group" data-ng-if="fields.FieldName ==='fldparentaddress'">
+                                                            <label for="course_code">Parent Address<span class="text-danger">*</span></label>
+                                                            <textarea id="message" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.." data-parsley-validation-threshold="10"></textarea>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group" data-ng-if="fields.FieldName ==='fldparentmobilenumber'">
+
+                                                            <label for="heard">Mobile Number<span class="text-danger">*</span></label>
+                                                            <input type="text" name="mobile" parsley-trigger="change" required placeholder="" class="form-control" id="mobile">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group" data-ng-if="fields.FieldName ==='fldparentemailaddress'">
+                                                            <label for="course_code">Email Address<span class="text-danger">*</span></label>
+                                                            <input type="text" name="budget_name" parsley-trigger="change" required placeholder="" class="form-control" id="budget">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group" data-ng-if="fields.FieldName ==='fldparentgovernmentid'">
+                                                            <label for="heard">Government ID<span class="text-danger">*</span></label>
+                                                            <input type="text" name="government_id" parsley-trigger="change" required placeholder="" class="form-control" id="government_id">
+
+                                                        </div>
+                                                    </div>
+                                                    <!--End of Accordion 2-->
+
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldprogramstudyid'">
+                                                        <label for="userName">select Program Interested<span class="text-danger">*</span></label>
+                                                        <select id="heard" class="form-control" data-ng-model="selectedProgramStudy" data-ng-options="fps.ProgramStudyName for fps in programStudyData" ng-change="fetchRelatedDataOfPS(selectedProgramStudy)">
+                                                            <option value="" disabled="" selected="" class="ng-binding">Please select the value</option>
+                                                            <option value="">{{'selectAProgram'| translate}}</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldcourseid'">
+                                                        <label for="userName">Select Course Interested<span class="text-danger">*</span></label>
+                                                        <select id="heard" class="form-control" data-ng-model="selectedCourse" data-ng-options="fps.CourseName for fps in courseData" ng-change="fetchRelatedDataOfCourse(selectedCourse)">
+                                                            <option value="" disabled="" selected="" class="ng-binding">Please select the value</option>
+                                                            <option value="">{{'selectACourse'| translate}}</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-group" data-ng-if="fields.FieldName ==='fldsubjectid'">
+                                                        <label for="userName">Select Subjects <span class="text-danger">*</span></label>
+                                                        <select id="heard" class="form-control" data-ng-model="selectedSubject" data-ng-options="fps.SubjectName for fps in subjectData">
+                                                            <option value="" disabled="" selected="" class="ng-binding">Please select the value</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <!--End Of Accordion 3-->
+
+                                                    <div class="col-md-4">
+                                                        <div class="form-group" data-ng-if="fields.FieldName ==='fldpaymentparticulars'">
+
+                                                            <label for="userName">Payment Particulars</label>
+                                                            <h4>Admissions and Registration Fees</h4>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+
+                                                        <div class="form-group" data-ng-if="fields.FieldName ==='fldfeeamount'">
+                                                            <label class="control-label">Amount</label>
+                                                            <h2>$980</h2>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="col-md-4">
+
+                                                        <div class="form-group" data-ng-if="fields.FieldName ==='fldtotal'">
+                                                            <label class="control-label">Total</label>
+                                                            <h2>$1280</h2>
+                                                        </div>
+
+                                                    </div>
+                                                    <!--<div class="form-group" data-ng-if="fields.FieldName ==='fldfathername'">
+        <label for="heard">Father name<span class="text-danger">*</span></label>
+        <input type="text" name="first_name" parsley-trigger="change" required placeholder="" class="form-control" id="first_name">
+
+    </div>-->
+
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div ng-bind-html="myText"></div>-->
+
+                        </accordion-group>
+                    </accordion>
+
+                    <div class="form-group m-b-0 text-right">
+                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="addAdmissionFormDetails(modAdmissionObj)">
+                            Save Details
+                        </button>
+                        <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5">Close</button>
+                    </div>
+                    <!--<div class="modal-footer">
+                    <button type="button" class="btn btn-teal btn-bordered waves-light" id="btnUploadAdd">Save Details</button>
+                    <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" id="btnUploadCancel">Close</button>
+                </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <div id="con-close-modal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Select Batch</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+
+                        <div class="col-md-12">
+                            <div class="panel-group" style="margin-bottom:0px;" id="accordionm" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThreem">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionm" href="#collapseThreem" aria-expanded="false" aria-controls="collapseThreem">
+                                                Filters
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThreem" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <form action="#" data-parsley-validate="">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="userName">Batch Name</label>
+                                                            <select id="heard" class="form-control" multiple>
+                                                                <option value="Batch1">Bacth1</option>
+                                                                <option value="Batch2">Bacth2</option>
+                                                                <option value="Batch3">Batch3</option>
+                                                                <option value="other">Other..</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="userName">Result Type</label>
+                                                            <select id="heard" class="form-control" multiple>
+                                                                <option value="">Choose..</option>
+                                                                <option value="Result1">Result1</option>
+                                                                <option value="Result2">Result2</option>
+                                                                <option value="other">Other..</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group text-right m-b-0">
+                                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="submit">
+                                                        GO
+                                                    </button>
+                                                    <button type="reset" class="btn btn-default waves-effect m-l-5">
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive" style="margin-top: -10px;">
+
+                                <table id="datatablem" class="table table-striped table-bordered table-colored table-inverse">
+                                    <thead>
+                                        <tr>
+                                            <th>Batch Name</th>
+                                            <th>Result Type</th>
+                                            <th class="check"><label><input type="checkbox" id="flowcheckall" value="" />&nbsp;Select All</label></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Batch 1</td>
+                                            <td>Result 1  </td>
+                                            <td><input id="flowcheckall" type="checkbox" data-parsley-multiple="groups" data-parsley-mincheck="2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Batch 2</td>
+                                            <td>Result 2</td>
+                                            <td><input id="flowcheckall" type="checkbox" data-parsley-multiple="groups" data-parsley-mincheck="2"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div> <!-- table-responsive -->
+                            <div class="modal-footer">
+                                <!--<button type="button" class="btn btn-teal btn-bordered waves-light" ></button>
+                                <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" id="btnUploadCancel" ng-click="resetForm()" value="Reset">Reset</button>-->
+                            </div>
+                            <!--id="btnUploadAdd"-->
+
+
+
+
+                        </div>
+                    </div>
+                </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
+
+<script>
+
+</script>

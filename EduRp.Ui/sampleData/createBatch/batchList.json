@@ -1,0 +1,20 @@
+﻿{
+  "results": [
+    {
+      "id": 1,
+      "degreeCode": "0011",
+      "degreeName": "batch 1",
+      "academic_term": 10,
+      "sks": "R",
+      "active": true
+    },
+    {
+      "id": 2,
+      "degreeCode": "0012",
+      "degreeName": "batch 2",
+      "academic_term": 12,
+      "sks": "R",
+      "active": false
+    }
+  ]
+}

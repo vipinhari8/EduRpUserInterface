@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<html ng-app="EduRpApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>EduRp</title>
+
+
+    <script src="../../Assets/Scripts/modernizr-2.8.3.js"></script>
+    <!--Morris Chart CSS -->
+    <link href="../../Assets/plugins/morris/morris.css" rel="stylesheet" />
+    <!-- Plugins Css -->
+    <link href="../../Assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <link href="../../Assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+    <link href="../../Assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="../../Assets/plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet" />
+    <link href="../../Assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+
+
+    <!-- App css -->
+    <link href="../../Assets/Styles/edurp/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/Styles/edurp/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Assets/Styles/edurp/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/Styles/edurp/css/components.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/Styles/edurp/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/Styles/edurp/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/Styles/edurp/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/Styles/edurp/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="../../Assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+    <link href="App/Templates/ScheduleExamination/style.css" rel="stylesheet" />
+
+
+
+    <link href="Assets/Styles/styles.css" rel="stylesheet" />
+    <link href="Assets/Styles/roboto.css" rel="stylesheet" />
+    <link href="Assets/Styles/ripples.css" rel="stylesheet" />
+    <link href="Assets/Styles/material.css" rel="stylesheet" />
+    <link href="Assets/Styles/material-fullpalette.css" rel="stylesheet" />
+    <link href="Assets/Styles/bootstrap.css" rel="stylesheet" />
+    <link href="Assets/Styles/bootstrap-theme.css" rel="stylesheet" />
+
+    <!-- DataTables -->
+
+
+
+    <link href="Assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/plugins/datatables/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/plugins/datatables/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="Assets/Styles/angularjs-datetime-picker.css" rel="stylesheet" />
+
+    <!-- Plugins css-->
+    <link href="Assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="Assets/plugins/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="Assets/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link href="Assets/plugins/bootstrap-sweetalert/sweet-alert.css" rel="stylesheet" type="text/css">
+
+    <!-- App css -->
+
+    <link href="Assets/Styles/edurp/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="Assets/Styles/edurp/css/core.css" rel="stylesheet" type="text/css" />
+
+    <link href="Assets/Styles/edurp/css/components.css" rel="stylesheet" type="text/css" />
+
+    <link href="Assets/Styles/edurp/css/icons.css" rel="stylesheet" type="text/css" />
+
+    <link href="Assets/Styles/edurp/css/pages.css" rel="stylesheet" type="text/css" />
+
+    <link href="Assets/Styles/edurp/css/menu.css" rel="stylesheet" type="text/css" />
+
+    <link href="Assets/Styles/edurp/css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="Assets/plugins/switchery/switchery.min.css">
+    <link rel="stylesheet" href="Assets/Styles/fullcalendar.min.css">
+
+</head>
+<body ng-app="EduRpApp"
+      ng-controller="userCtrl as vm">
+    <div>
+        <!--<nav class="navbar navbar-default ">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div class="navbar-collapse collapse" style="margin-top: 110px;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-if="vm.isLoggedIn()">
+                            <a>Welcome {{ vm.userName }}</a>
+                        </li>
+                        <li ng-if="vm.isLoggedIn()">
+                            <span>
+                                <button type="submit"
+                                        class="btn btn-default"
+                                        ng-click="vm.logout()">
+                                    Log Out
+                                </button>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                </div>
+            </div>
+        </nav>-->
+
+        <header id="topnav" ng-if="vm.isLoggedIn()">
+            <div class="topbar-main">
+                <div class="container">
+
+                    <!-- Logo container-->
+                    <div class="logo">
+                        <!-- Text Logo -->
+                        <!--<a href="index.html" class="logo">-->
+                        <!--EDuRP-->
+                        <!--</a>-->
+                        <!-- Image Logo -->
+                        <a href="index.html" class="logo">
+                            <img src="../../Assets/images/logo.png" alt="" height="30">
+
+                        </a>
+
+                    </div>
+                    <!-- End Logo container-->
+
+
+                    <div class="menu-extras">
+
+                        <ul class="nav navbar-nav navbar-right pull-right">
+
+                            <li class="dropdown navbar-c-items">
+                                <a href="#" class="right-menu-item dropdown-toggle" data-toggle="dropdown">
+                                    <i class="mdi mdi-email"></i>
+                                    <span class="badge up bg-danger">8</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right dropdown-lg user-list notify-list">
+                                    <li class="text-center">
+                                        <h5>Messages</h5>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="user-list-item">
+                                            <div class="avatar">
+                                                <img src="../../Assets/images/users/avatar-2.jpg" alt="">
+                                            </div>
+                                            <div class="user-desc">
+                                                <span class="name">Raghu Rajan</span>
+                                                <span class="desc">There are new settings available</span>
+                                                <span class="time">2 hours ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="user-list-item">
+                                            <div class="avatar">
+                                                <img src="../../Assets/images/users/avatar-3.jpg" alt="">
+                                            </div>
+                                            <div class="user-desc">
+                                                <span class="name">Prakash Kumar</span>
+                                                <span class="desc">There are new settings available</span>
+                                                <span class="time">2 hours ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="user-list-item">
+                                            <div class="avatar">
+                                                <img src="../../Assets/images/users/avatar-4.jpg" alt="">
+                                            </div>
+                                            <div class="user-desc">
+                                                <span class="name">Rekha Jain</span>
+                                                <span class="desc">There are new settings available</span>
+                                                <span class="time">2 hours ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="all-msgs text-center">
+                                        <p class="m-0"><a href="#">See all Messages</a></p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown navbar-c-items">
+                                <a href="#" class="right-menu-item dropdown-toggle" data-toggle="dropdown">
+                                    <i class="mdi mdi-bell"></i>
+                                    <span class="badge up bg-success">4</span>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right dropdown-lg user-list notify-list">
+                                    <li class="text-center">
+                                        <h5>Notifications</h5>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="user-list-item">
+                                            <div class="icon bg-info">
+                                                <i class="mdi mdi-account"></i>
+                                            </div>
+                                            <div class="user-desc">
+                                                <span class="name">New Signup</span>
+                                                <span class="time">5 hours ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="user-list-item">
+                                            <div class="icon bg-danger">
+                                                <i class="mdi mdi-comment"></i>
+                                            </div>
+                                            <div class="user-desc">
+                                                <span class="name">New Message received</span>
+                                                <span class="time">1 day ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="user-list-item">
+                                            <div class="icon bg-warning">
+                                                <i class="mdi mdi-settings"></i>
+                                            </div>
+                                            <div class="user-desc">
+                                                <span class="name">Settings</span>
+                                                <span class="time">1 day ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="all-msgs text-center">
+                                        <p class="m-0"><a href="#">See all Notification</a></p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown navbar-c-items">
+                                <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="../../Assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                            </li>
+
+                        </ul>
+                        <div class="menu-item">
+                            <!-- Mobile menu toggle-->
+                            <a class="navbar-toggle">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </div>
+                    </div>
+                    <!-- end menu-extras -->
+
+                </div> <!-- end container -->
+            </div>
+            <!-- end topbar-main -->
+            <div class="navbar-custom">
+                <div class="container">
+                    <div id="navigation">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+
+                            <li class="has-submenu" ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')">
+                                <a href="index.html"><i class="mdi mdi-view-dashboard"></i>Dashboard</a>
+
+                            </li>
+
+                            <li class="has-submenu" ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')">
+                                <a href="#"><i class="mdi mdi-settings"></i>Master Settings</a>
+                                <ul class="submenu">
+                                    <li class="has-submenu">
+                                        <a href="#">Academic Settings</a>
+                                        <!--ng-hide="vm.userid === 4"-->
+                                        <ul class="submenu">
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/AcademicBatch')">Batch</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a href="#">Program Study</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/CourseList/')">Show Course</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Subject')">Subjects</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Chapters')">Chapters</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ExaminationType')">Examination Type</a></li>
+                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a ng-click="vm.goToPage('/ScheduleExamination')">Calendar</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Task')">Task</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a href="#">Ranking Levels</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a href="#">Grading Levels</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a href="#">Department</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu" ng-if="vm.roleId ==='1'">
+                                        <a href="#">Fees</a>
+                                        <ul class="submenu">
+                                            <li><a ng-click="vm.goToPage('/Admin/Fees')">Fees</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu" ng-if="vm.roleId ==='1'">
+                                        <a href="#">Facilities</a>
+                                        <ul class="submenu">
+                                            <li><a ng-click="vm.goToPage('/Admin/ClassRoom')">Class Room</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu" ng-if="vm.roleId ==='1'">
+                                        <a href="#">Staff</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Staff Profile</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="#">Students</a>
+                                        <ul class="submenu">
+                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a href="#">Student Profile</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu" ng-if="vm.roleId ==='1'">
+                                        <a href="#">Manage Settings</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Manage Subjects</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageCourses')">Manage Courses</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageProgramStudy')">Manage Program Study</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageTask')">Manage Task</a></li>
+                                        </ul>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu" ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')">
+                                <a href="#"><i class="mdi  mdi-clipboard-account"></i>Admissions</a>
+                                <ul class="submenu megamenu">
+                                    <li>
+                                        <ul>
+                                            <li><a ng-click="vm.goToPage('/Admin/CreateBatch')">Create Batch</a></li>
+                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a ng-click="vm.goToPage('/StudentAdmissionForm')">Admission Forms</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageStudentCounsellingDetail')">Councelling</a></li>
+                                            <li><a ng-click="vm.goToPage('/ReviewAndApprove')">Review And Approve</a></li>
+                                            <li><a href="#">ID Cards</a></li>
+
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu" ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')||(vm.roleId ==='4')">
+                                <a href="#"><i class="mdi mdi-chart-pie"></i>Academics</a>
+                                <ul class="submenu">
+                                    <li class="has-submenu">
+                                        <a href="#">Attendance</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Daily Attendance</a></li>
+                                            <li><a href="#">Attendance Report</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="#">Time Table</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Class TimeTable</a></li>
+                                            <li><a href="#">Exam TimeTable</a></li>
+                                            <li><a href="#">Staff Allocation</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="#">Examination</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Examination Syllabus</a></li>
+                                            <li><a href="#">Hall Ticket</a></li>
+                                            <li><a href="#">Exam TimeTable</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="#">Exam Results</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Academic Results</a></li>
+                                            <li><a href="#">Entrance Exam Results</a></li>
+                                            <li><a href="#">Quiz</a></li>
+                                            <li><a href="#">Phyical Education Report</a></li>
+                                            <li><a href="#">Contionious Assesment Report</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu">
+                                        <a href="#">Conduct</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Student Character Supervision</a></li>
+                                            <li><a href="#">Merit and demerits</a></li>
+                                            <li><a href="#">Loss and Found</a></li>
+                                            <li><a href="#">Letter for Permission</a></li>
+                                            <li><a href="#">Mind Your Language</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="#">Projects</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Creativity Report</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Assignment</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#">Lesson Plan</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#">Student Diary</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#">Teacher Notes</a>
+
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="#">Health Care</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Student Health Review</a></li>
+                                            <li><a href="#">Nurse Notes</a></li>
+                                            <li><a href="#">Psychology Test</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu" ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')||(vm.roleId ==='4')">
+                                <a href="#"><i class="mdi mdi-credit-card"></i>Fees</a>
+                                <ul class="submenu">
+                                    <li><a href="#">Collect Fees</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu" ng-if="vm.roleId ==='1'">
+                                <a href="#"><i class="mdi mdi-account-key"></i>HR</a>
+                                <ul class="submenu">
+                                    <li><a href="#">Teacher Evaluation</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="mdi mdi-account-circle"></i>Accounts</a>
+                                <ul class="submenu">
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Change Password</a></li>
+                                    <li ng-if="vm.isLoggedIn()">
+                                        <a>Welcome {{ vm.userName }}</a>
+                                    </li>
+                                    <li ng-if="vm.isLoggedIn()">
+                                        <span>
+                                            <button type="submit"
+                                                    class="btn btn-default"
+                                                    ng-click="vm.logout()">
+                                                Log Out
+                                            </button>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <!--<li ng-if="vm.isLoggedIn()"><a data-ng-show="vm.roleId ==='1'">hi</a></li>-->
+                            <!--<li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a>hi</a></li>-->
+
+                        </ul>
+                        <!-- End navigation menu -->
+                    </div> <!-- end #navigation -->
+                </div> <!-- end container -->
+            </div>
+            <!-- end navbar-custom -->
+        </header>
+        <div class="container">
+            <!--<div class="row">
+                <div class="jumbotron">
+                    <h1>EDURP !</h1>
+                </div>
+            </div>-->
+            <div class="row">
+                <div ng-if="vm.isLoggedIn() == true"
+                     ng-include="'app/DashBoard/dashboardListView.html'">
+                </div>
+                <div ng-if="vm.isLoggedIn() == false"
+                     ng-include="'app/user/userLoginView.html'">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="AngularScripts/jquery-1.9.1.min.js"></script>
+    <script src="AngularScripts/angular.js"></script>
+    <script src="AngularScripts/angular-resource.js"></script>
+    <script src="App/app.js"></script>
+    <script src="App/Common/common.services.js"></script>
+    <script src="App/user/userCtrl.js"></script>
+    <script src="App/DashBoard/dashboardListCtrl.js"></script>
+    <script src="App/Services/PageSettings/loginservice.js"></script>
+    <script src="App/Services/PageSettings/dashboardService.js"></script>
+    <script src="App/Model/userProfile.js"></script>
+
+    <script src="Assets/Scripts/jquery-2.1.4.js"></script>
+    <script src="Assets/Scripts/fullcalender/jquery.min.js"></script>
+    <script src="Assets/Scripts/fullcalender/moment.js"></script>
+    <script src="Assets/Scripts/modernizr-2.8.3.js"></script>
+    <script src="Assets/Scripts/respond.js"></script>
+    <script src="Assets/Scripts/ripples.js"></script>
+    <script src="Assets/Scripts/material.js"></script>
+    <script src="Assets/Scripts/jquery.validate.js"></script>
+    <script src="Assets/Scripts/jquery.validate.unobtrusive.js"></script>
+    <!--<script src="Assets/Scripts/angular/angular.js"></script>-->
+    <script src="Assets/Scripts/angular/angular-route.js"></script>
+    <!--<script src="Assets/Scripts/angular/angular-resource.js"></script>-->
+    <script src="Assets/Scripts/angular/angular-animate.js"></script>
+    <script src="Assets/Scripts/angular/angular-loader.js"></script>
+    <script src="Assets/Scripts/angular/angular-aria.js"></script>
+    <script src="Assets/Scripts/angular/angular-cookies.js"></script>
+    <script src="Assets/Scripts/angular/angular-messages.js"></script>
+    <script src="Assets/Scripts/angular/angular-mocks.js"></script>
+    <script src="Assets/Scripts/angular/angular-sanitize.js"></script>
+    <script src="Assets/Scripts/angular/angular-scenario.js"></script>
+    <script src="Assets/Scripts/angular/angular-touch.js"></script>
+    <script src="Assets/Scripts/angular/angular-translate.js"></script>
+    <script src="Assets/Scripts/angular/angular-translate-loader-static-files.js"></script>
+    <script src="Assets/Scripts/angular/ui-bootstrap.js"></script>
+    <script src="Assets/Scripts/angular/ui-bootstrap-tpls.js"></script>
+    <script src="Assets/Scripts/fullcalender/calendar.js"></script>
+    <script src="Assets/Scripts/fullcalender/fullcalendar.min.js"></script>
+    <script src="Assets/Scripts/angular/angularjs-datetime-picker.js"></script>
+    <script src="App/Directives/angularjs-dropdown-multiselect.js"></script>
+    <script src="App/Directives/multiselect.js"></script>
+
+    <script src="App/Services/Interceptors/errorHandler.js"></script>
+    <script src="App/Services/Interceptors/xmlHttpInterceptor.js"></script>
+    <script src="App/Services/Account/storageHandler.js"></script>
+    <script src="App/Services/Account/tokenHandler.js"></script>
+    <script src="App/Services/Account/authService.js"></script>
+    <script src="App/Route/routeConfig.js"></script>
+    <script src="App/Services/urlService/urlService.js"></script>
+    <script src="App/Services/Contact/contactService.js"></script>
+    <script src="App/Services/Common/services.js"></script>
+    <script src="App/Services/Course/courseListService.js"></script>
+    <script src="App/Services/Subject/subjectListService.js"></script>
+    <script src="App/Services/ProgramStudy/programStudyService.js"></script>
+    <script src="App/Services/CreateBatch/createBatchService.js"></script>
+    <script src="App/Services/BulkUpload/bulkUploadService.js"></script>
+    <script src="App/Services/AcademicBatch/academicBatchService.js"></script>
+    <script src="App/Services/ClassRoom/classRoomListService.js"></script>
+    <script src="App/Services/Employees/employeesListService.js"></script>
+    <script src="App/Services/ExaminationType/examinationTypeService.js"></script>
+    <script src="App/Services/Fees/feesListService.js"></script>
+    <script src="App/Services/NotificationType/notificationTypeService.js"></script>
+    <script src="App/Services/Chapters/chaptersListService.js"></script>
+    <script src="App/Services/Task/taskListService.js"></script>
+    <script src="App/Services/ManageCourses/ManageCourseServices.js"></script>
+    <script src="App/Services/ManageTask/manageTaskService.js"></script>
+    <script src="App/Services/ScheduleExamination/scheduleExaminationService.js"></script>
+    <script src="App/Services/StudentPortal/StudentPortalService.js"></script>
+    <script src="App/Services/StudentAdmissionForm/studentAdmissionFormService.js"></script>
+    <script src="App/Services/ManageStudentCounsellingDetail/manageStudentCounsellingDetailService.js"></script>
+    <script src="App/Services/ReviewAndApprove/reviewandapproveService.js"></script>
+    <script src="App/Directives/common.js"></script>
+
+    <script src="App/Controllers/Global/globalController.js"></script>
+    <script src="App/Controllers/Account/loginController.js"></script>
+    <script src="App/Controllers/Account/registerController.js"></script>
+    <script src="App/Controllers/Contact/contactController.js"></script>
+    <script src="App/Controllers/Contact/contactFormModalController.js"></script>
+    <script src="App/Controllers/Course/courseListController.js"></script>
+    <script src="App/Controllers/Subject/subjectListContoller.js"></script>
+    <script src="App/Controllers/ProgramStudy/programStudyController.js"></script>
+    <script src="App/Controllers/CreateBatch/createBatchCtrl.js"></script>
+    <script src="App/Controllers/Task/taskListController.js"></script>
+    <script src="App/Controllers/Fees/feesListController.js"></script>
+    <script src="App/Controllers/ClassRoom/classRoomListContoller.js"></script>
+    <script src="App/Controllers/ExaminationType/examinationTypeController.js"></script>
+    <script src="App/Controllers/Employees/employeesListContoller.js"></script>
+    <script src="App/Controllers/NotificationType/notificationTypeController.js"></script>
+    <script src="App/Controllers/AcademicBatch/academicBatchController.js"></script>
+    <script src="App/Controllers/Chapters/chaptersListContoller.js"></script>
+    <script src="App/Controllers/ManageCourses/ManageCoursesController.js"></script>
+    <script src="App/Controllers/ManageTask/manageTaskController.js"></script>
+    <script src="App/Controllers/ScheduleExamination/scheduleExaminationController.js"></script>
+    <script src="App/Controllers/BulkUpload/bulkUploadModuleController.js"></script>
+    <script src="App/Controllers/StudentPortal/StudentPortalController.js"></script>
+    <script src="App/Controllers/StudentAdmissionForm/studentadmissionformController.js"></script>
+    <script src="App/Controllers/ManageStudentCounsellingDetail/manageStudentCounsellingDetailController.js"></script>
+    <script src="App/Controllers/ReviewAndApprove/reviewandapproveController.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.material.init();
+        });
+    </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,30 @@
+﻿{
+  "results": [
+    {
+      "ChaptersId": 1,
+      "ChapterNumber": 111,
+      "ChapterTitle": "Horizon",
+      "ModeOfTeaching": "English",
+      "ChapterDetails": "scary story",
+      "SKS": 10
+
+    },
+    {
+      "ChaptersId": 2,
+      "ChapterNumber": 58,
+      "ChapterTitle": "paul Coehlo",
+      "ModeOfTeaching": "English",
+      "ChapterDetails": "scary story",
+      "SKS": 10
+    },
+    {
+
+      "ChapterNumber": 857,
+      "ChapterTitle": "Horizon",
+      "ModeOfTeaching": "English",
+      "ChapterDetails": "scary story",
+      "SKS": 10
+
+    }
+  ]
+}

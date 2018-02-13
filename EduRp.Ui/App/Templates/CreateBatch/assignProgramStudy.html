@@ -1,0 +1,138 @@
+﻿
+            <div class="modal-header">
+                <button type="button" class="close" data-ng-click="Modals.close();">x</button>
+                <h4 class="modal-title">{{'assignProgramStudyHeader'|translate}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel-group" style="margin-bottom:0px;" id="accordion" role="tablist" aria-multiselectable="true">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThreeff">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThreeff" aria-expanded="false" aria-controls="collapseThreeff">
+                                            {{'filter'|translate}}
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThreeff" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThreeff">
+                                    <div class="panel-body">
+                                        <form action="#" data-parsley-validate="">
+
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="userName">{{'programStudyCodeColumn'| translate}}</label>
+                                                        <textarea></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="userName">{{'programStudyeNameColumn'| translate}}</label>
+                                                        <input type="text" />
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                            <div class="form-group text-right m-b-0">
+                                                <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="submit">
+                                                    {{'goBtn'|translate}}
+                                                </button>
+                                                <button type="reset" class="btn btn-default waves-effect m-l-5">
+                                                    {{'clearBtn'|translate}}
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="table-responsive" style="margin-top: -10px;">
+
+
+                            <table id="datatablem" class="table table-striped table-bordered table-colored table-inverse">
+
+                                <thead>
+                                    <tr>
+
+                                        <th ng-click="$parent.nonAssignedProgramStudyOrderByField='ProgramStudyCode'; $parent.nonAssignedProgramStudyReverseSort = !$parent.nonAssignedProgramStudyReverseSort">
+                                            {{'programStudyCodeColumn'| translate}}
+                                            <span ng-show="$parent.nonAssignedProgramStudyOrderByField == 'ProgramStudyCode'">
+                                                <span ng-show="!$parent.nonAssignedProgramStudyReverseSort">^</span>
+                                                <span ng-show="$parent.nonAssignedProgramStudyReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th ng-click="nonAssignedProgramStudyOrderByField='ProgramStudyName'; nonAssignedProgramStudyReverseSort = !nonAssignedProgramStudyReverseSort">
+                                            {{'programStudyNameColumn'| translate}}
+                                            <span ng-show="nonAssignedProgramStudyOrderByField == 'ProgramStudyName'">
+                                                <span ng-show="!nonAssignedProgramStudyReverseSort">^</span>
+                                                <span ng-show="nonAssignedProgramStudyReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th ng-click="nonAssignedProgramStudyOrderByField='AcademicTerm'; nonAssignedProgramStudyReverseSort = !nonAssignedProgramStudyReverseSort">
+                                            {{'programStudyAcademicTermColumn'| translate}}
+                                            <span ng-show="nonAssignedProgramStudyOrderByField == 'AcademicTerm'">
+                                                <span ng-show="!nonAssignedProgramStudyReverseSort">^</span>
+                                                <span ng-show="nonAssignedProgramStudyReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th ng-click="nonAssignedProgramStudyOrderByField='SKS'; nonAssignedProgramStudyReverseSort = !nonAssignedProgramStudyReverseSort">
+                                            {{'programStudySKSColumn'| translate}}
+                                            <span ng-show="nonAssignedProgramStudyOrderByField == 'SKS'">
+                                                <span ng-show="!nonAssignedProgramStudyReverseSort">^</span>
+                                                <span ng-show="nonAssignedProgramStudyReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th ng-click="nonAssignedProgramStudyOrderByField='Status'; nonAssignedProgramStudyReverseSort = !nonAssignedProgramStudyReverseSort">
+                                            {{'programStudyStatusColumn'| translate}}
+                                            <span ng-show="nonAssignedProgramStudyOrderByField == 'Status'">
+                                                <span ng-show="!nonAssignedProgramStudyReverseSort">^</span>
+                                                <span ng-show="nonAssignedProgramStudyReverseSort">v</span>
+                                            </span>
+                                        </th>
+                                        <th class="check">
+                                        <label>
+                                            <input type="checkbox" id="flowcheckallco" value="" data-ng-model="$parent.unlinkedProgramStudyAllSelected" ng-change="isUnlinkedProgramStudyAllSelected();" />
+                                            &nbsp;{{'selectAll' | translate}}
+                                        </label>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr data-ng-repeat="ups in $parent.unlinkedProgramStudyOfBatchList | orderBy:nonAssignedProgramStudyOrderByField:nonAssignedProgramStudyReverseSort">
+
+                                        <td>{{ups.ProgramStudyCode}}</td>
+                                        <td>{{ups.ProgramStudyName}} </td>
+                                        <td>{{ups.AcademicTerm}}</td>
+                                        <td>{{ups.SKS}} </td>
+                                        <td>{{ups.Status}} </td>
+                                        <td><input  type="checkbox" data-ng-model="ups.Selected" ng-true-value="'true'" ng-false-value="'false'" ng-checked="unlinkedProgramStudyAllSelected" ng-click="isThisUnlinkedProgramStudySelected(ups)" /></td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div> <!-- table-responsive -->
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-teal btn-bordered waves-light" id="btnUploadAdd" data-ng-click="assignUnlinkedProgramStudy();">{{'saveDetailsBtn'|translate}}</button>
+                            <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.close();">{{'closeBtn'|translate}}</button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+<!-- /.modal -->

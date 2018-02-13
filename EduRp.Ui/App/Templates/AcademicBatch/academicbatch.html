@@ -1,0 +1,156 @@
+﻿<div class="row">
+    <!-- end col -->
+    <div class="col-lg-12">
+        <div class="card-box">
+
+            <div class="row">
+                <div class="col-lg-2">
+                    <h4 class="m-t-0 header-title"><b>View Academic Batch</b></h4>
+                </div>
+                <div class="col-lg-2">
+                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" data-toggle="modal" data-target="#con-close-modal">Add New Academic Batch</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    &nbsp;
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="portlet">
+                        <div class="portlet-heading portlet-heading bg-inverse">
+                            <h3 class="portlet-title text-light">
+                                Components / Filters
+                            </h3>
+                            <div class="portlet-widgets">
+                                <a data-toggle="collapse" data-parent="#accordion1" href="#bg-default"><i class="ion-plus-round"></i></a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="bg-default" class="panel-collapse collapse">
+                            <div class="portlet-body">
+
+                                <form action="#" data-parsley-validate="">
+                                    <div class="form-group">
+                                        <label for="userName">Batch Name</label>
+                                        <select id="heard" class="form-control" required="">
+                                            <option value="">Choose..</option>
+                                            <option value="2016-2017">2016-2017</option>
+                                            <option value="2018-2019">2018-2019</option>
+                                            <option value="2019-2020">2019-2020</option>
+                                            <option value="other">Other..</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="activeStatus">
+                                            <input type="radio" name="status" id="activeStatus" value="Active" />
+                                            Active
+                                        </label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inactiveStatus">
+                                            <input type="radio" name="status" id="inactiveStatus" value="Inactive" />
+                                            Inactive
+                                        </label>
+                                    </div>
+                                    <div class="form-group text-right m-b-0">
+                                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" type="submit">
+                                            GO
+                                        </button>
+                                        <button type="reset" class="btn btn-default waves-effect m-l-5">
+                                            Clear
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="table-responsive">
+                        <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed table-colored table-inverse">
+                            <thead>
+                                <tr>
+                                    <th ng-click="orderByField='BatchName'; reverseSort = !reverseSort">
+                                        Batch Name
+                                        <span ng-show="orderByField == 'BatchName'">
+                                            <span ng-show="!reverseSort">^</span>
+                                            <span ng-show="reverseSort">v</span>
+                                        </span>
+                                    </th>
+                                    <th ng-click="orderByField='ResultType'; reverseSort = !reverseSort">
+                                        Result Type
+                                        <span ng-show="orderByField == 'ResultType'">
+                                            <span ng-show="!reverseSort">^</span>
+                                            <span ng-show="reverseSort">v</span>
+                                        </span>
+                                    </th>
+                                    <th ng-click="orderByField='AcademicTerm'; reverseSort = !reverseSort">
+                                        Academic Term
+                                        <span ng-show="orderByField == 'AcademicTerm'">
+                                            <span ng-show="!reverseSort">^</span>
+                                            <span ng-show="reverseSort">v</span>
+                                        </span>
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr data-ng-repeat="cd in filteredAcademicBatchData|orderBy:orderByField:reverseSort">
+                                    <td>{{ cd.BatchName}}</td>
+                                    <td>{{ cd.ResultType}}</td>
+                                    <td>{{ cd.AcademicTerm}}</td>
+                                    <td>{{ cd.Status}}</td>
+                                    <td><i class="fa fa-pencil-square-o m-r-5" data-ng-click="editAcademicBatchContainer(cd)" style="cursor: pointer;"></i></td>
+                                    <td><i class="fa fa-trash-o fa-lg" data-ng-click="deleteAcademicBatchContainer(cd)"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="dataTables_length" id="datatable_length">
+
+                        <label>
+                            Show
+                            <select name="datatable_length"
+                                    aria-controls="datatable"
+                                    class="form-control input-sm"
+                                    data-ng-model="numPerPage"
+                                    data-ng-options="x for x in showPerPageDataOptions"></select>
+                            entries
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">
+                        Showing {{currentPage*numPerPage - numPerPage  + 1}} to {{academicBatchData.length > currentPage*numPerPage ? currentPage*numPerPage : academicBatchData.length}} of {{academicBatchData.length}} entries
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
+                        <pagination ng-model="currentPage"
+                                    total-items="academicBatchData.length"
+                                    max-size="maxSize"
+                                    boundary-links="true"
+                                    items-per-page="numPerPage">
+                        </pagination>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->

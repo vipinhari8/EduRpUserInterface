@@ -1,0 +1,19 @@
+﻿{
+  "results": [
+    {
+      "id": 1,
+      "FeesCode": "0011",
+      "FeesName": "Free"
+    },
+    {
+      "id": 2,
+      "FeesCode": "0012",
+      "FeesName": "Sponsored"
+    },
+    {
+      "id": 3,
+      "FeesCode": "0013",
+      "FeesName": "Funded"
+    }
+  ]
+}
