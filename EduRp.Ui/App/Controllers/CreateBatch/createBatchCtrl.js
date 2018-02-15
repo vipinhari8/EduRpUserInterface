@@ -12,7 +12,7 @@
         $scope.programStudyData = [];
         $scope.filteredProgramStudyData = [];
         $scope.programStudyCurrentPage = 1;
-        $scope.programStudyNumPerPage = 10;
+        $scope.programStudyNumPerPage = 5;
         $scope.programStudyMaxSize = 5;
         $scope.assignedProgramStudyCodeByField = 'ProgramStudyCode';
         $scope.assignedProgramStudyReverseSort = false;
@@ -39,7 +39,7 @@
         $scope.feesData = [];
         $scope.filteredFeesData = [];
         $scope.feesCurrentPage = 1;
-        $scope.feesNumPerPage = 10;
+        $scope.feesNumPerPage = 5;
         $scope.feesMaxSize = 5;
         $scope.assignedFeesOrderByField = 'feesName';
         $scope.assignedFeesReverseSort = false;
@@ -58,7 +58,7 @@
             $scope.adjustFeesList();
         });
 
-        $scope.showPerPageDataOptions = [10, 25, 50, 100];
+        $scope.showPerPageDataOptions = [5, 10, 25, 50, 100];
 
         $scope.addBatchFormObj = { status: "Active" };
 

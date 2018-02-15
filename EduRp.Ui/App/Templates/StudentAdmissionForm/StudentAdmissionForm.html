@@ -23,7 +23,7 @@
                                     <div class="panel-body">
                                         <form id="form1" action="#" data-parsley-validate="">
                                             <div class="row"> 
-                                                <div class="col-md-4" data-ng-repeat="fields in jsondata.fields" >  
+                                                <div class="col-md-4" data-ng-repeat="fields in jsondata.fields" >
 
                                                     <div class="col-md-5">
                                                         <div class="form-group" data-ng-if="fields.FieldName ==='fldtitle'">
@@ -186,6 +186,7 @@
                                                         <label for="userName">Select Subjects <span class="text-danger">*</span></label>
                                                         <select id="heard" class="form-control" data-ng-model="selectedSubject" data-ng-options="fps.SubjectName for fps in subjectData">
                                                             <option value="" disabled="" selected="" class="ng-binding">Please select the value</option>
+                                                            <option value="">{{'selectASubject'| translate}}</option>
                                                         </select>
                                                     </div>
 

@@ -26,7 +26,7 @@
 
         $scope.mainContentSubPart = false;
         $scope.currentPage = 1
-            , $scope.numPerPage = 10
+            , $scope.numPerPage = 5
             , $scope.maxSize = 5;
         $scope.orderByField = 'StudentId';
         $scope.reverseSort = false;
@@ -40,7 +40,7 @@
             $scope.adjustStdCouncellingList();
         });
 
-        $scope.showPerPageDataOptions = [10, 25, 50, 100];
+        $scope.showPerPageDataOptions = [5, 10, 25, 50, 100];
 
         $scope.filterPanel = false;
 

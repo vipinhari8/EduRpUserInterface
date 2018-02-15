@@ -58,7 +58,7 @@
             $scope.adjustFeesList();
         });
 
-        $scope.showPerPageDataOptions = [5, 10, 25, 50, 100];
+        $scope.showPerPageDataOptions = [10, 25, 50, 100];
 
         $scope.addPSFormObj = { status: "Active" };
 

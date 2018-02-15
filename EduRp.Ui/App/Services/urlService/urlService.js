@@ -1,23 +1,23 @@
-
 ﻿var localhost = false;
 var apiPrefix = 'http://edurpwebapi20180213021849.azurewebsites.net';
+//http://localhost:50381 
+//http://edurpwebapi20180213021849.azurewebsites.net
 var urlService =
     {
+        getSubjectList: localhost ? '/sampleData/subjectList.json' : apiPrefix + '/api/SubjectMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
+        addSubject: localhost ? '/sampleData/subjectList.json' : apiPrefix + '/api/SubjectMasters/Save/',
+        updateSubject: localhost ? '/sampleData/subjectList.json' : apiPrefix + '/api/SubjectMasters/Save/',
+        deleteSubject: localhost ? '/sampledata/subjectlist.json' : apiPrefix + '/api/SubjectMasters/Delete/',
+
         getCourseList: localhost ? '/sampleData/Course/list.json' : apiPrefix + '/api/CourseMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addCourse: localhost ? '/sampleData/Course/add.json' : apiPrefix + '/api/CourseMasters/Save/',
         updateCourse: localhost ? '/sampleData/Course/edit.json' : apiPrefix + '/api/CourseMasters/Save/',
         deleteCourse: localhost ? '/sampleData/Course/delete.json' : apiPrefix + '/api/CourseMasters/Save',
 
-
         getFeesList: localhost ? '/sampleData/feesList.json' : apiPrefix + '/api/Fees/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addFee: localhost ? ' ' : apiPrefix + '/api/Fees/Save/',
         updateFee: localhost ? ' ' : apiPrefix + '/api/Fees/Save/',
         deleteFee: localhost ? ' ' : apiPrefix + '/api/Fees/Delete/',
-
-        getSubjectList: localhost ? '/sampleData/subjectList.json' : apiPrefix + '/api/SubjectMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
-        addSubject: localhost ? '/sampleData/subjectList.json' : apiPrefix + '/api/Subjectmasters/Save/',
-        updateSubject: localhost ? '/sampleData/subjectList.json' : apiPrefix + '/api/SubjectMasters/Save/',
-        deleteSubject: localhost ? '/sampledata/subjectlist.json' : apiPrefix + '/api/SubjectMasters/Delete/',
 
         getClassRoomList: localhost ? '/sampleData/classRoomList.json' : apiPrefix + '/api/ClassRoomMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addClassRoom: localhost ? ' ' : apiPrefix + '/api/ClassRoomMasters/Save/',
@@ -30,8 +30,7 @@ var urlService =
         deleteEmployee: localhost ? '/sampleData/getEmployeesList.json' : apiPrefix + '/api/Employees/Delete',
 
         getChaptersList: localhost ? '/sampleData/chapterList.json' : apiPrefix + '/api/ChapterMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
-        
-		addChapter: localhost ? ' ' : apiPrefix + '/api/ChapterMasters/Save/',
+        addChapter: localhost ? ' ' : apiPrefix + '/api/ChapterMasters/Save/',
         updateChapter: localhost ? ' ' : apiPrefix + '/api/ChapterMasters/Save/',
         deleteChapter: localhost ? ' ' : apiPrefix + '/api/ChapterMasters/Delete/',
 
@@ -44,15 +43,34 @@ var urlService =
         addTask: localhost ? ' ' : apiPrefix + '/api/Tasks/Save/',
         updateTask: localhost ? ' ' : apiPrefix + '/api/Tasks/Save/',
         deleteTask: localhost ? ' ' : apiPrefix + '/api/Tasks/Delete/',
-
-        getBatch: localhost ? ' ' : apiPrefix + '/api/BatchMasters/Get',
-        //addBatch: localhost ? ' ' : apiPrefix + '/api/BatchMasters/Post/',
-        //updateBatch: localhost ? ' ' : apiPrefix + '/api/BatchMasters/Put/',
-        //deleteTask: localhost ? ' ' : apiPrefix + '/api/Tasks/Delete/',
-
         
         getProgramStudyList: localhost ? '/sampleData/programStudy/programStudyList.json' : apiPrefix +'/api/ProgramStudies/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addProgramStudy: localhost ? '/sampleData/programStudy/addProgramStudy.json' : apiPrefix + '/api/ProgramStudies/Save/',
+        
+        //scheduledExam
+
+        getScheduleDetails: localhost ? '/sampleData/ScheduleExam/scheduledExam.json' : '/sampleData/ScheduleExam/scheduledExam.json',
+
+        //StudentAdmissionForm
+
+        getDynamicFormData: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : '/sampleData/StudentPortal/stdapplicationformdetail.json',
+        getDynamicFormData: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormDetail?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
+        getApplicationFormFeeDetail: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormFeeDetail?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
+        getApplicationFormHeader: localhost ? '' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormHeader?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
+        getAdmissionList: localhost ? '/sampleData/StudentPortal/studentPortal.json' : apiPrefix + '/api/StudentDashBoard/GetApplicationFormList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&batchid=null&psid=null&courseid=null',
+        addStudentAdmissionForm: localhost ? '' : apiPrefix + '',
+
+        //StudentCounselingPage & ReviewandApproveDetail
+
+        getStdCounsellingDetail: localhost ? '/sampleData/StudentPortal/studentPortal.json' : apiPrefix + '/api/StudentDashBoard/GetApplicationFormList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&batchid={{bId}}&psid={{PsId}}&CourseId={{cId}}',
+
+        getBatch: localhost ? ' ' : apiPrefix + '/api/BatchMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
+
+        getLinkedProgrmStudiesOfBatch: localhost ? ' ' : apiPrefix + '/api/ProgramStudies/GetBatchProgramStudyList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&batchid={{bId}}',
+         
+        getreviewandapproveDetail: localhost ? '/sampleData/ReviewAndApproveDetail/reviewandapprovedetail.json' : apiPrefix + '/api/StudentDashBoard/GetApplicationFormList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&batchid={{bId}}&psid={{PsId}}&CourseId={{cId}}',
+
+     
         getLinkedCoursesOfProgramStudy: localhost ? '/sampleData/programStudy/courseList.json' : apiPrefix + '/api/CourseMasters/GetProgramStudyCourseList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&psid={{PsId}}',
         getLinkedFeesOfProgramStudy: localhost ? '/sampleData/programStudy/feesList.json' : apiPrefix + '/api/Fees/GetProgramStudyFeesList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&psid={{PsId}}',
         getUnlinkedCoursesOfProgramStudy: localhost ? '/sampleData/programStudy/getUnlinkedCoursesOfProgramStudy.json' : apiPrefix + '/api/ProgramStudyCourseAssociations/GetProgramStudyCourseNotLinkedList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&psid={{PsId}}',
@@ -74,39 +92,11 @@ var urlService =
         assignUnlinkedFeesToBatch: localhost ? '/sampleData/createBatch/assignUnlinkedFees.json' : apiPrefix + '/api/BatchFeeAssociations/Link/',
 
         getCourseSubject: localhost ? '' : apiPrefix + '/api/SubjectMasters/GetCourseSubjectList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&CourseId={{cId}}',
-        getNotLinkedCourseList : localhost ? '' : apiPrefix + '/api/CourseSubjectAssociations/GetCourseSubjectNotLinkedList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&CourseId={{cId}}',
-        removeSubjectfromList : localhost ? '' : apiPrefix + '/api/CourseSubjectAssociations/UnLink/',
-        addSubjectInList : localhost ? '' : apiPrefix + '/api/CourseSubjectAssociations/Link/',
+        getNotLinkedCourseList: localhost ? '' : apiPrefix + '/api/CourseSubjectAssociations/GetCourseSubjectNotLinkedList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&CourseId={{cId}}',
+        removeSubjectfromList: localhost ? '' : apiPrefix + '/api/CourseSubjectAssociations/UnLink/',
+        addSubjectInList: localhost ? '' : apiPrefix + '/api/CourseSubjectAssociations/Link/',
+        getCourseSubjectList: localhost ? '' : apiPrefix + '/api/SubjectMasters/GetCourseSubjectList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&CourseId={{cId}}',
 
-
-        getBulkModule: localhost ? '/sampleData/bulkUpload.json' : apiPrefix + '/api/BulkLoadMaster/Get/1',
-
-        //scheduledExam
-
-        getScheduleDetails: localhost ? '/sampleData/ScheduleExam/scheduledExam.json' : '/sampleData/ScheduleExam/scheduledExam.json',
-
-        //StudentDashBoard
-
-        getAdmissionList: localhost ? '/sampleData/StudentPortal/studentPortal.json' : '/sampleData/StudentPortal/studentPortal.json',
-
-        //StudentAdmissionForm
-
-        getDynamicFormData: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : '/sampleData/StudentPortal/stdapplicationformdetail.json',
-
-        addStudentAdmissionForm: localhost ? '' : apiPrefix + '',
-
-        getDynamicFormData: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : '/sampleData/StudentPortal/stdapplicationformdetail.json',
-
-        //StudentCounselingPage & ReviewandApproveDetail
-
-        getStdCounsellingDetail: localhost ? '/sampleData/StudentPortal/studentPortal.json' : apiPrefix + '/api/StudentDashBoard/GetApplicationFormList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&batchid={{bId}}&psid={{PsId}}&CourseId={{cId}}',
-
-        getBatch: localhost ? ' ' : apiPrefix + '/api/BatchMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
-
-        getLinkedProgrmStudiesOfBatch: localhost ? ' ' : apiPrefix + '/api/ProgramStudies/GetBatchProgramStudyList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&batchid={{bId}}',
-         
-        getreviewandapproveDetail: localhost ? '/sampleData/ReviewAndApproveDetail/reviewandapprovedetail.json' : apiPrefix + '/api/StudentDashBoard/GetApplicationFormList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&batchid={{bId}}&psid={{PsId}}&CourseId={{cId}}',
-
-		
+        getBulkModule: localhost ? '/sampleData/bulkUpload.json' : apiPrefix + '/api/BulkLoadMaster/Get/1'   
 
     };

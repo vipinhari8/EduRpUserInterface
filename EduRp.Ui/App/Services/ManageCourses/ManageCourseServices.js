@@ -32,13 +32,17 @@
         var addSubjectInCorseList = function(addSubjectList){
             return execute('addSubjectInList', 'post', addSubjectList);
         };
+        var _getCourseSubjectList = function (cid) {
+            return execute('getCourseSubjectList', 'get', cid);
+        };
 
         return {
             getCourseList: getCourseList,
             getCourseListItem: getCourseListItem,
             getNotLinkedCourseList : getNotLinkedCourseList,
             removeSubjectFromList : removeSubjectFromList,
-            addSubjectInCorseList : addSubjectInCorseList
+            addSubjectInCorseList: addSubjectInCorseList,
+            getCourseSubjectList: _getCourseSubjectList
         };
 
     }
