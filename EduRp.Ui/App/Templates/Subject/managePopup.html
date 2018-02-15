@@ -1,6 +1,9 @@
 ﻿<div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="Modals.closeSubjectContainer()">x</button>
-    <h4 class="modal-title">Create New Subject</h4>
+    <h4 class="modal-title">
+        <span data-ng-if="modalType ==='add'">{{'subjectAddHeader'|translate}}</span>
+        <span data-ng-if="modalType ==='update'">{{'subjectUpdateHeader'|translate}}</span>
+    </h4>
 </div>
 <div class="modal-body">
     <div class="row">
@@ -16,7 +19,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="SubjectName">{{'subjectNameColumn'| translate }}<span class="text-danger">*</span></label>
+                                <label for="SubjectName">{{'subjectCodeColumn'| translate }}<span class="text-danger">*</span></label>
                                 <input type="text" name="SubjectName" parsley-trigger="change" required placeholder="Enter Subject Name" class="form-control" data-ng-model="$parent.modSubjectObj.SubjectName">
                             </div>
                         </div>
@@ -29,17 +32,20 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger waves-effect waves-light save-category">Save</button>
-                        <button type="button" class="btn btn-default waves-effect">Close</button>
 
                     </div>
                     <div class="form-group m-b-0 text-right">
-                       
+                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="updateSubjectDetails(addEditSubjectForm)" data-ng-if="modalType ==='update'">
+                            {{'saveDetailsBtn'|translate}}
+                        </button>
+                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="addSubjectDetails(addEditSubjectForm)" data-ng-if="modalType ==='add'">
+                            {{'addDetailsBtn'|translate}}
+                        </button>
+                        <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.closeSubjectContainer()">{{'closeBtn'|translate}}</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
 

@@ -10,4 +10,5 @@
         });
 }());
 
-//edurpwebapi20180213021849.azurewebsites.net
+//http://edurpwebapi20180213021849.azurewebsites.net
+//http://localhost:50381 

@@ -5,9 +5,9 @@
         .module('EduRpApp')
         .controller('studentAdmissionFormController', studentAdmissionFormController);
 
-    studentAdmissionFormController.$inject = ['$scope', '$q', '$log', 'errorHandler', 'studentAdmissionFormService', 'commonService', '$translate', 'programStudyService','manageCourseService'];
+    studentAdmissionFormController.$inject = ['$scope', '$q', '$log', 'errorHandler', 'studentAdmissionFormService', 'commonService', '$translate', 'programStudyService','managecourseService'];
 
-    function studentAdmissionFormController($scope, $q, $log, errorHandler, studentAdmissionFormService, commonService, $translate, programStudyService, manageCourseService) {
+    function studentAdmissionFormController($scope, $q, $log, errorHandler, studentAdmissionFormService, commonService, $translate, programStudyService, managecourseService) {
 
         /* jshint validthis:true */
         var vm = this;
@@ -49,7 +49,6 @@
                     $scope.mainContent = true;
                     if (data != null) {
                         $scope.programStudyData = data[0].results;
-                        console.log($scope.programStudyData);
                     }
                 }, function (reason) {
                     console.log("reason" + reason);
@@ -65,7 +64,20 @@
 
         $scope.$watch('admissionFormData[3].open', function (isOpen) {
             if (isOpen) {
-                console.log('Fourth group was opened'); 
+                $q.all([
+                    studentAdmissionFormService.getApplicationFormFeeDetail()
+                ]).then(function (data) {
+                    $scope.mainContent = true;
+                    if (data != null) {
+                        $scope.feesData = data[0].results;
+                    }
+                }, function (reason) {
+                    console.log("reason" + reason);
+                    errorHandler.logServiceError('programStudyController', reason);
+                }, function (update) {
+                    console.log("update" + update);
+                    errorHandler.logServiceNotify('programStudyController', update);
+                });
 
             }
         });
@@ -73,7 +85,20 @@
         $scope.$watch('admissionFormData[4].open', function (isOpen) {
             if (isOpen) {
 
-                console.log('Fourth group was opened');
+                $q.all([
+                    studentAdmissionFormService.getApplicationFormHeader()
+                ]).then(function (data) {
+                    $scope.mainContent = true;
+                    if (data != null) {
+                        $scope.paymentsData = data[0].results;
+                    }
+                }, function (reason) {
+                    console.log("reason" + reason);
+                    errorHandler.logServiceError('programStudyController', reason);
+                }, function (update) {
+                    console.log("update" + update);
+                    errorHandler.logServiceNotify('programStudyController', update);
+                });
             }
         });
 
@@ -109,11 +134,20 @@
             ]).then(function (data) {
                 if (data !== null) {
                     $scope.admissionFormData =[];
-                    angular.forEach(data[0].results, function (std,stk) {
-                        
-
+                    angular.forEach(data[0].results, function (std, stk) {
+                        var found = 0;
+                        angular.forEach($scope.admissionFormData, function (admv, admk) {
+                            if (admv.AppFormGroupId === std.AppFormGroupId) {
+                                found = 1;
+                                $scope.admissionFormData[admk]['fields'].push({ AppFormFieldId: std.AppFormFieldId, FieldName: std.FieldName, Value: std.Value});
+                            };
+                        });
+                        if (found === 0) {
+                            $scope.admissionFormData.push({ AppFormGroupId: std.AppFormGroupId, AppFormGroupLabel: std.AppFormGroupLabel, "fields": [{ AppFormFieldId: std.AppFormFieldId, FieldName: std.FieldName, Value: std.Value }]})
+                        }
 
                     });
+                    console.log($scope.admissionFormData);
                 }
             }, function (reason) {
                 errorHandler.logServiceError('studentAdmissionFormController', reason);
@@ -148,7 +182,7 @@
             var selPS = angular.copy(psData);
             if (selPS) {
                 $q.all([
-                    studentAdmissionFormService.getCourseSubjectList(selPS)
+                    managecourseService.getCourseSubjectList(selPS)
                 ]).then(function (data) {
                     // $scope.mainContentSubPart = true;
                     if (data != null) {

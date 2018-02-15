@@ -3,11 +3,11 @@
 
     angular
         .module('EduRpApp')
-        .controller('scheduleExaminationController', scheduleExaminationController);
+        .controller('scheduleExaminationController', scheduleExaminationCntrl);
 
-    scheduleExaminationController.$inject = ['$scope', '$q', '$modal', 'scheduleExaminationService', 'commonService', '$compile', 'uiCalendarConfig'];
+    scheduleExaminationCntrl.$inject = ['$scope', '$q', '$modal', 'scheduleExaminationService', 'commonService', '$compile', 'uiCalendarConfig'];
 
-    function scheduleExaminationController($scope, $q, $modal, scheduleExaminationService, commonService, $compile, uiCalendarConfig) {
+    function scheduleExaminationCntrl($scope, $q, $modal, scheduleExaminationService, commonService, $compile, uiCalendarConfig) {
         $scope.eventSources = [];
         $scope.scheduleDetails = undefined;
         $scope.events = [];
@@ -20,80 +20,6 @@
             scheduleExaminationService.getScheduleDetails().then(detailSuccess, detailError);
 
         };
-//------------------------------------------------------------DropDown - multiselect starts here ---------------------------------------------------
-        //$scope.example14model = [];
-        //$scope.example14settings = {
-        //    scrollableHeight: '200px',
-        //    scrollable: true,
-        //    enableSearch: true
-        //};
-
-        //$scope.example14data = [{      
-        //        "label": "Texas",
-        //        "id": "TX"
-        //    }, {
-        //        "label": "Utah",
-        //        "id": "UT"
-        //    }, {
-        //        "label": "Vermont",
-        //        "id": "VT"
-        //    }, {
-        //        "label": "Virgin Islands",
-        //        "id": "VI"
-        //    }, {
-        //        "label": "Virginia",
-        //        "id": "VA"
-        //    }, {
-        //        "label": "Washington",
-        //        "id": "WA"
-        //    }, {
-        //        "label": "West Virginia",
-        //        "id": "WV"
-        //    }, {
-        //        "label": "Wisconsin",
-        //        "id": "WI"
-        //    }, {
-        //        "label": "Wyoming",
-        //        "id": "WY"
-        //}];
-        //$scope.example2settings = {
-        //    displayProp: 'id'
-        //};
-        $scope.name = 'World';
-        $scope.cars = [{ id: 1, name: 'Audi' }, { id: 2, name: 'BMW' }, { id: 1, name: 'Honda' }];
-        $scope.selectedCar = [];
-
-        $scope.fruits = [{ id: 1, name: 'Apple' }, { id: 2, name: 'Orange' }, { id: 3, name: 'Banana' }];
-        $scope.selectedFruit = null;
-//----------------------------------------------------------------dropdown - multiselect ends here----------------------------------------------------
-//-------------------------------------------------------------------model starts here ------------------------------------------------------------------
-        $scope.scheduleExamContainer = function () {
-            $scope.Modals.openSubjectContainer();
-        };
-
-        $scope.Modals = {
-            openSubjectContainer: function () {
-                $scope.modalInstance = $modal.open({
-                    animation: true,
-                    templateUrl: '/App/Templates/ScheduleExamination/modelScheduleExamination.html',
-                    size: 'lg',
-                    scope: $scope,
-                    backdrop: 'static'
-                });
-
-                $scope.modalInstance.result.then(
-                    function (subject) {
-
-                    },
-                    function (event) {
-
-                    });
-            },
-            closeSubjectContainer: function () {
-                $scope.modalInstance.dismiss();
-            }
-        };
-//-----------------------------------------------------------------------model ends here----------------------------------------------------------------
 
         function detailSuccess(response){
             $scope.scheduleDetails = response.ExamSchedule;
@@ -114,7 +40,6 @@
         function detailError(){
             console.log("Schedule Details Not found");
         }
-
 
         $scope.uiConfig = {
             calendar: {

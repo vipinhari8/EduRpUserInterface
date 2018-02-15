@@ -25,7 +25,7 @@
             $scope.adjusttaskList();
         });
 
-        $scope.showPerPageDataOptions = [5, 25, 50, 100];
+        $scope.showPerPageDataOptions = [5, 10, 25, 50, 100];
 
         $scope.modtaskObj = {};
         $scope.modalType = '';

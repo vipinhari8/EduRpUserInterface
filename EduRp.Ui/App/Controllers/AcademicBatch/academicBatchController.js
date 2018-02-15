@@ -11,7 +11,7 @@
         $scope.academicBatchData = [];
         $scope.filteredAcademicBatchData = [];
         $scope.currentPage = 1
-            , $scope.numPerPage = 10
+            , $scope.numPerPage = 5
             , $scope.maxSize = 5;
         $scope.orderByField = 'SubjectName';
         $scope.reverseSort = false;
@@ -25,7 +25,7 @@
             $scope.adjustAcademicBatchList();
         });
 
-        $scope.showPerPageDataOptions = [10, 25, 50, 100];
+        $scope.showPerPageDataOptions = [5, 10, 25, 50, 100];
 
         $scope.modAcademicBatchObj = {};
         $scope.pp = '90';

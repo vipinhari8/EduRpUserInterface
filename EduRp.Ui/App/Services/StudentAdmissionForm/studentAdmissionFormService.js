@@ -21,23 +21,25 @@
             };
 
             var _addStudentAdmissionForm = function (postData) {
-                debugger;
                 return execute('addStudentAdmissionForm', 'post', postData);
-
             };
-            var _getCourseSubjectList = function (cid) {
-                return execute('getCourseSubjectList', 'get', cid);
+
+            var _getApplicationFormFeeDetail = function (postData) {
+                return execute('getApplicationFormFeeDetail', 'get', null);
+            };
+
+            var _getApplicationFormHeader = function (postData) {
+                return execute('getApplicationFormHeader', 'get', null);
             };
 
             //function getData() { }
 
             return {
-
                 getDynamicFormData: _getDynamicFormData,
                 getAdmissionNumber: _getAdmissionNumber,
                 addStudentAdmissionForm: _addStudentAdmissionForm,
-                getCourseSubjectList: _getCourseSubjectList
-
+                getApplicationFormFeeDetail: _getApplicationFormFeeDetail,
+                getApplicationFormHeader: _getApplicationFormHeader
             };
         }
 })();
