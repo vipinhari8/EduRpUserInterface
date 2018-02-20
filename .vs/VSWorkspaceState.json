@@ -3,20 +3,14 @@
     "",
     "\\EduRp.Ui",
     "\\EduRp.Ui\\App",
-    "\\EduRp.Ui\\App\\Common",
     "\\EduRp.Ui\\App\\Controllers",
+    "\\EduRp.Ui\\App\\Controllers\\ManageCourses",
     "\\EduRp.Ui\\App\\Controllers\\ProgramStudy",
-    "\\EduRp.Ui\\App\\Controllers\\ReviewAndApprove",
-    "\\EduRp.Ui\\App\\Controllers\\ScheduleExamination",
-    "\\EduRp.Ui\\App\\Controllers\\StudentPortal",
-    "\\EduRp.Ui\\App\\Controllers\\Subject",
-    "\\EduRp.Ui\\App\\Controllers\\Task",
     "\\EduRp.Ui\\App\\Services",
-    "\\EduRp.Ui\\App\\Services\\Interceptors",
+    "\\EduRp.Ui\\App\\Services\\urlService",
     "\\EduRp.Ui\\App\\Templates",
-    "\\EduRp.Ui\\App\\Templates\\StudentPortal",
-    "\\EduRp.Ui\\languages"
+    "\\EduRp.Ui\\App\\Templates\\ManageCourses"
   ],
-  "SelectedNode": "\\EduRp.Ui\\App\\Services\\Interceptors\\errorHandler.js",
+  "SelectedNode": "\\EduRp.Ui\\App\\Controllers\\ManageCourses\\ManageCoursesController.js",
   "PreviewInSolutionExplorer": false
 }

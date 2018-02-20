@@ -3,31 +3,35 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+
+    <link rel="shortcut icon" href="Assets/images/favicon.ico">
     <title>EduRp</title>
 
 
-    <script src="../../Assets/Scripts/modernizr-2.8.3.js"></script>
+    <script src="Assets/Scripts/modernizr-2.8.3.js"></script>
     <!--Morris Chart CSS -->
-    <link href="../../Assets/plugins/morris/morris.css" rel="stylesheet" />
+    <link href="Assets/plugins/morris/morris.css" rel="stylesheet" />
     <!-- Plugins Css -->
-    <link href="../../Assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />
-    <link href="../../Assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
-    <link href="../../Assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
-    <link href="../../Assets/plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet" />
-    <link href="../../Assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <link href="Assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <link href="Assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+    <link href="Assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="Assets/plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet" />
+    <link href="Assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
 
 
     <!-- App css -->
-    <link href="../../Assets/Styles/edurp/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../../Assets/Styles/edurp/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../../Assets/Styles/edurp/css/core.css" rel="stylesheet" type="text/css" />
-    <link href="../../Assets/Styles/edurp/css/components.css" rel="stylesheet" type="text/css" />
-    <link href="../../Assets/Styles/edurp/css/icons.css" rel="stylesheet" type="text/css" />
-    <link href="../../Assets/Styles/edurp/css/pages.css" rel="stylesheet" type="text/css" />
-    <link href="../../Assets/Styles/edurp/css/menu.css" rel="stylesheet" type="text/css" />
-    <link href="../../Assets/Styles/edurp/css/responsive.css" rel="stylesheet" type="text/css" />
-    <link href="../../Assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+    <link href="Assets/Styles/edurp/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/Styles/edurp/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Assets/Styles/edurp/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/Styles/edurp/css/components.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/Styles/edurp/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/Styles/edurp/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/Styles/edurp/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/Styles/edurp/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
     <link href="App/Templates/ScheduleExamination/style.css" rel="stylesheet" />
+    <link href="Assets/plugins/datetimepicker/css/datetimepicker.css" rel="stylesheet" />
+    <link href="Assets/Styles/angularjs-datetime-picker.css" rel="stylesheet" />
 
 
 
@@ -82,8 +86,7 @@
     <link rel="stylesheet" href="Assets/Styles/fullcalendar.min.css">
 
 </head>
-<body ng-app="EduRpApp"
-      ng-controller="userCtrl as vm">
+<body ng-controller="userCtrl as vm">
     <div>
         <!--<nav class="navbar navbar-default ">
             <div class="container">
@@ -285,6 +288,7 @@
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/CourseList/')">Show Course</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Subject')">Subjects</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Chapters')">Chapters</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Employees')">Chapters</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ExaminationType')">Examination Type</a></li>
                                             <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a ng-click="vm.goToPage('/ScheduleExamination')">Calendar</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Task')">Task</a></li>

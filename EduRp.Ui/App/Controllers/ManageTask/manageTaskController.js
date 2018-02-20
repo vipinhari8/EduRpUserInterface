@@ -10,12 +10,13 @@
     function manageTaskController($scope, $q, $log, manageTaskService, commonService, $modal) {
 
         $scope.taskListItem = undefined;
-        $scope.taskListDetails = undefined;
+        $scope.taskListDetails = [];
         $scope.showTaskDetailList = false;
         $scope.selectedTask = undefined;
         //$scope.selectAllCourseList = false;
         $scope.assignEmployeeModal = false;
         $scope.notLinkedEmployees = undefined;
+        $scope.selectedTask = null;
         //$scope.selectCourse = undefined;
 
         $scope.init = init;
@@ -50,11 +51,13 @@
          * Get all the couse details,
          * on selected subject from dropdrown
          */
-        function getSelectedTaskDetails() {
-            manageTaskService.getTaskList($scope.taskList).then(selectedTaskDetailSuccess, selectedTaskDetailError);
+        function getSelectedTaskDetails(selectedTask) {
+            manageTaskService.getTaskList($scope.selectedTask).then(selectedTaskDetailSuccess, selectedTaskDetailError);
         }
 
         function selectedTaskDetailSuccess(response) {
+            Console.log("hi");
+            Console.log(response);
             $scope.taskListDetails = response.results;
             $scope.showTaskDetailList = true;
         }
