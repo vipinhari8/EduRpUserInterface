@@ -32,13 +32,18 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-2">
-                            <select id="heard" class="form-control">
-                                <option data-ng-repeat="taskList in taskListItem track by $index" value="taskList.TaskId">{{taskList.TaskName}}</option>
+                            <!--<select id="heard" class="form-control">
+                                <option data-ng-model="selectedTask" data-ng-repeat="taskList in taskListItem track by $index" value="taskList.TaskId">{{taskList.TaskName}}</option>
                                 <option value="other">Select Other</option>
+                            </select>-->
+
+                            <select id="heard" class="form-control" data-ng-model="selectedTask" data-ng-options="taskList.TaskName for taskList in taskListItem">
+                                <option value="" disabled="" selected="" class="ng-binding">Please Select the Task</option>
                             </select>
+
                         </div>
                         <div class="col-lg-2">
-                            <button class="btn btn-teal btn-bordered waves-light waves-effect w-xl m-b-5" data-ng-click="getSelectedTaskDetails()">Go</button>
+                            <button class="btn btn-teal btn-bordered waves-light waves-effect w-xl m-b-5" data-ng-click="getSelectedTaskDetails(selectedTask)">Go</button>
                         </div>
                     </div>
                     <hr>
@@ -128,8 +133,8 @@
                                             </thead>
                                             <tbody>
                                                 <tr data-ng-repeat="taskDetails in taskListDetails">
-                                                    <td>{{taskDetails.EmployeeCode}}</td>
-                                                    <td>{{taskDetails.EmployeeName}}</td>
+                                                    <td>{{taskDetails.EmployeeNumber}}</td>
+                                                    <td>{{taskDetails.FullName}}</td>
                                                     <td><input type="checkbox" data-ng-model="taskDetails.selected" data-ng-change="toggleTaskDetails()" /></td>
                                                 </tr>
                                             </tbody>

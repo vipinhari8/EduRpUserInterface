@@ -2,8 +2,9 @@
 var apiPrefix = 'http://edurpwebapi20180213021849.azurewebsites.net';
 //http://localhost:50381 
 //http://edurpwebapi20180213021849.azurewebsites.net
+
 var urlService =
-    {
+    { 
         getSubjectList: localhost ? '/sampleData/subjectList.json' : apiPrefix + '/api/SubjectMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addSubject: localhost ? '/sampleData/subjectList.json' : apiPrefix + '/api/SubjectMasters/Save/',
         updateSubject: localhost ? '/sampleData/subjectList.json' : apiPrefix + '/api/SubjectMasters/Save/',
@@ -12,7 +13,7 @@ var urlService =
         getCourseList: localhost ? '/sampleData/Course/list.json' : apiPrefix + '/api/CourseMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addCourse: localhost ? '/sampleData/Course/add.json' : apiPrefix + '/api/CourseMasters/Save/',
         updateCourse: localhost ? '/sampleData/Course/edit.json' : apiPrefix + '/api/CourseMasters/Save/',
-        deleteCourse: localhost ? '/sampleData/Course/delete.json' : apiPrefix + '/api/CourseMasters/Save',
+        deleteCourse: localhost ? '/sampleData/Course/delete.json' : apiPrefix + '/api/CourseMasters/Delete',
 
         getFeesList: localhost ? '/sampleData/feesList.json' : apiPrefix + '/api/Fees/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addFee: localhost ? ' ' : apiPrefix + '/api/Fees/Save/',
@@ -97,6 +98,9 @@ var urlService =
         addSubjectInList: localhost ? '' : apiPrefix + '/api/CourseSubjectAssociations/Link/',
         getCourseSubjectList: localhost ? '' : apiPrefix + '/api/SubjectMasters/GetCourseSubjectList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&CourseId={{cId}}',
 
-        getBulkModule: localhost ? '/sampleData/bulkUpload.json' : apiPrefix + '/api/BulkLoadMaster/Get/1'   
+        getBulkModule: localhost ? '/sampleData/bulkUpload.json' : apiPrefix + '/api/BulkLoadMaster/Get/1',
+
+        //manage task 
+ 
 
     };

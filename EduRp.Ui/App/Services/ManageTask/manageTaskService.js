@@ -29,6 +29,10 @@
             return execute('removeEmployeefromList', 'delete', selectedEmployee);
         };
 
+        var getlinkedstaffList = function (taskdata) {
+            return execute('getlinkedstaffList', 'get', taskdata);
+        };
+
         var addEmployeeInTaskList = function (addEmployeeList) {
             return execute('addEmployeeInList', 'post', addEmployeeList);
         };
@@ -38,7 +42,8 @@
             getTaskListItem: getTaskListItem,
             getNotLinkedTaskList: getNotLinkedTaskList,
             removeEmployeefromList: removeEmployeefromList,
-            addEmployeeInTaskList: addEmployeeInTaskList
+            addEmployeeInTaskList: addEmployeeInTaskList,
+            getlinkedstaffList: getlinkedstaffList
         };
 
     }

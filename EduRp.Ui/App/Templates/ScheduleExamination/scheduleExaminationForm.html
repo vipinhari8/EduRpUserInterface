@@ -1,0 +1,49 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="closeScheduleExamModal()">x</button>
+    <h4 class="modal-title">Schedule an Examination</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="dropdown form-group dropdown-start-parent">
+                    <label>Start Date</label>
+                    <a class="dropdown-toggle" id="dropdownStart" role="button" data-toggle="dropdown" data-target=".dropdown-start-parent" href="javascript:void(0);">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" data-ng-model="dateRangeStart">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <datetimepicker data-ng-model="dateRangeStart"
+                                        data-datetimepicker-config="{ dropdownSelector: '#dropdownStart', renderOn: 'end-date-changed' }"
+                                        data-on-set-time="startDateOnSetTime()"
+                                        data-before-render="startDateBeforeRender($dates)"></datetimepicker>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="dropdown form-group dropdown-end-parent">
+                    <label>End Date</label>
+                    <a class="dropdown-toggle" id="dropdownEnd" role="button" data-toggle="dropdown" data-target=".dropdown-end-parent" href="javascript:void(0);">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" data-ng-model="dateRangeEnd">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <datetimepicker data-ng-model="dateRangeEnd"
+                                        data-datetimepicker-config="{ dropdownSelector: '#dropdownEnd', renderOn: 'start-date-changed' }"
+                                        data-on-set-time="endDateOnSetTime()"
+                                        data-before-render="endDateBeforeRender($view, $dates, $leftDate, $upDate, $rightDate)"></datetimepicker>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <button type="button" class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5 pull-right" data-ng-click="scheduleExamination()">Schedule</button>
+    </div>
+
+</div>

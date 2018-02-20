@@ -1,1 +1,131 @@
-﻿<div ui-calendar="uiConfig.calendar" data-ng-model="eventSources"></div>
+﻿<div class="row">
+<div class="col-md-12">
+    <div class="card-box">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="#" data-parsley-validate="">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="userName">Select Batch</label>
+                                <select id="heard" class="form-control" data-ng-model="selectedBatch" data-ng-options="fps.BatchName for fps in batchList" ng-change="fetchProgramStudyByBatchId(selectedBatch)">
+                                    <option value="" disabled="" selected="" class="ng-binding">Please select the Batch</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="userName">Program</label>
+                                <select id="heard" class="form-control" data-ng-model="selectedPS" data-ng-options="fps.ProgramStudyName for fps in programStudyData" ng-change="fetchCourseByProgramStudyId(selectedPS)">
+                                    <option value="" disabled="" selected="" class="ng-binding">Please select the ProgramStudy</option>
+                                    <option value="">{{'selectAProgram'| translate}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="userName">Course</label>
+                                <select id="heard" class="form-control" data-ng-model="selectedCourse" data-ng-options="fps.CourseName for fps in courseData" ng-change="fetchSubjectByCourseId(selectedCourse)">
+                                    <option value="" disabled="" selected="" class="ng-binding">Please select the Course</option>
+                                    <option value="">{{'selectASubject'| translate}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="userName">Exam Type</label>
+                                <select id="heard" class="form-control" data-ng-model="selectedExam" data-ng-options="fps.ExamName for fps in examTypeData">
+                                    <option value="" disabled="" selected="" class="ng-binding">Please select the Course</option>
+                                    <option value="">{{'selectACourse'| translate}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="userName">Subject</label>
+                                    <select id="heard" class="form-control" data-ng-model="selectedSubject" data-ng-options="fps.SubjectName for fps in subjectData">
+                                        <option value="" disabled="" selected="" class="ng-binding">Please select the Course</option>
+                                        <option value="">{{'selectACourse'| translate}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="userName">Total No. of Students </label>
+                                <span style="font-size:28px;">120</span>
+                            </div>
+                        </div>
+                    </div>
+</form>
+                <div id="calendar"></div>
+                <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" type="submit">
+                    Save Details
+                </button>
+                <button type="button" class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5 pull-right" data-ng-click="showExaminationDropdown()">
+                    Schedule Exam
+                </button>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+        <div class="row" data-ng-show="scheduleExaminationForm">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label for="examname">Exam name:</label>
+                    <input type="text" id="examname" class="form-control" data-ng-model="examinationName" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="dropdown form-group dropdown-start-parent">
+                        <label>Start Date</label>
+                        <a class="dropdown-toggle" id="dropdownStart" role="button" data-toggle="dropdown" data-target=".dropdown-start-parent" href="javascript:void(0);">
+                            <div class="input-group date">
+                                <input type="text" class="form-control" data-ng-model="dateRangeStart">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <datetimepicker data-ng-model="dateRangeStart"
+                                            data-datetimepicker-config="{ dropdownSelector: '#dropdownStart', renderOn: 'end-date-changed' }"
+                                            data-on-set-time="startDateOnSetTime()"
+                                            data-before-render="startDateBeforeRender($dates)"></datetimepicker>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="dropdown form-group dropdown-end-parent">
+                        <label>End Date</label>
+                        <a class="dropdown-toggle" id="dropdownEnd" role="button" data-toggle="dropdown" data-target=".dropdown-end-parent" href="javascript:void(0);">
+                            <div class="input-group date">
+                                <input type="text" class="form-control" data-ng-model="dateRangeEnd">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <datetimepicker data-ng-model="dateRangeEnd"
+                                            data-datetimepicker-config="{ dropdownSelector: '#dropdownEnd', renderOn: 'start-date-changed' }"
+                                            data-on-set-time="endDateOnSetTime()"
+                                            data-before-render="endDateBeforeRender($view, $dates, $leftDate, $upDate, $rightDate)"></datetimepicker>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="button" class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5 pull-left" data-ng-click="cancelScheduling()">Cancel</button>
+                <button type="button" class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5 pull-right" data-ng-click="scheduleExamination()">Schedule</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row">
+    <div ui-calendar="uiConfig.calendar" data-ng-model="eventSources"></div>
+</div>
