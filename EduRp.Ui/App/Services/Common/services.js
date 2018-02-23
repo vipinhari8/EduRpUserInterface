@@ -45,15 +45,20 @@
                 var cd = this.fetchMainCookieData();
                 cd.bId = data.BatchId;
                 return cd;
-            }  else if (['getCourseSubject', 'getNotLinkedCourseList'].indexOf(url) !== -1) {
+            }
+            else if (['getCourseSubject',
+                        'getNotLinkedCourseList'
+                       ].indexOf(url) !== -1) {
                 var cd = this.fetchMainCookieData();
                 cd.cId = data.CourseId;
                 return cd;
-            } else if (['getCourseSubjectList'].indexOf(url) !== -1) {
+            }
+            else if (['getCourseSubjectList'].indexOf(url) !== -1) {
                 var cd = this.fetchMainCookieData();
                 cd.cId = data.CourseId;
                 return cd;
-            } else if (['getStdCounsellingDetail'].indexOf(url) !== -1) {
+            }
+            else if (['getStdCounsellingDetail'].indexOf(url) !== -1) {
                 var cd = this.fetchMainCookieData();
                 cd.bId = data.BatchId;
                 cd.PsId = data.ProgramStudyId;

@@ -283,12 +283,12 @@
                                         <a href="#">Academic Settings</a>
                                         <!--ng-hide="vm.userid === 4"-->
                                         <ul class="submenu">
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/AcademicBatch')">Batch</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a href="#">Program Study</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/BatchMaster')">Batch</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ProgramStudy')">Program Study</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/CourseList/')">Show Course</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Subject')">Subjects</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Chapters')">Chapters</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Employees')">Chapters</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Employees')">Employees</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ExaminationType')">Examination Type</a></li>
                                             <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a ng-click="vm.goToPage('/ScheduleExamination')">Calendar</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Task')">Task</a></li>
@@ -547,6 +547,8 @@
     <script src="App/Services/Contact/contactService.js"></script>
     <script src="App/Services/Common/services.js"></script>
     <script src="App/Services/Course/courseListService.js"></script>
+    <script src="App/Services/BatchMaster/batchMasterService.js"></script>
+    <script src="App/Services/ProgramStudyMaster/PrgmStudyMasterService.js"></script>
     <script src="App/Services/Subject/subjectListService.js"></script>
     <script src="App/Services/ProgramStudy/programStudyService.js"></script>
     <script src="App/Services/CreateBatch/createBatchService.js"></script>
@@ -570,7 +572,10 @@
 
     <script src="App/Controllers/Global/globalController.js"></script>
     <script src="App/Controllers/Account/loginController.js"></script>
+    <script src="App/User/logoutCtrl.js"></script>
     <script src="App/Controllers/Account/registerController.js"></script>
+    <script src="App/Controllers/BatchMaster/batchMasterController.js"></script>
+    <script src="App/Controllers/ProgramStudyMaster/prgmStudyMasterController.js"></script>
     <script src="App/Controllers/Contact/contactController.js"></script>
     <script src="App/Controllers/Contact/contactFormModalController.js"></script>
     <script src="App/Controllers/Course/courseListController.js"></script>
@@ -579,7 +584,7 @@
     <script src="App/Controllers/CreateBatch/createBatchCtrl.js"></script>
     <script src="App/Controllers/Task/taskListController.js"></script>
     <script src="App/Controllers/Fees/feesListController.js"></script>
-    <script src="App/Controllers/ClassRoom/classRoomListContoller.js"></script>
+    <script src="App/Controllers/ClassRoom/classRoomListController.js"></script>
     <script src="App/Controllers/ExaminationType/examinationTypeController.js"></script>
     <script src="App/Controllers/Employees/employeesListContoller.js"></script>
     <script src="App/Controllers/NotificationType/notificationTypeController.js"></script>
@@ -593,6 +598,7 @@
     <script src="App/Controllers/StudentAdmissionForm/studentadmissionformController.js"></script>
     <script src="App/Controllers/ManageStudentCounsellingDetail/manageStudentCounsellingDetailController.js"></script>
     <script src="App/Controllers/ReviewAndApprove/reviewandapproveController.js"></script>
+    <script src="App/User/registrationController.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {

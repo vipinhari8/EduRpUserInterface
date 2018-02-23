@@ -1,42 +1,31 @@
 ﻿
-<div class="wrapper">
+<div class="wrapper" style="padding-top: 0px;">
     <div class="container">
-
         <!-- Page-Title -->
         <div class="row">
             <div class="col-sm-12">
-                <div class="page-title-box">
-                    <div class="btn-group pull-left">
-                        <ol class="breadcrumb hide-phone p-0 m-0">
-                            <li>
-                                <a href="#">{{'breadcrumbOfEdurp' | translate}}</a>
-                            </li>
-                            <li>
-                                <a href="#">{{'breadcrumbOfDashboard' | translate}}</a>
-                            </li>
-                            <li class="active">
-                                {{'breadcrumb3OfFees' | translate}}
-
-                            </li>
-                        </ol>
-                    </div>
-
-                </div>
+                <ul class="breadcrumb">
+                    <li><a href="#">{{'breadcrumb1OfBatchMaster'|translate}}</a></li>
+                    <li><a href="#">{{'breadcrumb2OfBatchMaster'|translate}}</a></li>
+                    <li class="active">{{'breadcrumb3OfBatchMaster'|translate}}</li>
+                </ul>
             </div>
         </div>
-        <!-- end page title end breadcrumb -->
 
+        <!-- end page title end breadcrumb -->
 
         <div class="row">
             <!-- end col -->
             <div class="col-lg-12">
                 <div class="card-box">
                     <div class="row">
-                        <div class="col-lg-8">
-                            <h4 class="m-t-0 header-title"><b>Fee</b></h4>
-                        </div>
-                        <div class="col-lg-4 pull-right">
-                            <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" data-ng-click="addFeesContainer()">Add Fee</button>
+                        <div class="col-lg-12">
+                            <h4 class="m-t-0 header-title">
+                                <b>{{'batchMasterHeader'|translate}}</b>
+                                <!--</div>
+                                <div class="col-lg-4 pull-right">-->
+                                <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5 pull-right" data-ng-click="addBatchContainer()">{{'batchMasterAddBtn' | translate}}</button>
+                            </h4>
                         </div>
                     </div>
                     <div class="row">
@@ -44,51 +33,44 @@
                             &nbsp;
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-lg-12">
-
                             <div class="panel-group" role="tablist" aria-multiselectable="true">
-
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab">
                                         <h4 class="panel-title" data-ng-click="toggleFilterPanel()">
                                             <a ng-class="!filterPanel ? 'collapsed': ''" aria-expanded="false" aria-controls="collapseThree">
-                                                Filters
+                                                {{'filters'| translate}}
                                             </a>
                                         </h4>
                                     </div>
                                     <div class="panel-collapse" role="tabpanel" aria-labelledby="headingThree" data-ng-show="filterPanel">
                                         <div class="panel-body">
                                             <form action="#" data-parsley-validate="">
-
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="userName">Fee Label</label>
-                                                            <textarea cols="25" rows="5" name="course_code_tobe_filtered" data-ng-model="course_code_tobe_filtered">
+                                                            <label for="userName">{{'batchMasterNameColumn'| translate }}</label>
+                                                            <textarea cols="25" rows="3" name="course_code_tobe_filtered" data-ng-model="course_code_tobe_filtered" class="form-control">
                                                             </textarea>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="userName">Amount</label>
-                                                            <input type="text" name="course_name_tobe_filtered" data-ng-model="course_name_tobe_filtered" />
+                                                            <label for="userName">{{'batchMasterAcademicTermColumn'| translate }}</label>
+                                                            <input type="text" name="course_name_tobe_filtered" data-ng-model="course_name_tobe_filtered" class="form-control" />
+                                                        </div>
+                                                        <div class="form-group text-right m-b-0">
+                                                            <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="button" data-ng-click="getFilteredData()">
+                                                                {{'goBtn'| translate }}
+                                                            </button>
+                                                            <button type="reset" data-ng-click="toggleFilterPanel()" class="btn btn-default waves-effect m-l-5">
+                                                                {{'clearBtn'| translate }}
+                                                            </button>
                                                         </div>
                                                     </div>
-
                                                 </div>
 
-
-
-                                                <div class="form-group text-right m-b-0">
-                                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="button" data-ng-click="getFilteredData()">
-                                                        GO
-                                                    </button>
-                                                    <button type="reset" data-ng-click="toggleFilterPanel()" class="btn btn-default waves-effect m-l-5">
-                                                        Clear
-                                                    </button>
-                                                </div>
                                             </form>
                                         </div>
                                     </div>
@@ -96,93 +78,73 @@
                             </div>
                         </div>
 
-
-
                         <!-- end col -->
-                        <div class="col-lg-12">
-
+                        <div class="col-lg-12" style="margin-top:-30px">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="table-responsive">
-
                                         <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed table-colored table-inverse">
                                             <thead>
                                                 <tr>
-                                                    <th ng-click="orderByField='FeeLabel'; reverseSort = !reverseSort">
-                                                        Fee Label
-                                                        <span ng-show="orderByField == 'FeeLabel'">
+                                                    <th ng-click="orderByField='BatchName'; reverseSort = !reverseSort">
+                                                        {{'batchMasterNameColumn'| translate }}
+                                                        <span ng-show="orderByField == 'BatchName'">
                                                             <span ng-show="!reverseSort">^</span>
                                                             <span ng-show="reverseSort">v</span>
                                                         </span>
                                                     </th>
-                                                    <th ng-click="orderByField='Amount'; reverseSort = !reverseSort">
-                                                        Amount
-                                                        <span ng-show="orderByField == 'Amount'">
-                                                            <span ng-show="!reverseSort">^</span>
-                                                            <span ng-show="reverseSort">v</span>
-                                                        </span>
-                                                    </th>
-
-                                                    <th ng-click="orderByField='FeeType'; reverseSort = !reverseSort">
-                                                        Fee Type
-                                                        <span ng-show="orderByField == 'FeeType'">
-                                                            <span ng-show="!reverseSort">^</span>
-                                                            <span ng-show="reverseSort">v</span>
-                                                        </span>
-                                                    </th>  
-                                                    <th ng-click="orderByField='Description'; reverseSort = !reverseSort">
-                                                        Description
-                                                        <span ng-show="orderByField == 'Description'">
-                                                            <span ng-show="!reverseSort">^</span>
-                                                            <span ng-show="reverseSort">v</span>
-                                                        </span>
-                                                    </th>
-
                                                     <th>
-
+                                                        {{'batchMasterResultTypeColumn'| translate }}
                                                     </th>
+                                                    <th ng-click="orderByField='AcademicTerm'; reverseSort = !reverseSort">
+                                                        {{'batchMasterAcademicTermColumn'| translate }}
+                                                        <span ng-show="orderByField == 'AcademicTerm'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+
+                                                    <th></th>
                                                 </tr>
                                             </thead>
-
                                             <tbody>
-                                                <tr data-ng-repeat="ed in filteredFeesData|orderBy:orderByField:reverseSort">
-                                                    <td>{{ ed.FeeLabel}}</td>
-                                                    <td>{{ ed.Amount}}</td>
-                                                    <td>{{ ed.FeeType}}</td>
-                                                    <td>{{ ed.Description}}</td>
-                                                    <td><i class="fa fa-pencil-square-o m-r-5" data-ng-click="editFeesContainer(ed)" style="cursor: pointer;"></i>
-                                                    <i class="fa fa-trash-o fa-lg" data-ng-click="deleteFee(ed)"></i></td>
+                                                <tr data-ng-repeat="sd in filteredbatchData|orderBy:orderByField:reverseSort">
+                                                    <td>{{sd.BatchName}}</td>
+                                                    <td>{{sd.ResultType}}</td>
+                                                    <td>{{sd.AcademicTerm}}</td>
+                                                    <td>
+                                                        <i class="fa fa-pencil-square-o m-r-5" data-ng-click="editBatchContainer(sd)" style="cursor: pointer;"></i>
+                                                        <i class="fa fa-trash-o fa-lg" data-ng-click="deleteBatch(sd)" style="cursor: pointer;"></i>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-
                             </div> <!-- end card -->
                             <div class="row">
                                 <div class="col-sm-2">
                                     <div class="dataTables_length" id="datatable_length">
-
                                         <label>
-                                            Show
+                                            {{'shows'| translate}}
                                             <select name="datatable_length"
                                                     aria-controls="datatable"
                                                     class="form-control input-sm"
                                                     data-ng-model="numPerPage"
                                                     data-ng-options="x for x in showPerPageDataOptions"></select>
-                                            entries
+                                            {{'entries'| translate}}
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">
-                                        Showing {{currentPage*numPerPage - numPerPage  + 1}} to {{feesData.length > currentPage*numPerPage ? currentPage*numPerPage : feesData.length}} of {{feesData.length}} entries
+                                        {{'showing'| translate}} {{currentPage*numPerPage - numPerPage  + 1}} {{'to'| translate}} {{batchListItem.length > currentPage*numPerPage ? currentPage*numPerPage : batchListItem.length}} {{'of'| translate}} {{batchListItem.length}} {{'entries'| translate}}
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
                                         <pagination ng-model="currentPage"
-                                                    total-items="feesData.length"
+                                                    total-items="batchListItem.length"
                                                     max-size="maxSize"
                                                     boundary-links="true"
                                                     items-per-page="numPerPage">
@@ -191,22 +153,15 @@
                                 </div>
                             </div>
 
-
                         </div>
                         <!-- end col -->
 
-
-
                     </div>
                     <!-- end row -->
-
 
                 </div>
             </div>
         </div>
 
-
-
     </div>
 </div>
-

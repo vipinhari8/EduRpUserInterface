@@ -5,9 +5,9 @@
         .module('EduRpApp')
         .factory('tokenHandler', tokenHandler);
 
-    tokenHandler.inject = ['storageHandler'];
+    tokenHandler.inject = ['storageHandler','$window'];
 
-    function tokenHandler(storageHandler) {
+    function tokenHandler(storageHandler, $window) {
         var loginTokenId = 'kiks-app-loginToken-2015';
         var nameTokenId = 'kiks-app-loginName-2015';
         var redirectUrl = null;
@@ -18,7 +18,7 @@
 
             },
             getLoginToken: function () {
-                return storageHandler.getItem(loginTokenId);
+                return sessionStorage.accessToken;
 
             },
             removeLoginToken: function () {

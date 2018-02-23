@@ -89,13 +89,14 @@
                 };
                 feesListService.updateFee($scope.modFeesObj).then(function (data) {
                     angular.forEach($scope.filteredFeesData, function (v, k) {
-                        if (v.SubjectId === sid) {
+                        if (v.FeeId === fid) {
                             $scope.filteredFeesData[k]['FeeLabel'] = $scope.modFeesObj.FeeLabel;
                             $scope.filteredFeesData[k]['Amount'] = $scope.modFeesObj.Amount;
                             $scope.filteredFeesData[k]['FeeType'] = $scope.modFeesObj.FeeType;
                             $scope.filteredFeesData[k]['Description'] = $scope.modFeesObj.Description;
                         }
                     });
+                    $scope.modFeesObj = {};
                     $scope.Modals.closeFeesContainer();
                 }, function (error) {
                     alert("Please try again");
@@ -103,20 +104,18 @@
 
             }
         };
+
         //delete 
 
-        $scope.deleteFeesContainer = function (sd) {
+        $scope.deleteFee = function (fid) {
             if (confirm('Are you sure you want to delete this fee?')) {
-                feesListService.deleteFees(sd).then(function (data) {
-                    $scope.filteredFeesData = commonService.removeItemFromArray($scope.filteredSubjectData, sd);
+                feesListService.deleteFee(fid).then(function (data) {
+                    $scope.filteredFeesData = commonService.removeItemFromArray($scope.filteredFeesData, fid);
                 }, function (error) {
                     alert("Please try again");
                 });
             }
-
-
         };
-
 
         $scope.Modals = {
             openFeesContainer: function () {
@@ -127,14 +126,6 @@
                     scope: $scope,
                     backdrop: 'static'
                 });
-
-                $scope.modalInstance.result.then(
-                    function (subject) {
-
-                    },
-                    function (event) {
-
-                    });
             },
             closeFeesContainer: function () {
                 $scope.modalInstance.dismiss();
@@ -143,4 +134,4 @@
 
     };
 })
-    ();
+();

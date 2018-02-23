@@ -32,11 +32,14 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-2">
-                            <select class="form-control" data-ng-model="courseListItemValue">
-                                <option data-ng-repeat="courseList in courseListItem track by $index" data-ng-value="courseList.CourseId" data-ng-selected="true" data-ng-if="$index === 0">{{courseList.CourseCode}}</option>
-                                <option data-ng-repeat="courseList in courseListItem track by $index" data-ng-value="courseList.CourseId"  data-ng-if="$index > 0">{{courseList.CourseCode}}</option>
-                                <option value="other">Other..</option>
+                            <select class="form-control" data-ng-model="selectedCourse" data-ng-options="courseList.CourseName for courseList in courseListItem">
+                                <option value="">Select A Course</option>
                             </select>
+                            <!--<select class="form-control" data-ng-model="courseListItemValue">
+        <option data-ng-repeat="courseList in courseListItem track by $index" data-ng-value="courseList.CourseId" data-ng-selected="true" data-ng-if="$index === 0">{{courseList.CourseCode}}</option>
+        <option data-ng-repeat="courseList in courseListItem track by $index" data-ng-value="courseList.CourseId"  data-ng-if="$index > 0">{{courseList.CourseCode}}</option>
+        <option value="other">Other..</option>
+    </select>-->
                         </div>
                         <div class="col-lg-2">
                             <button class="btn btn-teal btn-bordered waves-light waves-effect w-xl m-b-5" data-ng-click="getSelectedCourseDetails()">Go</button>

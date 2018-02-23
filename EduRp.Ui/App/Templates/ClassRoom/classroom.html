@@ -158,13 +158,6 @@
                                                             <span ng-show="reverseSort">v</span>
                                                         </span>
                                                     </th>
-                                                    <th ng-click="orderByField='Status'; reverseSort = !reverseSort">
-                                                        Status
-                                                        <span ng-show="orderByField == 'Status'">
-                                                            <span ng-show="!reverseSort">^</span>
-                                                            <span ng-show="reverseSort">v</span>
-                                                        </span>
-                                                    </th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -178,10 +171,9 @@
                                                     <td>{{ ed.CapacityOfRoom}}</td>
                                                     <td>{{ ed.Facility}}</td>
                                                     <td>{{ ed.Location}}</td>
-                                                    <td>{{ ed.Status}}</td>
                                                     <td>
                                                         <i class="fa fa-pencil-square-o m-r-5" data-ng-click="editClassRoomContainer(ed)" style="cursor: pointer;"></i>
-                                                        <i class="fa fa-trash-o fa-lg" data-ng-click="deleteClassRoomContainer(cd)"></i>
+                                                        <i class="fa fa-trash-o fa-lg" data-ng-click="deleteclassRoom(ed)"></i>
                                                     </td>
                                                 </tr>
                                             </tbody>

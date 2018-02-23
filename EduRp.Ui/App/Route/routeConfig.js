@@ -21,6 +21,10 @@
                     requiresLogin: true,
                     controller: 'courseListController'
                 })
+                .when('/Admin/ProgramStudy', {
+                    templateUrl: '/App/Templates/ProgramStudyMaster/prgmstudymaster.html',
+                    controller: 'prgmStudyMasterController'
+                })
                 .when('/Admin/Subject', {
                     templateUrl: '/App/Templates/Subject/subject.html',
                     requiresLogin: true,
@@ -36,6 +40,11 @@
                     requiresLogin: true,
                     controller: 'createBatchController'
                 })
+                .when('/Admin/BatchMaster', {
+                    templateUrl: '/App/Templates/BatchMaster/batchMaster.html',
+                    requiresLogin: true,
+                    controller: 'batchMasterController'
+                })
                 .when('/Admin/AcademicBatch', {
                     templateUrl: '/App/Templates/AcademicBatch/academicbatch.html',
                     requiresLogin: true,
@@ -47,23 +56,28 @@
                     controller: 'taskListController'
                 })
                 .when('/Admin/ClassRoom', {
-                    templateUrl: '/App/Templates/Classroom/classroom.html',
+                    templateUrl: '/App/Templates/ClassRoom/classroom.html',
+                    requiresLogin: true,
                     controller: 'classRoomListController'
                 })
                 .when('/Admin/Employees', {
                     templateUrl: '/App/Templates/Employees/employees.html',
+                    requiresLogin: true,
                     controller: 'employeesListController'
                 })
                 .when('/Admin/ExaminationType', {
                     templateUrl: '/App/Templates/Examinationtype/examinationtype.html',
+                    requiresLogin: true,
                     controller: 'examinationTypeController'
                 })
                 .when('/Admin/Fees', {
                     templateUrl: '/App/Templates/Fees/fees.html',
+                    requiresLogin: true,
                     controller: 'feesListController'
                 })
                 .when('/Admin/NotificationType', {
                     templateUrl: '/App/Templates/NotificationType/notificationtype.html',
+                    requiresLogin: true,
                     controller: 'notificationTypeController'
                 })
                 .when('/Admin/Chapters', {

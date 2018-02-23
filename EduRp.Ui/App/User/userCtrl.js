@@ -29,6 +29,7 @@
             var result = userProfile.getProfile().isLoggedIn;
             return result;
         };
+
         vm.goToPage = function (page) {
             $location.path(page);
         };
@@ -79,6 +80,7 @@
 
             loginResult.then(function (resp) {
 
+                $location.path('/UserDashBoard');
                 vm.userName = resp.data.userName;
                 vm.userId = resp.data.userid;
                 vm.roleId = resp.data.roleid;
@@ -92,7 +94,9 @@
         };
 
         vm.logout = function () {
-            sessionStorage.removeItem('accessToken');
+            userProfile.logout();
+            //$location.path('/LoggedOut');
+            //sessionStorage.removeItem('accessToken');
             //var logoutResult = loginservice.logout();
             //logoutResult.then(function (resp) {
             //    userProfile.logout();

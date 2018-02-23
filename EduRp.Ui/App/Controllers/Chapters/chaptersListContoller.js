@@ -78,7 +78,7 @@
             $scope.Modals.openChaptersContainer();
         };
 
-        $scope.updateChaptersDetails = function (form, fid) {
+        $scope.updateChaptersDetails = function (form, chid) {
 
             if (form.$valid) {
                 var postData = {
@@ -90,13 +90,15 @@
                 };
                 chaptersListService.updateChapter($scope.modChaptersObj).then(function (data) {
                     angular.forEach($scope.filteredChaptersData, function (v, k) {
-                        if (v.SubjectId === sid) {
-                            $scope.filteredChaptersData[k]['FeeLabel'] = $scope.modChaptersObj.FeeLabel;
-                            $scope.filteredChaptersData[k]['Amount'] = $scope.modChaptersObj.Amount;
-                            $scope.filteredChaptersData[k]['FeeType'] = $scope.modChaptersObj.FeeType;
-                            $scope.filteredChaptersData[k]['Description'] = $scope.modChaptersObj.Description;
+                        if (v.ChapterId === chid) {
+                            $scope.filteredChaptersData[k]['ChapterNumber'] = $scope.modChaptersObj.ChapterNumber;
+                            $scope.filteredChaptersData[k]['ChapterTitle'] = $scope.modChaptersObj.ChapterTitle;
+                            $scope.filteredChaptersData[k]['ModeOfTeaching'] = $scope.modChaptersObj.ModeOfTeaching;
+                            $scope.filteredChaptersData[k]['ChapterDetails'] = $scope.modChaptersObj.ChapterDetails;
+                            $scope.filteredChaptersData[k]['SKS'] = $scope.modChaptersObj.SKS;
                         }
                     });
+                    $scope.modChaptersObj = {};
                     $scope.Modals.closeChaptersContainer();
                 }, function (error) {
                     alert("Please try again");
@@ -106,18 +108,15 @@
         };
         //delete 
 
-        $scope.deleteChaptersContainer = function (sd) {
+        $scope.deleteChaptersContainer = function (ed) {
             if (confirm('Are you sure you want to delete this Chapter?')) {
-                chaptersListService.deleteChapter(cd).then(function (data) {
-                    $scope.filteredChaptersData = commonService.removeItemFromArray($scope.filteredChaptersData, cd);
+                chaptersListService.deleteChapter(ed).then(function (data) {
+                    $scope.filteredChaptersData = commonService.removeItemFromArray($scope.filteredChaptersData, ed);
                 }, function (error) {
                     alert("Please try again");
                 });
             }
-
-
         };
-
 
         $scope.Modals = {
             openChaptersContainer: function () {
@@ -128,14 +127,6 @@
                     scope: $scope,
                     backdrop: 'static'
                 });
-
-                $scope.modalInstance.result.then(
-                    function (subject) {
-
-                    },
-                    function (event) {
-
-                    });
             },
             closeChaptersContainer: function () {
                 $scope.modalInstance.dismiss();
