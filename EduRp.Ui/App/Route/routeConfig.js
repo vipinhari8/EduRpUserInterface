@@ -93,6 +93,10 @@
                     templateUrl: '/App/Templates/ManageCourses/ManageCourses.html',
                     controller: 'managecourcesController'
                 })
+                .when('/ManageSubject', {
+                    templateUrl: '/App/Templates/ManageSubject/manageSubject.html',
+                    controller: 'manageSubjectController'
+                })
                 .when('/ManageTask', {
                     templateUrl: '/App/Templates/ManageTask/manageTask.html',
                     controller: 'manageTaskController'

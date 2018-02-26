@@ -325,10 +325,11 @@
                                     <li class="has-submenu" ng-if="vm.roleId ==='1'">
                                         <a href="#">Manage Settings</a>
                                         <ul class="submenu">
-                                            <li><a href="#">Manage Subjects</a></li>
+                                            <!--<li><a href="#">Manage Subject</a></li>-->
                                             <li><a ng-click="vm.goToPage('/ManageCourses')">Manage Courses</a></li>
                                             <li><a ng-click="vm.goToPage('/ManageProgramStudy')">Manage Program Study</a></li>
                                             <li><a ng-click="vm.goToPage('/ManageTask')">Manage Task</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageSubject')">Manage  Subject</a></li>
                                         </ul>
                                     </li>
 
@@ -562,6 +563,7 @@
     <script src="App/Services/Chapters/chaptersListService.js"></script>
     <script src="App/Services/Task/taskListService.js"></script>
     <script src="App/Services/ManageCourses/ManageCourseServices.js"></script>
+    <script src="App/Services/ManageSubject/manageSubjectService.js"></script>
     <script src="App/Services/ManageTask/manageTaskService.js"></script>
     <script src="App/Services/ScheduleExamination/scheduleExaminationService.js"></script>
     <script src="App/Services/StudentPortal/StudentPortalService.js"></script>
@@ -591,6 +593,7 @@
     <script src="App/Controllers/AcademicBatch/academicBatchController.js"></script>
     <script src="App/Controllers/Chapters/chaptersListContoller.js"></script>
     <script src="App/Controllers/ManageCourses/ManageCoursesController.js"></script>
+    <script src="App/Controllers/ManageSubject/manageSubjectController.js"></script>
     <script src="App/Controllers/ManageTask/manageTaskController.js"></script>
     <script src="App/Controllers/ScheduleExamination/scheduleExaminationController.js"></script>
     <script src="App/Controllers/BulkUpload/bulkUploadModuleController.js"></script>
