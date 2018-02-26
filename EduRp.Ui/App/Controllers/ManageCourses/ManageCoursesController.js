@@ -46,13 +46,13 @@
 
 
         /**
-         * Get all the couse details,
-         * on selected subject from dropdrown
+         * Get all the subject details,
+         * on selected couse from dropdrown
          */
         function getSelectedCourseDetails(){
-            managecourseService.getCourseListItem($scope.selectedCourse.CourseId).then(selectedCourseDetailSuccess, selectedCourseDetailError);
+            managecourseService.getCourseListItem($scope.selectedCourse).then(selectedCourseDetailSuccess, selectedCourseDetailError);
         }
-
+        //GridFunctionality
         function selectedCourseDetailSuccess(response){
             $scope.courseListDetails = response.results;
             $scope.showCourseDetailList = true;
@@ -67,7 +67,8 @@
          * get all the unlinked Subject and oprn the popup modal
          */
         function assignSubject(){
-            managecourseService.getNotLinkedCourseList().then(notLinkedCourseSuccess, notLinkedCourseError);
+            managecourseService.getNotLinkedCourseList($scope.selectedCourse).then(notLinkedCourseSuccess, notLinkedCourseError);
+            $scope.selectedCourse.CourseId;
         }
 
         function notLinkedCourseSuccess(response){

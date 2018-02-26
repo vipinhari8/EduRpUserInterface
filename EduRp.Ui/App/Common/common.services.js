@@ -5,7 +5,7 @@
         .module("common.services",
         ["ngResource"])
         .constant("appSettings",
-        {
+        { 
             serverPath: "http://edurpwebapi20180213021849.azurewebsites.net"
         });
 }());

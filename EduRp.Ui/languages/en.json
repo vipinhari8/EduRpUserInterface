@@ -66,6 +66,8 @@
   "removeCoursesBtn": "Remove Courses",
   "courseCodeColumn": "Course Code",
   "courseNameColumn": "Course Name",
+  "courseSKSColumn": "SKS",
+
   "subjectCodeColumn": "Subject Code",
   "subjectNameColumn": "Subject Name",
   "sksColumn": "SKS",
@@ -156,5 +158,24 @@
   "feeAmountColumn": "Amount",
   "feeTypeColumn": "Fee Type",
   "feeDescriptionColumn": "Description",
-  "noDataUnderGrid": "No Data Available"
+  "noDataUnderGrid": "No Data Available",
+
+  "breadcrumb1OfBatchMaster": "EduRP",
+  "breadcrumb2OfBatchMaster": "Dashboard",
+  "breadcrumb3OfBatchMaster": "Batch Master",
+  "batchMasterHeader": "Batch Master",
+  "batchMasterAddBtn": "Add New Batch",
+  "batchMasterNameColumn": "BatchName",
+  "batchMasterAcademicTermColumn": "AcademicTerm",
+
+
+  "breadcrumb1OfProgramStudyMaster": "EduRP",
+  "breadcrumb2OfProgramStudyMaster": "Dashboard",
+  "breadcrumb3OfProgramStudyMaster": "Program Study Master",
+  "ProgramStudyMasterHeader": "Program Study Master",
+  "ProgramStudyMasterAddBtn": "Add New Program Study",
+  "ProgramStudyMasterCodeColumn": "Program Study code",
+  "ProgramStudyMasterNameColumn": "Program Study Name",
+  "ProgramStudyMasterAcademicTermColumn": "Academic Term",
+  "ProgramStudyMasterSKSColumn": "SKS"
 }

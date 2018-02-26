@@ -13,7 +13,7 @@
         $scope.currentPage = 1
             , $scope.numPerPage = 5
             , $scope.maxSize = 5;
-        $scope.orderByField = 'ExamName';
+        $scope.orderByField = 'ExaminationTypeId';
         $scope.reverseSort = false;
         $scope.adjustExaminationList = function () {
             var begin = (($scope.currentPage - 1) * $scope.numPerPage)
@@ -35,6 +35,7 @@
             $scope.filterPanel = !$scope.filterPanel;
         };
 
+        
         //Get PageLoad
         (function startup() {
 
@@ -62,6 +63,8 @@
             if (form.$valid) {
                 $q.when([examinationTypeService.addExaminationType($scope.modExaminationTypeObj)]).then(function (data) {
                     $scope.filteredExaminationTypeData.push($scope.modExaminationTypeObj);
+                    $q.all();
+                    $scope.modExaminationTypeObj = {};
                     $scope.Modals.closeExaminationTypeContainer();
                 }, function (error) {
                     alert("please try later");
@@ -86,10 +89,10 @@
                     "ExamName": $scope.modExaminationTypeObj.ExamName,
                     "MinMarks": $scope.modExaminationTypeObj.MinMarks,
                     "MaxMarks": $scope.modExaminationTypeObj.MaxMarks,
-                     "FeeLabel": $scope.modExaminationTypeObj.FeeLabel,
-                      "Amount": $scope.modExaminationTypeObj.Amount
+                    "FeeLabel": $scope.modExaminationTypeObj.FeeLabel,
+                    "Amount": $scope.modExaminationTypeObj.Amount
                 };
-                feesListService.updateExaminationType($scope.modExaminationTypeObj).then(function (data) {
+                examinationTypeService.updateExaminationType($scope.modExaminationTypeObj).then(function (data) {
                     angular.forEach($scope.filteredExaminationTypeData, function (v, k) {
                         if (v.ExaminationTypeId === eid) {
                             $scope.filteredExaminationTypeData[k]['ExamGroup'] = $scope.modExaminationTypeObj.ExamGroup;
@@ -100,7 +103,9 @@
                             $scope.filteredExaminationTypeData[k]['Amount'] = $scope.modExaminationTypeObj.Amount;
                         }
                     });
+                    $scope.modExaminationTypeObj = {};
                     $scope.Modals.closeExaminationTypeContainer();
+
                 }, function (error) {
                     alert("Please try again");
                 });
@@ -147,4 +152,4 @@
 
     };
 })
-    ();
+();

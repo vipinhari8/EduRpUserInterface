@@ -21,8 +21,8 @@
             return execute('getCourseSubject', 'get', cid);
         };
 
-        var getNotLinkedCourseList = function () {
-            return execute('getNotLinkedCourseList', 'get', null);
+        var getNotLinkedCourseList = function (data) {
+            return execute('getNotLinkedCourseList', 'get', data);
         };
 
         var removeSubjectFromList = function(selectedSubject){
