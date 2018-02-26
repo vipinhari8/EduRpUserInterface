@@ -283,12 +283,12 @@
                                         <a href="#">Academic Settings</a>
                                         <!--ng-hide="vm.userid === 4"-->
                                         <ul class="submenu">
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/AcademicBatch')">Batch</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a href="#">Program Study</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/BatchMaster')">Batch</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ProgramStudy')">Program Study</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/CourseList/')">Show Course</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Subject')">Subjects</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Chapters')">Chapters</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Employees')">Chapters</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Employees')">Employees</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ExaminationType')">Examination Type</a></li>
                                             <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a ng-click="vm.goToPage('/ScheduleExamination')">Calendar</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Task')">Task</a></li>
@@ -325,10 +325,11 @@
                                     <li class="has-submenu" ng-if="vm.roleId ==='1'">
                                         <a href="#">Manage Settings</a>
                                         <ul class="submenu">
-                                            <li><a href="#">Manage Subjects</a></li>
+                                            <!--<li><a href="#">Manage Subject</a></li>-->
                                             <li><a ng-click="vm.goToPage('/ManageCourses')">Manage Courses</a></li>
                                             <li><a ng-click="vm.goToPage('/ManageProgramStudy')">Manage Program Study</a></li>
                                             <li><a ng-click="vm.goToPage('/ManageTask')">Manage Task</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageSubject')">Manage  Subject</a></li>
                                         </ul>
                                     </li>
 
@@ -547,6 +548,8 @@
     <script src="App/Services/Contact/contactService.js"></script>
     <script src="App/Services/Common/services.js"></script>
     <script src="App/Services/Course/courseListService.js"></script>
+    <script src="App/Services/BatchMaster/batchMasterService.js"></script>
+    <script src="App/Services/ProgramStudyMaster/PrgmStudyMasterService.js"></script>
     <script src="App/Services/Subject/subjectListService.js"></script>
     <script src="App/Services/ProgramStudy/programStudyService.js"></script>
     <script src="App/Services/CreateBatch/createBatchService.js"></script>
@@ -560,6 +563,7 @@
     <script src="App/Services/Chapters/chaptersListService.js"></script>
     <script src="App/Services/Task/taskListService.js"></script>
     <script src="App/Services/ManageCourses/ManageCourseServices.js"></script>
+    <script src="App/Services/ManageSubject/manageSubjectService.js"></script>
     <script src="App/Services/ManageTask/manageTaskService.js"></script>
     <script src="App/Services/ScheduleExamination/scheduleExaminationService.js"></script>
     <script src="App/Services/StudentPortal/StudentPortalService.js"></script>
@@ -570,7 +574,10 @@
 
     <script src="App/Controllers/Global/globalController.js"></script>
     <script src="App/Controllers/Account/loginController.js"></script>
+    <script src="App/User/logoutCtrl.js"></script>
     <script src="App/Controllers/Account/registerController.js"></script>
+    <script src="App/Controllers/BatchMaster/batchMasterController.js"></script>
+    <script src="App/Controllers/ProgramStudyMaster/prgmStudyMasterController.js"></script>
     <script src="App/Controllers/Contact/contactController.js"></script>
     <script src="App/Controllers/Contact/contactFormModalController.js"></script>
     <script src="App/Controllers/Course/courseListController.js"></script>
@@ -579,13 +586,14 @@
     <script src="App/Controllers/CreateBatch/createBatchCtrl.js"></script>
     <script src="App/Controllers/Task/taskListController.js"></script>
     <script src="App/Controllers/Fees/feesListController.js"></script>
-    <script src="App/Controllers/ClassRoom/classRoomListContoller.js"></script>
+    <script src="App/Controllers/ClassRoom/classRoomListController.js"></script>
     <script src="App/Controllers/ExaminationType/examinationTypeController.js"></script>
     <script src="App/Controllers/Employees/employeesListContoller.js"></script>
     <script src="App/Controllers/NotificationType/notificationTypeController.js"></script>
     <script src="App/Controllers/AcademicBatch/academicBatchController.js"></script>
     <script src="App/Controllers/Chapters/chaptersListContoller.js"></script>
     <script src="App/Controllers/ManageCourses/ManageCoursesController.js"></script>
+    <script src="App/Controllers/ManageSubject/manageSubjectController.js"></script>
     <script src="App/Controllers/ManageTask/manageTaskController.js"></script>
     <script src="App/Controllers/ScheduleExamination/scheduleExaminationController.js"></script>
     <script src="App/Controllers/BulkUpload/bulkUploadModuleController.js"></script>
@@ -593,6 +601,7 @@
     <script src="App/Controllers/StudentAdmissionForm/studentadmissionformController.js"></script>
     <script src="App/Controllers/ManageStudentCounsellingDetail/manageStudentCounsellingDetailController.js"></script>
     <script src="App/Controllers/ReviewAndApprove/reviewandapproveController.js"></script>
+    <script src="App/User/registrationController.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {

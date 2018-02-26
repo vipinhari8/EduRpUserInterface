@@ -1,45 +1,56 @@
-﻿var localhost = false;
+﻿var localhost = false;                                                                                                                                                                       
 var apiPrefix = 'http://edurpwebapi20180213021849.azurewebsites.net';
 //http://localhost:50381 
 //http://edurpwebapi20180213021849.azurewebsites.net
 
 var urlService =
-    { 
+    {
+        //------------------------------------------------------------------------Program Study Master---------------------------------------------------------------------------------------------
+        getPrgmStudyMasterList: localhost ? '' : apiPrefix + '/api/ProgramStudies/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
+        addPrgmStudyMaster: localhost ? '' : apiPrefix + '/api/ProgramStudies/Save',
+        updatePrgmStudyMaster: localhost ? '' : apiPrefix + '/api/ProgramStudies/Save',
+        deletePrgmStudyMaster: localhost ? '' : apiPrefix + '/api/ProgramStudies/Delete',
+//------------------------------------------------------------------------Batch Master---------------------------------------------------------------------------------------------
+        getbatchMasterList: localhost ? '' : apiPrefix + '/api/BatchMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
+        addbatchMaster: localhost ? '' : apiPrefix + '/api/BatchMasters/Save',
+        updatebatchMaster: localhost ? '' : apiPrefix + '/api/BatchMasters/Save',
+        deletebatchMaster: localhost ? '' : apiPrefix + '/api/BatchMasters/Delete',
+//-------------------------------------------------------------------------SubjectMaster--------------------------------------------------------------------------------------------
         getSubjectList: localhost ? '/sampleData/subjectList.json' : apiPrefix + '/api/SubjectMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addSubject: localhost ? '/sampleData/subjectList.json' : apiPrefix + '/api/SubjectMasters/Save/',
         updateSubject: localhost ? '/sampleData/subjectList.json' : apiPrefix + '/api/SubjectMasters/Save/',
         deleteSubject: localhost ? '/sampledata/subjectlist.json' : apiPrefix + '/api/SubjectMasters/Delete/',
-
+//-------------------------------------------------------------------------CourseMaster--------------------------------------------------------------------------------------------
         getCourseList: localhost ? '/sampleData/Course/list.json' : apiPrefix + '/api/CourseMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addCourse: localhost ? '/sampleData/Course/add.json' : apiPrefix + '/api/CourseMasters/Save/',
         updateCourse: localhost ? '/sampleData/Course/edit.json' : apiPrefix + '/api/CourseMasters/Save/',
         deleteCourse: localhost ? '/sampleData/Course/delete.json' : apiPrefix + '/api/CourseMasters/Delete',
-
+//-------------------------------------------------------------------------FeeMaster--------------------------------------------------------------------------------------------
         getFeesList: localhost ? '/sampleData/feesList.json' : apiPrefix + '/api/Fees/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addFee: localhost ? ' ' : apiPrefix + '/api/Fees/Save/',
         updateFee: localhost ? ' ' : apiPrefix + '/api/Fees/Save/',
         deleteFee: localhost ? ' ' : apiPrefix + '/api/Fees/Delete/',
-
+//-------------------------------------------------------------------------ClassRoomMaster--------------------------------------------------------------------------------------------
         getClassRoomList: localhost ? '/sampleData/classRoomList.json' : apiPrefix + '/api/ClassRoomMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addClassRoom: localhost ? ' ' : apiPrefix + '/api/ClassRoomMasters/Save/',
         updateClassRoom: localhost ? ' ' : apiPrefix + '/api/ClassRoomMasters/Save/',
-        deletesubject: localhost ? ' ' : apiPrefix + '/api/ClassRoomMasters/Delete/',
-
+        deleteClassRoom: localhost ? ' ' : apiPrefix + '/api/ClassRoomMasters/Delete/',
+//-------------------------------------------------------------------------EmployeeMaster--------------------------------------------------------------------------------------------
         getEmployeesList: localhost ? '/sampleData/getEmployeesList.json' : apiPrefix + '/api/Employees/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addEmployee: localhost ? '/sampleData/getEmployeesList.json' : apiPrefix + '/api/Employees/Save',
         updateEmployee: localhost ? '/sampleData/getEmployeesList.json' : apiPrefix + '/api/Employees/Save',
         deleteEmployee: localhost ? '/sampleData/getEmployeesList.json' : apiPrefix + '/api/Employees/Delete',
-
+//-------------------------------------------------------------------------ChapterMaster--------------------------------------------------------------------------------------------
         getChaptersList: localhost ? '/sampleData/chapterList.json' : apiPrefix + '/api/ChapterMasters/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addChapter: localhost ? ' ' : apiPrefix + '/api/ChapterMasters/Save/',
         updateChapter: localhost ? ' ' : apiPrefix + '/api/ChapterMasters/Save/',
         deleteChapter: localhost ? ' ' : apiPrefix + '/api/ChapterMasters/Delete/',
-
+//-------------------------------------------------------------------------ExaminationTypesMaster-------------------------------------------------------------------------------------
         getExaminationTypeList: localhost ? '/sampleData/examinationtypeList.json' : apiPrefix + '/api/ExaminationTypes/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addExaminationType: localhost ? ' ' : apiPrefix + '/api/ExaminationTypes/Save/',
         updateExaminationType: localhost ? ' ' : apiPrefix + '/api/ExaminationTypes/Save/',
         deleteExaminationType: localhost ? ' ' : apiPrefix + '/api/ExaminationTypes/Delete/',
-
+//-------------------------------------------------------------------------TaskMaster--------------------------------------------------------------------------------------------------
         getTaskList: localhost ? '/sampleData/tasksList.json' : apiPrefix + '/api/Tasks/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addTask: localhost ? ' ' : apiPrefix + '/api/Tasks/Save/',
         updateTask: localhost ? ' ' : apiPrefix + '/api/Tasks/Save/',
