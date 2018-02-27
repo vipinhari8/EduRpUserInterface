@@ -29,7 +29,8 @@
             return execute('removeSubjectfromList', 'delete', selectedSubject);
         };
 
-        var addSubjectInCorseList = function(addSubjectList){
+        var addSubjectInCorseList = function (addSubjectList) {
+            debugger;
             return execute('addSubjectInList', 'post', addSubjectList);
         };
         var _getCourseSubjectList = function (cid) {
