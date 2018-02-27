@@ -5,9 +5,9 @@
         .module('EduRpApp')
         .controller('managecourcesController', managecourcesCtrl);
 
-    managecourcesCtrl.$inject = ['$scope', '$q', '$log', 'managecourseService', 'commonService', '$modal'];
+    managecourcesCtrl.$inject = ['$scope', '$q', '$log', 'managecourseService', 'commonService', '$modal','errorHandler'];
 
-    function managecourcesCtrl($scope, $q, $log, managecourseService, commonService, $modal) {
+    function managecourcesCtrl($scope, $q, $log, managecourseService, commonService, $modal, errorHandler) {
 
         $scope.courseListItem = [];
         $scope.courseListDetails = undefined;
@@ -113,7 +113,7 @@
         }
 
         function removeSubjectSuccess(response){
-            managecourseService.getCourseListItem($scope.selectedCourse.CourseId).then(selectedCourseDetailSuccess, selectedCourseDetailError);
+            managecourseService.getCourseListItem($scope.selectedCourse).then(selectedCourseDetailSuccess, selectedCourseDetailError);
         }
 
         function removeSubjectError(response){
@@ -182,35 +182,46 @@
              * else proceed the journey
              */
             angular.forEach($scope.notLinkedSubjects, function(subject){
-                if(subject.selected){
+                if (subject.selected) {
+                    var courseID = angular.copy($scope.selectedCourse.CourseId);
                     var subjectID = angular.copy(subject.SubjectId);
                     var subjectCode = angular.copy(subject.SubjectCode);
                     var subjectName = angular.copy(subject.SubjectName)
                     var subdata = {
+                        "courseId": courseID,
                         "subjectId" : subjectID,
-                        "subjectCode" : subjectCode,
-                        "subjectName" : subjectName
+                        "SubjectCode" : subjectCode,
+                        "SubjectName" : subjectName
                     };
                     subdata = angular.extend({},cookieData, subdata);
                     addSubjectList.push(subdata);
                 }
             });
             console.log(addSubjectList);
-            if(addSubjectList.length === 0){
-                alert("Please Select a subject");
-            }else{
-                managecourseService.addSubjectInCorseList(addSubjectList).then(addSubjectInCourseListSuccess, addSubjectInCourseListError);
+
+            if (addSubjectList.length !== 0) {
+                managecourseService.addSubjectInCorseList(addSubjectList).then(linkSubjectSuccess, linkSubjectError);
+            } else {
+                alert("Please Select an subject");
             }
-        }
 
-        function addSubjectInCourseListSuccess(){
-            console.log("Success");
-            managecourseService.getCourseListItem().then(selectedCourseDetailSuccess, selectedCourseDetailError);
-            $scope.Modals.closeModalContainer();
-        }
+            function linkSubjectSuccess(response) {
+                managecourseService.getCourseListItem($scope.selectedCourse).then(selectedCourseDetailSuccess, selectedCourseDetailError);
+                $scope.Modals.closeModalContainer();
+            }
 
-        function addSubjectInCourseListError(){
-            console.log("Error");
+            function linkSubjectError(response) {
+                console.log("Error");
+            }
+            //if (addSubjectList.length !==0) {
+            //    $q.when([managecourseService.addSubjectInCorseList(addSubjectList)]).then(function (data) {
+            //            $scope.courseListDetails.push(addSubjectList);
+            //            $scope.Modals.closeModalContainer();
+            //    },function (error) {
+            //            alert("please select a subject");
+            //    });
+            //}
+            
         }
 
         /**

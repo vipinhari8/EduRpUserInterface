@@ -47,7 +47,7 @@
                 return cd;
             }
             else if (['getCourseSubject',
-                        'getNotLinkedCourseList'
+                      'getNotLinkedCourseList',
                        ].indexOf(url) !== -1) {
                 var cd = this.fetchMainCookieData();
                 cd.cId = data.CourseId;

@@ -10,7 +10,7 @@
     function RegisterController($scope, $location, $timeout, AuthService) {
 
         $scope.savedSuccessfully = false;
-        $scope.message = "";
+        $scope.message = ""; 
 
         $scope.registration = {
             firstName: "",
