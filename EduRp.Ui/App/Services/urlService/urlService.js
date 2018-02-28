@@ -5,7 +5,7 @@ var apiPrefix = 'http://edurpwebapi20180213021849.azurewebsites.net';
 
 var urlService =
     {
-        //------------------------------------------------------------------------Program Study Master---------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------Program Study Master---------------------------------------------------------------------------------------------
         getPrgmStudyMasterList: localhost ? '' : apiPrefix + '/api/ProgramStudies/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         addPrgmStudyMaster: localhost ? '' : apiPrefix + '/api/ProgramStudies/Save',
         updatePrgmStudyMaster: localhost ? '' : apiPrefix + '/api/ProgramStudies/Save',
@@ -55,17 +55,14 @@ var urlService =
         addTask: localhost ? ' ' : apiPrefix + '/api/Tasks/Save/',
         updateTask: localhost ? ' ' : apiPrefix + '/api/Tasks/Save/',
         deleteTask: localhost ? ' ' : apiPrefix + '/api/Tasks/Delete/',
-        
-        getProgramStudyList: localhost ? '/sampleData/programStudy/programStudyList.json' : apiPrefix +'/api/ProgramStudies/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
-        addProgramStudy: localhost ? '/sampleData/programStudy/addProgramStudy.json' : apiPrefix + '/api/ProgramStudies/Save/',
-        
-        //scheduledExam
+
+//-------------------------------------------------------------------------------------scheduledExam-------------------------------------------------------------------------------------
 
         getScheduleDetails: localhost ? '/sampleData/ScheduleExam/scheduledExam.json' : '/sampleData/ScheduleExam/scheduledExam.json',
 
         //StudentAdmissionForm
 
-        getDynamicFormData: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : '/sampleData/StudentPortal/stdapplicationformdetail.json',
+        //getDynamicFormData: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : '/sampleData/StudentPortal/stdapplicationformdetail.json',
         getDynamicFormData: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormDetail?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
         getApplicationFormFeeDetail: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormFeeDetail?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
         getApplicationFormHeader: localhost ? '' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormHeader?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
@@ -82,7 +79,10 @@ var urlService =
          
         getreviewandapproveDetail: localhost ? '/sampleData/ReviewAndApproveDetail/reviewandapprovedetail.json' : apiPrefix + '/api/StudentDashBoard/GetApplicationFormList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&batchid={{bId}}&psid={{PsId}}&CourseId={{cId}}',
 
-     
+
+
+        getProgramStudyList: localhost ? '/sampleData/programStudy/programStudyList.json' : apiPrefix + '/api/ProgramStudies/Get?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
+        addProgramStudy: localhost ? '/sampleData/programStudy/addProgramStudy.json' : apiPrefix + '/api/ProgramStudies/Save/',
         getLinkedCoursesOfProgramStudy: localhost ? '/sampleData/programStudy/courseList.json' : apiPrefix + '/api/CourseMasters/GetProgramStudyCourseList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&psid={{PsId}}',
         getLinkedFeesOfProgramStudy: localhost ? '/sampleData/programStudy/feesList.json' : apiPrefix + '/api/Fees/GetProgramStudyFeesList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&psid={{PsId}}',
         getUnlinkedCoursesOfProgramStudy: localhost ? '/sampleData/programStudy/getUnlinkedCoursesOfProgramStudy.json' : apiPrefix + '/api/ProgramStudyCourseAssociations/GetProgramStudyCourseNotLinkedList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&psid={{PsId}}',
@@ -111,7 +111,17 @@ var urlService =
 
         getBulkModule: localhost ? '/sampleData/bulkUpload.json' : apiPrefix + '/api/BulkLoadMaster/Get/1',
 
-        //manage task 
- 
+//-------------------------------------------------------------------------------------------- manage Subject--------------------------------------------------------------------------------------------------
+        getSubjectChapter: localhost ? '' : apiPrefix + '/api/ChapterMasters/GetSubjectChapterList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&sbjid={{subjid}}',
+        getNotLinkedSubjectList: localhost ? '' : apiPrefix + '/api/SubjectChapterAssociations/GetSubjectChapterNotLinkedList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&subjid={{subjid}}',
+        UnlinkChapter: localhost ? '' : apiPrefix + '/api/SubjectChapterAssociations/UnLink/',
+        LinkChapter: localhost ? '' : apiPrefix + '/api/SubjectChapterAssociations/Link/',
+        getSubjectChapterList: localhost ? '' : apiPrefix + '/api/SubjectChapterAssociations/GetSubjectChapterList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&subjid={{subjid}}',
+//-----------------------------------------------------------------------------------------------manageTask---------------------------------------------------------------------------------------------------
+        getTaskEmployee: localhost ? '' : apiPrefix + '/api/Employees/GetTaskStaffList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&taskid={{taskid}}',
+        getNotLinkedTaskList: localhost ? '' : apiPrefix + '/api/TaskStaffAssociations/GetTaskStaffNotLinkedList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&taskid={{taskid}}',
+        removeEmployeeFromList: localhost ? '' : apiPrefix + '/api/TaskStaffAssociations/UnLink/',
+        addEmployeeInTaskList: localhost ? '' : apiPrefix + '/api/TaskStaffAssociations/Link/',
+        //getTaskEmployeeList: localhost ? '' : apiPrefix + '/api/TaskStaffAssociations/GetSubjectChapterList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&taskid={{taskid}}',
 
     };

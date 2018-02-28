@@ -18,31 +18,32 @@
 
 
         var getSubjectListItem = function (cid) {
-            return execute('getSubjectChapter', 'get', sid);
+            return execute('getSubjectChapter', 'get', cid);
         };
 
         var getNotLinkedSubjectList = function (data) {
             return execute('getNotLinkedSubjectList', 'get', data);
         };
 
-        var removeChapterFromList = function (selectedSubject) {
-            return execute('removeChapterFromList', 'delete', selectedChapter);
+        var _removeChapterFromList = function (data) {
+            return execute('UnlinkChapter', 'delete', data);
         };
 
-        var addChapterInSubjectList = function (addSubjectList) {
-            return execute('addChapterInSubjectList', 'post', addChapterList);
+        var _addChapterInSubjectList = function (data) {
+            debugger;
+            return execute('LinkChapter', 'post', data);
         };
         var _getSubjectChapterList = function (cid) {
-            return execute('getCourseSubjectList', 'get', cid);
+            return execute('getSubjectChapterList', 'get', cid);
         };
 
         return {
-            getCourseList: getCourseList,
-            getCourseListItem: getCourseListItem,
-            getNotLinkedCourseList: getNotLinkedCourseList,
-            removeSubjectFromList: removeSubjectFromList,
-            addSubjectInCorseList: addSubjectInCorseList,
-            getCourseSubjectList: _getCourseSubjectList
+            getSubjectList: getSubjectList,
+            getSubjectListItem: getSubjectListItem,
+            getNotLinkedSubjectList: getNotLinkedSubjectList,
+            removeChapterFromList: _removeChapterFromList,
+            addChapterInSubjectList: _addChapterInSubjectList,
+            getSubjectChapterList: _getSubjectChapterList
         };
 
     }

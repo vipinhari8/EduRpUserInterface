@@ -65,6 +65,15 @@
                 cd.cId = data.CourseId;
                 return cd;
             }
+            else if (['getSubjectChapter', 'getNotLinkedSubjectList'].indexOf(url) !== -1) {
+                var cd = this.fetchMainCookieData();
+                cd.subjid = data.SubjectId;
+                return cd;
+            } else if (['getTaskEmployee', 'getNotLinkedTaskList'].indexOf(url) !== -1) {
+                var cd = this.fetchMainCookieData();
+                cd.taskid = data.TaskId;
+                return cd;
+            }
             else {
                 return this.fetchMainCookieData();
             }

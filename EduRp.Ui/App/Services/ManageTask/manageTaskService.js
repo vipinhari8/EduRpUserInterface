@@ -17,33 +17,33 @@
         };
 
 
-        var getTaskListItem = function (tid) {
-            return execute('getTaskStaffList', 'get',tid);
+        var getTaskListItem = function (data) {
+            return execute('getTaskEmployee', 'get', data);
         };
 
-        var getNotLinkedTaskList = function () {
-            return execute('getNotLinkedTaskList', 'get', null);
+        var getNotLinkedTaskList = function (data) {
+            return execute('getNotLinkedTaskList', 'get', data);
         };
 
-        var removeEmployeefromList = function (selectedEmployee) {
-            return execute('removeEmployeefromList', 'delete', selectedEmployee);
+        var removeEmployeeFromList = function (data) {
+            return execute('removeEmployeeFromList', 'delete', data);
         };
 
-        var getlinkedstaffList = function (taskdata) {
-            return execute('getlinkedstaffList', 'get', taskdata);
+        var addEmployeeInTaskList = function (data) {
+            debugger;
+            return execute('addEmployeeInTaskList', 'post', data);
         };
-
-        var addEmployeeInTaskList = function (addEmployeeList) {
-            return execute('addEmployeeInList', 'post', addEmployeeList);
-        };
+        //var _getTaskEmployeeList = function (data) {
+        //    return execute('getTaskEmployeeList', 'get', data);
+        //};
 
         return {
             getTaskList: getTaskList,
             getTaskListItem: getTaskListItem,
             getNotLinkedTaskList: getNotLinkedTaskList,
-            removeEmployeefromList: removeEmployeefromList,
-            addEmployeeInTaskList: addEmployeeInTaskList,
-            getlinkedstaffList: getlinkedstaffList
+            removeEmployeeFromList: removeEmployeeFromList,
+            addEmployeeInTaskList: addEmployeeInTaskList
+            //getTaskEmployeeList: _getTaskEmployeeList
         };
 
     }

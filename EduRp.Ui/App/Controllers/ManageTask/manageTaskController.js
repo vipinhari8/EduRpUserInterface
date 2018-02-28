@@ -5,18 +5,17 @@
         .module('EduRpApp')
         .controller('manageTaskController', manageTaskController);
 
-    manageTaskController.$inject = ['$scope', '$q', '$log', 'manageTaskService', 'commonService', '$modal'];
+    manageTaskController.$inject = ['$scope', '$q', '$log', 'manageTaskService', 'commonService', '$modal', 'errorHandler'];
 
-    function manageTaskController($scope, $q, $log, manageTaskService, commonService, $modal) {
+    function manageTaskController($scope, $q, $log, manageTaskService, commonService, $modal, errorHandler) {
 
-        $scope.taskListItem = undefined;
+        $scope.taskListItem = [];
         $scope.taskListDetails = [];
         $scope.showTaskDetailList = false;
         $scope.selectedTask = undefined;
         //$scope.selectAllCourseList = false;
         $scope.assignEmployeeModal = false;
         $scope.notLinkedEmployees = undefined;
-        $scope.selectedTask = null;
         //$scope.selectCourse = undefined;
 
         $scope.init = init;
@@ -29,35 +28,32 @@
         $scope.toggleNotlinkedEmployee = toggleNotlinkedEmployee;
         $scope.selectAllNotlinkedListItems = selectAllNotlinkedListItems;
 
-        
+        init();
 
-        
+        function init() {
+            manageTaskService.getTaskList().then(taskListSuccess, taskListError);
+        }
 
         function taskListSuccess(response) {
             $scope.taskListItem = response.results;
-            $scope.taskListItemValue = $scope.taskListItem[0];
+            console.log(response);
+            console.log($scope.taskListItem);
         }
 
         function taskListError(response) {
             $log.info("Task list item error");
         }
 
-        function init() {
-            manageTaskService.getTaskList().then(taskListSuccess, taskListError);
-        }
 
-        init();
         /**
-         * Get all the couse details,
-         * on selected subject from dropdrown
+         * Get all the subject details,
+         * on selected couse from dropdrown
          */
-        function getSelectedTaskDetails(selectedTask) {
-            manageTaskService.getTaskList($scope.selectedTask).then(selectedTaskDetailSuccess, selectedTaskDetailError);
+        function getSelectedTaskDetails() {
+            manageTaskService.getTaskListItem($scope.selectedTask).then(selectedTaskDetailSuccess, selectedTaskDetailError);
         }
-
+        //GridFunctionality
         function selectedTaskDetailSuccess(response) {
-            Console.log("hi");
-            Console.log(response);
             $scope.taskListDetails = response.results;
             $scope.showTaskDetailList = true;
         }
@@ -71,7 +67,8 @@
          * get all the unlinked Subject and oprn the popup modal
          */
         function assignEmployee() {
-            manageTaskService.getNotLinkedTaskList().then(notLinkedTaskSuccess, notLinkedTaskError);
+            manageTaskService.getNotLinkedTaskList($scope.selectedTask).then(notLinkedTaskSuccess, notLinkedTaskError);
+            $scope.selectedTask.TaskId;
         }
 
         function notLinkedTaskSuccess(response) {
@@ -100,11 +97,11 @@
                 if (employee.selected) {
                     var employeeID = angular.copy(employee.EmployeeId);
                     var taskID = angular.copy(employee.TaskId);
-                    var subdata = {
-                        "employeeId": employeeID,
-                        "taskId": taskID
+                    var empdata = {
+                        "EmployeeId": employeeID,
+                        "TaskId": taskID
                     };
-                    Empdata = angular.extend({}, cookieData, empdata);
+                    empdata = angular.extend({}, cookieData, empdata);
                     selectedEmployee.push(empdata);
                 }
             });
@@ -116,7 +113,7 @@
         }
 
         function removeEmployeeSuccess(response) {
-            manageTaskService.gettaskListItem().then(selectedTaskDetailSuccess, selectedTaskDetailError);
+            manageTaskService.getTaskListItem($scope.selectedTask).then(selectedTaskDetailSuccess, selectedTaskDetailError);
         }
 
         function removeEmployeeError(response) {
@@ -157,7 +154,7 @@
             if ($scope.selectAllNotlinkedList) {
                 flag = false;
             }
-            angular.forEach($scope.notLinkedSubjects, function (a, b) {
+            angular.forEach($scope.notLinkedEmployees, function (a, b) {
                 a.selected = flag;
                 $scope.selectAllNotlinkedList = flag;
             });
@@ -173,9 +170,9 @@
         }
 
         /**
-        * Below method will execute, when click
-        * on Assign Subject button from popup
-        */
+         * Below method will execute, when click
+         * on Assign Subject button from popup
+         */
         function addEmployeeIntoList() {
             var addEmployeeList = [];
             var cookieData = commonService.fetchMainCookieData();
@@ -186,34 +183,44 @@
              */
             angular.forEach($scope.notLinkedEmployees, function (employee) {
                 if (employee.selected) {
+                    var taskID = angular.copy($scope.selectedTask.TaskId);
                     var employeeID = angular.copy(employee.EmployeeId);
-                    var employeeCode = angular.copy(employee.EmployeeCode);
-                    var employeeName = angular.copy(employee.EmployeeName)
-                    var subdata = {
-                        "employeeId": employeeID,
-                        "employeeCode": employeeCode,
-                        "employeeName": employeeName
+                    //var subjectCode = angular.copy(subject.SubjectCode);
+                    //var subjectName = angular.copy(subject.SubjectName)
+                    var empdata = {
+                        "TaskId": taskID,
+                        "EmployeeId": employeeID
+                       
                     };
                     empdata = angular.extend({}, cookieData, empdata);
                     addEmployeeList.push(empdata);
                 }
             });
             console.log(addEmployeeList);
-            if (addEmployeeList.length === 0) {
-                alert("Please Select a employee");
+
+            if (addEmployeeList.length !== 0) {
+                manageTaskService.addEmployeeInTaskList(addEmployeeList).then(linkEmployeeSuccess, linkEmployeeError);
             } else {
-                manageTaskService.addEmployeeInTaskList(addEmployeeList).then(addEmployeeInTaskListSuccess, addEmployeeInTaskListError);
+                alert("Please Select an employee");
             }
-        }
 
-        function addEmployeeInTaskListSuccess() {
-            console.log("Success");
-            manageTaskService.getTaskListItem().then(selectedTaskDetailSuccess, selectedTaskDetailError);
-            $scope.Modals.closeModalContainer();
-        }
+            function linkEmployeeSuccess(response) {
+                manageTaskService.getTaskListItem($scope.selectedTask).then(selectedTaskDetailSuccess, selectedTaskDetailError);
+                $scope.Modals.closeModalContainer();
+            }
 
-        function addEmployeeInTaskListError() {
-            console.log("Error");
+            function linkEmployeeError(response) {
+                console.log("Error");
+            }
+            //if (addSubjectList.length !==0) {
+            //    $q.when([managecourseService.addSubjectInCorseList(addSubjectList)]).then(function (data) {
+            //            $scope.courseListDetails.push(addSubjectList);
+            //            $scope.Modals.closeModalContainer();
+            //    },function (error) {
+            //            alert("please select a subject");
+            //    });
+            //}
+
         }
 
         /**
@@ -231,7 +238,7 @@
                 });
 
                 $scope.modalInstance.result.then(
-                    function (employee) {
+                    function (subject) {
 
                     },
                     function (event) {
