@@ -13,7 +13,7 @@
                                 <a href="#">Dashboard</a>
                             </li>
                             <li class="active">
-                                Manage Subject
+                                Subject
                             </li>
                         </ol>
                     </div>
@@ -36,10 +36,10 @@
                                 <option value="">Select A Subject</option>
                             </select>
                             <!--<select class="form-control" data-ng-model="courseListItemValue">
-        <option data-ng-repeat="courseList in courseListItem track by $index" data-ng-value="courseList.CourseId" data-ng-selected="true" data-ng-if="$index === 0">{{subjectList.SubjectCode}}</option>
-        <option data-ng-repeat="courseList in courseListItem track by $index" data-ng-value="courseList.CourseId"  data-ng-if="$index > 0">{{subjectList.SubjectCode}}</option>
-        <option value="other">Other..</option>
-    </select>-->
+                                <option data-ng-repeat="courseList in courseListItem track by $index" data-ng-value="courseList.CourseId" data-ng-selected="true" data-ng-if="$index === 0">{{courseList.CourseCode}}</option>
+                                <option data-ng-repeat="courseList in courseListItem track by $index" data-ng-value="courseList.CourseId"  data-ng-if="$index > 0">{{courseList.CourseCode}}</option>
+                                <option value="other">Other..</option>
+                            </select>-->
                         </div>
                         <div class="col-lg-2">
                             <button class="btn btn-teal btn-bordered waves-light waves-effect w-xl m-b-5" data-ng-click="getSelectedSubjectDetails()">Go</button>
@@ -58,11 +58,11 @@
                                         Assigned Chapters
                                     </h4>
                                 </div>
-                                <div class="col-lg-2 pull-right">
-                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" id="removesubjects" data-ng-click="removeSelectedChapter()">Remove Chapters</button>
+                                <div class="col-lg-4 pull-right">
+                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5 pull-right" id="removechapters" data-ng-click="removeSelectedChapter()">Remove Chapters</button>
                                 </div>
                                 <div class="col-lg-2 pull-right">
-                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" data-ng-click="assignChapter()">Assign Chapters</button>
+                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5 pull-right" data-ng-click="assignChapter()">Assign Chapters</button>
                                 </div>
                             </div>
                             <br>
@@ -81,7 +81,7 @@
                                                 <div class="row">
                                                     <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label for="userName">Chapter Code</label>
+                                                            <label for="userName">Subject Code</label>
                                                             <select id="heard" class="form-control" multiple>
                                                                 <option value="0001">0001</option>
                                                                 <option value="0002">0002</option>
@@ -92,7 +92,7 @@
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label for="userName">Chapter Name</label>
+                                                            <label for="userName">Subject Name</label>
                                                             <select id="heard" class="form-control" multiple>
                                                                 <option value="">Choose..</option>
                                                                 <option value="Computer Sciences">Computer Sciences</option>
@@ -126,9 +126,9 @@
                                             <thead>
                                                 <tr>
                                                     <th>Chapter Number</th>
-                                                    <th>ChapterTitle</th>
+                                                    <th>Chapter Title</th>
                                                     <th>ModeOfTeaching</th>
-                                                    <th>ChapterDetails</th>
+                                                    <th>Chapter Details</th>
                                                     <th><label><input type="checkbox" data-ng-model="selectAllSubjectList" data-ng-click="selectAllSubjects()" />&nbsp;Select All</label></th>
                                                 </tr>
                                             </thead>
@@ -138,7 +138,7 @@
                                                     <td>{{subjectDetails.ChapterTitle}}</td>
                                                     <td>{{subjectDetails.ModeOfTeaching}}</td>
                                                     <td>{{subjectDetails.ChapterDetails}}</td>
-                                                    <td><input type="checkbox" data-ng-model="courseDetails.selected" data-ng-change="toggleSubjectDetails()" /></td>
+                                                    <td><input type="checkbox" data-ng-model="subjectDetails.selected" data-ng-change="toggleSubjectDetails()" /></td>
                                                 </tr>
                                             </tbody>
                                         </table>

@@ -5,12 +5,12 @@
         .module('EduRpApp')
         .controller('manageSubjectController', manageSubjectController);
 
-    manageSubjectController.$inject = ['$scope', '$q', '$log', 'manageSubjectService', 'commonService', '$modal'];
+    manageSubjectController.$inject = ['$scope', '$q', '$log', 'manageSubjectService', 'commonService', '$modal', 'errorHandler'];
 
-    function manageSubjectController($scope, $q, $log, manageSubjectService, commonService, $modal) {
+    function manageSubjectController($scope, $q, $log, manageSubjectService, commonService, $modal, errorHandler) {
 
         $scope.subjectListItem = [];
-        $scope.subjectListDetails = undefined;
+        $scope.subjectListDetails = [];
         $scope.showSubjectDetailList = false;
         $scope.selectedSubject = undefined;
         //$scope.selectAllCourseList = false;
@@ -23,7 +23,7 @@
         $scope.assignChapter = assignChapter;
         $scope.removeSelectedChapter = removeSelectedChapter;
         $scope.addChapterIntoList = addChapterIntoList;
-        $scope.selectAllSubject = selectAllSubject;
+        $scope.selectAllSubjects = selectAllSubjects;
         $scope.toggleSubjectDetails = toggleSubjectDetails;
         $scope.toggleNotlinkedChapter = toggleNotlinkedChapter;
         $scope.selectAllNotlinkedListItems = selectAllNotlinkedListItems;
@@ -46,7 +46,7 @@
 
 
         /**
-         * Get all the subject details,
+         * Get all the chapter details,
          * on selected couse from dropdrown
          */
         function getSelectedSubjectDetails() {
@@ -59,7 +59,7 @@
         }
 
         function selectedSubjectDetailError(response) {
-            $log.info("Subject details error");
+            $log.info("subject details error");
         }
 
         /**
@@ -71,7 +71,7 @@
             $scope.selectedSubject.SubjectId;
         }
 
-        function notLinkedChapterSuccess(response) {
+        function notLinkedSubjectSuccess(response) {
             $scope.notLinkedChapters = response.results;
             $scope.Modals.openChapterContainer();
         }
@@ -95,11 +95,11 @@
              */
             $scope.subjectListDetails.forEach(function (chapter) {
                 if (chapter.selected) {
-                    var chapterID = angular.copy(chapter.ChapterId);
-                    var subjectID = angular.copy(chapter.SubjectId);
+                    var ChapterID = angular.copy(chapter.ChapterId);
+                    var SubjectID = angular.copy(chapter.SubjectId);
                     var chapdata = {
-                        "chapterId": chapterID,
-                        "subjectId": subjectID
+                        "ChapterId": ChapterID,
+                        "SubjectId": SubjectID
                     };
                     chapdata = angular.extend({}, cookieData, chapdata);
                     selectedChapter.push(chapdata);
@@ -113,7 +113,7 @@
         }
 
         function removeChapterSuccess(response) {
-            manageSubjectService.getSubjectListItem($scope.selectedSubject.SubjectId).then(selectedSubjectDetailSuccess, selectedSubjectDetailError);
+            manageSubjectService.getSubjectListItem($scope.selectedSubject).then(selectedSubjectDetailSuccess, selectedSubjectDetailError);
         }
 
         function removeChapterError(response) {
@@ -181,40 +181,53 @@
              * if array is blank, alert for select,
              * else proceed the journey
              */
-            angular.forEach($scope.notLinkedSubjects, function (chapter) {
-                if (subject.selected) {
-                    var chapterID = angular.copy(chapter.ChapterId);
-                    var chapterNumber = angular.copy(chapter.chapterNumber);
-                    var chapterTitle = angular.copy(chapter.chapterTitle);
+            angular.forEach($scope.notLinkedChapters, function (chapter) {
+                if (chapter.selected) {
+                    var SubjectId = angular.copy($scope.selectedSubject.SubjectId);
+                    var ChapterId = angular.copy(chapter.ChapterId);
+                    var ChapterNumber = angular.copy(chapter.ChapterNumber);
+                    var ChapterTitle = angular.copy(chapter.ChapterTitle);
                     var ModeOfTeaching = angular.copy(chapter.ModeOfTeaching);
-                    var chapterDetails = angular.copy(chapter.chapterDetails)
+                    var ChapterDetails = angular.copy(chapter.ChapterDetails);
+                    var SKS = angular.copy(chapter.SKS);
                     var chapdata = {
-                        "ChapterId": chapterID,
-                        "chapterNumber": chapterNumber,
-                        "chapterTitle": chapterTitle,
+                        "SubjectId": SubjectId,
+                        "ChapterId": ChapterId,
+                        "ChapterNumber": ChapterNumber,
+                        "ChapterTitle": ChapterTitle,
                         "ModeOfTeaching": ModeOfTeaching,
-                        "chapterDetails": chapterDetails
+                        "ChapterDetails": ChapterDetails,
+                        "SKS":SKS
                     };
                     chapdata = angular.extend({}, cookieData, chapdata);
                     addChapterList.push(chapdata);
                 }
             });
             console.log(addChapterList);
-            if (addChapterList.length === 0) {
-                alert("Please Select a Chapter");
+
+            if (addChapterList.length !== 0) {
+                manageSubjectService.addChapterInSubjectList(addChapterList).then(linkChapterSuccess, linkChapterError);
             } else {
-                manageSubjectService.addChapterInSubjectList(addChapterList).then(addChapterInSubjectListSuccess, addChapterInSubjectListError);
+                alert("Please Select an chapter");
             }
-        }
 
-        function addChapterInSubjectListSuccess() {
-            console.log("Success");
-            manageSubjectService.getSubjectListItem().then(selectedSubjectDetailSuccess, selectedSubjectDetailError);
-            $scope.Modals.closeModalContainer();
-        }
+            function linkChapterSuccess(response) {
+                manageSubjectService.getSubjectListItem($scope.selectedSubject).then(selectedSubjectDetailSuccess, selectedSubjectDetailError);
+                $scope.Modals.closeModalContainer();
+            }
 
-        function addChapterInSubjectListError() {
-            console.log("Error");
+            function linkChapterError(response) {
+                console.log("Error");
+            }
+            //if (addSubjectList.length !==0) {
+            //    $q.when([managecourseService.addSubjectInCorseList(addSubjectList)]).then(function (data) {
+            //            $scope.courseListDetails.push(addSubjectList);
+            //            $scope.Modals.closeModalContainer();
+            //    },function (error) {
+            //            alert("please select a subject");
+            //    });
+            //}
+
         }
 
         /**
@@ -232,7 +245,7 @@
                 });
 
                 $scope.modalInstance.result.then(
-                    function (subject) {
+                    function (chapter) {
 
                     },
                     function (event) {
