@@ -88,37 +88,6 @@
 </head>
 <body ng-controller="userCtrl as vm">
     <div>
-        <!--<nav class="navbar navbar-default ">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                </div>
-                <div class="navbar-collapse collapse" style="margin-top: 110px;">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li ng-if="vm.isLoggedIn()">
-                            <a>Welcome {{ vm.userName }}</a>
-                        </li>
-                        <li ng-if="vm.isLoggedIn()">
-                            <span>
-                                <button type="submit"
-                                        class="btn btn-default"
-                                        ng-click="vm.logout()">
-                                    Log Out
-                                </button>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                </div>
-            </div>
-        </nav>-->
-
         <header id="topnav" ng-if="vm.isLoggedIn()">
             <div class="topbar-main">
                 <div class="container">
@@ -130,9 +99,8 @@
                         <!--EDuRP-->
                         <!--</a>-->
                         <!-- Image Logo -->
-                        <a href="index.html" class="logo">
+                        <a class="logo">
                             <img src="../../Assets/images/logo.png" alt="" height="30">
-
                         </a>
 
                     </div>
@@ -143,11 +111,13 @@
 
                         <ul class="nav navbar-nav navbar-right pull-right">
 
+
                             <li class="dropdown navbar-c-items">
                                 <a href="#" class="right-menu-item dropdown-toggle" data-toggle="dropdown">
                                     <i class="mdi mdi-email"></i>
                                     <span class="badge up bg-danger">8</span>
                                 </a>
+
                                 <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right dropdown-lg user-list notify-list">
                                     <li class="text-center">
                                         <h5>Messages</h5>
@@ -155,7 +125,7 @@
                                     <li>
                                         <a href="#" class="user-list-item">
                                             <div class="avatar">
-                                                <img src="../../Assets/images/users/avatar-2.jpg" alt="">
+                                                <img src="assets/images/users/avatar-2.jpg" alt="">
                                             </div>
                                             <div class="user-desc">
                                                 <span class="name">Raghu Rajan</span>
@@ -167,7 +137,7 @@
                                     <li>
                                         <a href="#" class="user-list-item">
                                             <div class="avatar">
-                                                <img src="../../Assets/images/users/avatar-3.jpg" alt="">
+                                                <img src="assets/images/users/avatar-3.jpg" alt="">
                                             </div>
                                             <div class="user-desc">
                                                 <span class="name">Prakash Kumar</span>
@@ -179,7 +149,7 @@
                                     <li>
                                         <a href="#" class="user-list-item">
                                             <div class="avatar">
-                                                <img src="../../Assets/images/users/avatar-4.jpg" alt="">
+                                                <img src="assets/images/users/avatar-4.jpg" alt="">
                                             </div>
                                             <div class="user-desc">
                                                 <span class="name">Rekha Jain</span>
@@ -244,9 +214,21 @@
                             </li>
 
                             <li class="dropdown navbar-c-items">
-                                <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="../../Assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
-                            </li>
+                                <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true">
+                                    <img src="Assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
+                                    <li class="text-center">
+                                        <h5>Hi, Praveen</h5>
+                                    </li>
+                                    <li><a href="#"><i class="ti-user m-r-5"></i> Profile</a></li>
+                                    <li><a href="#"><i class="ti-settings m-r-5"></i> Settings</a></li>
+                                    <li><a href="#"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
+                                    <li><a href="#"><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                                </ul>
 
+                            </li>
+                            
                         </ul>
                         <div class="menu-item">
                             <!-- Mobile menu toggle-->
@@ -283,15 +265,15 @@
                                         <a href="#">Academic Settings</a>
                                         <!--ng-hide="vm.userid === 4"-->
                                         <ul class="submenu">
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/BatchMaster')">Batch</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ProgramStudy')">Program Study</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/CourseList/')">Show Course</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Subject')">Subjects</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Chapters')">Chapters</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Employees')">Employees</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ExaminationType')">Examination Type</a></li>
-                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a ng-click="vm.goToPage('/ScheduleExamination')">Calendar</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Task')">Task</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/BatchMaster')" href="" >Batch</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ProgramStudy')" href="" >Program Study</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/CourseList/')" href="" >Show Course</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Subject')" href="" >Subjects</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Chapters')" href="" >Chapters</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Employees')" href="" >Employees</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ExaminationType')" href="" >Examination Type</a></li>
+                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a ng-click="vm.goToPage('/ScheduleExamination')" href="" >Calendar</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Task')" href="" >Task</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a href="#">Ranking Levels</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a href="#">Grading Levels</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a href="#">Department</a></li>
@@ -300,14 +282,14 @@
                                     <li class="has-submenu" ng-if="vm.roleId ==='1'">
                                         <a href="#">Fees</a>
                                         <ul class="submenu">
-                                            <li><a ng-click="vm.goToPage('/Admin/Fees')">Fees</a></li>
+                                            <li><a ng-click="vm.goToPage('/Admin/Fees')" href="" >Fees</a></li>
                                         </ul>
                                     </li>
 
                                     <li class="has-submenu" ng-if="vm.roleId ==='1'">
                                         <a href="#">Facilities</a>
                                         <ul class="submenu">
-                                            <li><a ng-click="vm.goToPage('/Admin/ClassRoom')">Class Room</a></li>
+                                            <li><a ng-click="vm.goToPage('/Admin/ClassRoom')" href="" >Class Room</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu" ng-if="vm.roleId ==='1'">
@@ -319,18 +301,18 @@
                                     <li class="has-submenu">
                                         <a href="#">Students</a>
                                         <ul class="submenu">
-                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a href="#">Student Profile</a></li>
+                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a ng-click="vm.goToPage('/StudentProfile')" href="" >Student Profile</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu" ng-if="vm.roleId ==='1'">
                                         <a href="#">Manage Settings</a>
                                         <ul class="submenu">
                                             <!--<li><a href="#">Manage Subject</a></li>-->
-                                            <li><a ng-click="vm.goToPage('/ManageCourses')">Manage Courses</a></li>
-                                            <li><a ng-click="vm.goToPage('/ManageProgramStudy')">Manage Program Study</a></li>
-                                            <li><a ng-click="vm.goToPage('/ManageTask')">Manage Task</a></li>
-                                            <li><a ng-click="vm.goToPage('/ManageSubject')">Manage  Subject</a></li>
-                                        </ul>
+                                            <li><a ng-click="vm.goToPage('/ManageCourses')" href="" >Manage Courses</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageProgramStudy')" href="" >Manage Program Study</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageTask')" href="" >Manage Task</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageSubject')" href="" >Manage  Subject</a></li>
+                                        </ul>                                                                                                               
                                     </li>
 
 
@@ -342,10 +324,10 @@
                                 <ul class="submenu megamenu">
                                     <li>
                                         <ul>
-                                            <li><a ng-click="vm.goToPage('/Admin/CreateBatch')">Create Batch</a></li>
-                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a ng-click="vm.goToPage('/StudentAdmissionForm')">Admission Forms</a></li>
-                                            <li><a ng-click="vm.goToPage('/ManageStudentCounsellingDetail')">Councelling</a></li>
-                                            <li><a ng-click="vm.goToPage('/ReviewAndApprove')">Review And Approve</a></li>
+                                            <li><a ng-click="vm.goToPage('/Admin/CreateBatch')" href="" >Create Batch</a></li>
+                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')" href="" ><a ng-click="vm.goToPage('/StudentAdmissionForm')">Admission Forms</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageStudentCounsellingDetail')" href="">Councelling</a></li>
+                                            <li><a ng-click="vm.goToPage('/ReviewAndApprove')" href="" >Review And Approve</a></li>
                                             <li><a href="#">ID Cards</a></li>
 
                                         </ul>

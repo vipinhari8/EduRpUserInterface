@@ -113,7 +113,7 @@
                     templateUrl: '/App/Templates/ManageStudentCounsellingDetail/ManageStudentCounsellingDetail.html',
                     controller: 'manageStudentCounsellingDetailController'
                 })
-                .when('/StudentDashboard', {
+                .when('/StudentProfile', {
                     templateUrl: '/App/Templates/StudentPortal/StudentPortal.html',
                     controller: 'StudentPortalController'
                 })

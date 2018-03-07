@@ -1,0 +1,88 @@
+﻿{
+  "results": [
+    {
+      "Subjects": [
+        {
+          "SubjectId": "001",
+          "SubjectName": "Religion"
+        },
+        {
+          "SubjectId": "002",
+          "SubjectName": "Civics"
+        },
+        {
+          "SubjectId": "003",
+          "SubjectName": "Bahasa"
+        },
+        {
+          "SubjectId": "004",
+          "SubjectName": "Indonesia"
+        },
+        {
+          "SubjectId": "005",
+          "SubjectName": "English"
+        },
+        {
+          "SubjectId": "006",
+          "SubjectName": "Mathematics"
+        },
+        {
+          "SubjectId": "007",
+          "SubjectName": "Science"
+        },
+        {
+          "SubjectId": "008",
+          "SubjectName": "PhysicalEducation"
+        },
+        {
+          "SubjectId": "008",
+          "SubjectName": "Mandarin"
+        }
+      ]
+    },
+    {
+      "LearningSkills": [
+        {
+          "Skill": "Shows empathy,compassion and respect"
+        },
+        {
+          "Skill": "Demonstrates Confidence"
+        },
+        {
+          "Skill": "Demonstrates positive and responsible attitude"
+        },
+        {
+          "Skill": "Shows leadership qualities"
+        },
+        {
+          "Skill": "Meets deadlines"
+        },
+        {
+          "Skill": "Follow rules and routine consistently"
+        },
+        {
+          "Skill": "Demonstrates hard work and produces quality results"
+        },
+        {
+          "Skill": "Works very well with others in a group"
+        },
+        {
+          "Skill": "Handles disagreements with peers appropriately and diplomatically"
+        },
+        {
+          "Skill": "Demonstrates the capacity for innovation and a willingness to take risks"
+        }
+      ]
+    }
+  ]
+}
+		
+				
+		
+		
+			
+			
+				
+				
+				
+				
