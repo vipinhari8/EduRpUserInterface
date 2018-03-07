@@ -28,6 +28,35 @@
         $scope.toggleNotlinkedChapter = toggleNotlinkedChapter;
         $scope.selectAllNotlinkedListItems = selectAllNotlinkedListItems;
 
+
+        $scope.filteredSubjectData = [];
+        $scope.currentPage = 1
+            , $scope.numPerPage = 5
+            , $scope.maxSize = 5;
+        $scope.orderByField = 'ChapterNumber';
+        $scope.reverseSort = false;
+        $scope.adjustSubjectList = function () {
+            var begin = (($scope.currentPage - 1) * $scope.numPerPage)
+                , end = begin + $scope.numPerPage;
+
+            $scope.filteredSubjectData = angular.copy($scope.subjectListDetails.slice(begin, end));
+            console.log("Hi");
+            console.log($scope.subjectListDetails);
+            console.log($scope.filteredSubjectData);
+        };
+        $scope.$watch('currentPage + numPerPage', function () {
+            $scope.adjustSubjectList();
+        });
+        
+        $scope.showPerPageDataOptions = [5, 10, 25, 50, 100];
+
+        $scope.filterPanel = false;
+
+        $scope.toggleFilterPanel = function () {
+            $scope.filterPanel = !$scope.filterPanel;
+        };
+
+
         init();
 
         function init() {
@@ -55,6 +84,7 @@
         //GridFunctionality
         function selectedSubjectDetailSuccess(response) {
             $scope.subjectListDetails = response.results;
+            $scope.adjustSubjectList();
             $scope.showSubjectDetailList = true;
         }
 
@@ -259,4 +289,4 @@
 
     }
 })
-    ();
+();

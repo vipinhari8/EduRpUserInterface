@@ -15,30 +15,7 @@
             </div>
         </div>
 
-
-            <!--<div class="row">
-        <div class="col-sm-12">
-            <div class="page-title-box">
-                <div class="btn-group pull-left">
-                    <ol class="breadcrumb hide-phone p-0 m-0">
-                        <li>
-                            <a href="#">EDuRP</a>
-                        </li>
-                        <li>
-                            <a href="#">Dashboard</a>
-                        </li>
-                        <li class="active">
-                            Subjects
-
-                        </li>
-                    </ol>
-                </div>
-
-            </div>
-        </div>
-    </div>-->
             <!-- end page title end breadcrumb -->
-
 
             <div class="row">
                 <!-- end col -->
@@ -186,13 +163,13 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">
-                                            {{'showing'| translate}} {{currentPage*numPerPage - numPerPage  + 1}} {{'to'| translate}} {{subjectData.length > currentPage*numPerPage ? currentPage*numPerPage : subjectData.length}} {{'of'| translate}} {{subjectData.length}} {{'entries'| translate}}
+                                            {{'showing'| translate}} {{currentPage*numPerPage - numPerPage  + 1}} {{'to'| translate}} {{filteredSubjectData.length > currentPage*numPerPage ? currentPage*numPerPage : filteredSubjectData.length}} {{'of'| translate}} {{filteredSubjectData.length}} {{'entries'| translate}}
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
                                             <pagination ng-model="currentPage"
-                                                        total-items="subjectData.length"
+                                                        total-items="filteredSubjectData.length"
                                                         max-size="maxSize"
                                                         boundary-links="true"
                                                         items-per-page="numPerPage">

@@ -1,4 +1,4 @@
-﻿(function () {
+﻿﻿(function () {
     'use strict';
 
     angular
@@ -12,16 +12,19 @@
                 return commonService.executeAPICall(url, method, data);
             };
 
-            var _getDynamicFormData = function () {
-                return execute('getDynamicFormData','get', null);
+            var _getDynamicFormData = function (data) {
+                return execute('getDynamicFormData', 'get', data);
             };
 
             var _getAdmissionNumber = function () {
-                return execute('getDynamicFormData', 'get', null);
+                return execute('getAdmissionNumber', 'get', null);
             };
-
             var _addStudentAdmissionForm = function (postData) {
-                return execute('addStudentAdmissionForm', 'post', postData);
+                return execute('addStudentAdmissionForm', 'put', postData);
+            };
+            
+            var _saveStudentAdmissionForm = function (postData) {
+                return execute('saveStudentAdmissionForm', 'put', postData);
             };
 
             var _getApplicationFormFeeDetail = function (postData) {
@@ -37,9 +40,10 @@
             return {
                 getDynamicFormData: _getDynamicFormData,
                 getAdmissionNumber: _getAdmissionNumber,
-                addStudentAdmissionForm: _addStudentAdmissionForm,
                 getApplicationFormFeeDetail: _getApplicationFormFeeDetail,
-                getApplicationFormHeader: _getApplicationFormHeader
+                getApplicationFormHeader: _getApplicationFormHeader,
+                saveStudentAdmissionForm: _saveStudentAdmissionForm,
+                addStudentAdmissionForm: _addStudentAdmissionForm
             };
         }
 })();

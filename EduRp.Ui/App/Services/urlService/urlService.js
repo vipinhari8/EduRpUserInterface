@@ -63,11 +63,6 @@ var urlService =
         //StudentAdmissionForm
 
         //getDynamicFormData: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : '/sampleData/StudentPortal/stdapplicationformdetail.json',
-        getDynamicFormData: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormDetail?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
-        getApplicationFormFeeDetail: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormFeeDetail?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
-        getApplicationFormHeader: localhost ? '' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormHeader?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
-        getAdmissionList: localhost ? '/sampleData/StudentPortal/studentPortal.json' : apiPrefix + '/api/StudentDashBoard/GetApplicationFormList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&batchid=null&psid=null&courseid=null',
-        addStudentAdmissionForm: localhost ? '' : apiPrefix + '',
 
         //StudentCounselingPage & ReviewandApproveDetail
 
@@ -123,5 +118,16 @@ var urlService =
         removeEmployeeFromList: localhost ? '' : apiPrefix + '/api/TaskStaffAssociations/UnLink/',
         addEmployeeInTaskList: localhost ? '' : apiPrefix + '/api/TaskStaffAssociations/Link/',
         //getTaskEmployeeList: localhost ? '' : apiPrefix + '/api/TaskStaffAssociations/GetSubjectChapterList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&taskid={{taskid}}',
+
+//-------------------------------------------------------------------------------------------------student admission form---------------------------------------------------------------------------------------
+        getDynamicFormData: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormDetail?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
+        getApplicationFormFeeDetail: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormFeeDetail?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
+        getApplicationFormHeader: localhost ? '' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormHeader?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
+        getAdmissionList: localhost ? '/sampleData/StudentPortal/studentPortal.json' : apiPrefix + '/api/StudentDashBoard/GetApplicationFormList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&batchid=1&psid=null&courseid=null',
+        //addStudentAdmissionForm: localhost ? '' : apiPrefix + '',
+        getAdmissionNumber: localhost ? '' : apiPrefix + '/api/StudentDashBoard/GetAdmissionNumber?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
+        saveStudentAdmissionForm: localhost ? '' : apiPrefix + '/api/StudentAdmissionForms/UpdateApplicationForm',
+        addStudentAdmissionForm: localhost ? '' : apiPrefix + '/api/StudentAdmissionForms/UpdateApplicationForm',
+
 
     };
