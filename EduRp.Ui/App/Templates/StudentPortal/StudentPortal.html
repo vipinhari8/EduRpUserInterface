@@ -18,9 +18,9 @@
         <!-- end page title end breadcrumb -->
 
 
-        <div class="row" style="margin-top: 70px;">
+        <div class="row">
             <!-- end col -->
-            <div class="col-lg-12" style="margin-top: -70px;">
+            <div class="col-lg-12">
                 <div class="card-box">
                     <div class="row">
                         <div class="col-lg-12">
@@ -34,11 +34,13 @@
                             &nbsp;
                         </div>
                     </div>
-                    <div ng-click="goToPage('/StudentAdmissionForm')" ng-show="stdPortalData.length===0">
-                        <a class="glyphicon glyphicon-chevron-right" href="" ><strong>Click here For Admission Form</strong></a>
-                        <br />
+                    <div class="row" ng-click="newAdmissionForm()">
+                        <div class="col-lg-12">
+                            <h4><a href=""><i class="fa fa-plus"></i>Admission Form</a></h4>
+                        </div>
+                        
                     </div>
-                    <div></div>
+                    <br />
                     <div class="row" ng-show="stdPortalData.length!==0">
                         <div class="col-lg-12">
 
@@ -143,22 +145,18 @@
                                                             <span ng-show="reverseSort">v</span>
                                                         </span>
                                                     </th>
-                                                    <th>
-
-                                                    </th>
 
                                                 </tr>
                                             </thead>
 
                                             <tbody>
                                                 <tr data-ng-repeat="msd in filteredData|orderBy:orderByField:reverseSort">
-                                                    <td>{{ msd.AdmissionNumber }}</td> 
+                                                    <td ng-click="addNewAdmissionForm(msd)">{{ msd.AdmissionNumber }}</td> 
                                                     <td>{{ msd.Batch }}</td>
                                                     <td>{{ msd.ProgramStudy }}</td>
-                                                    <td>{{ msd.Approve }}</td>
+                                                    <td>{{ msd.Course }}</td>
                                                     <td>{{ msd.ApplicationCreatedDate }}</td>
                                                     <td>{{ msd.Status }}</td>
-                                                    <td ng-click="goToPage('/StudentAdmissionForm')" class="button-menu-mobile" ng-hide="msd.Status==='Saved'" href="">GoToApplicationForm</td>
                                                    
                                                 </tr>
                                             </tbody>
@@ -207,9 +205,14 @@
 
                     </div>
                     <!-- end row -->
+
+
                 </div>
             </div>
         </div>
+
+
+
     </div>
 </div>
 

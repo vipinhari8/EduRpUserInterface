@@ -42,7 +42,7 @@
                                 <option value="" disabled="" selected="" class="ng-binding">Please select the Batch</option>
                             </select>
                         </div>
-                        
+
                         <div class="col-lg-4">
                             <label for="userName">Program<span class="text-danger">*</span></label>
                             <select id="heard" class="form-control" data-ng-model="selectedPS" data-ng-options="fps.ProgramStudyName for fps in programStudyData" ng-change="fetchCourseByProgramStudyId(selectedPS)">
@@ -64,7 +64,11 @@
                         </div>
 
                     </div>
-
+                    <div ng-show="managestdcounsellingdata.length===0" style="padding-left:400px;">
+                        <a class="align-center" href=""><strong>No data to Display</strong></a>
+                        <br />
+                    </div>
+                    <div ng-show="managestdcounsellingdata.length!==0">
                         <div class="row" data-ng-show="mainContentSubPart">
                             <div class="col-lg-12">
 
@@ -169,23 +173,18 @@
                                                                 <span ng-show="reverseSort">v</span>
                                                             </span>
                                                         </th>
-                                                        <th>
-
-                                                        </th>
 
                                                     </tr>
                                                 </thead>
 
                                                 <tbody>
                                                     <tr data-ng-repeat="msd in managestdcounsellingdata|orderBy:orderByField:reverseSort">
-                                                        <td>{{ msd.AdmissionNumber }}</td>
+                                                        <td ng-click="addNewAdmissionForm(msd)">{{ msd.AdmissionNumber }}</td>
                                                         <td>{{ msd.Batch }}</td>
                                                         <td>{{ msd.ProgramStudy }}</td>
                                                         <td>{{ msd.Course }}</td>
                                                         <td>{{ msd.ApplicationCreatedDate }}</td>
                                                         <td>{{ msd.Status }}</td>
-                                                        <td ng-click="goToPage('/StudentAdmissionForm')" class="button-menu-mobile" ng-hide="msd.Status==='Saved'">EditApplicationForm</td>
-
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -233,9 +232,8 @@
 
                         </div>
                         <!-- end row -->
-
-
                     </div>
+                </div>
                 </div>
         </div>
 

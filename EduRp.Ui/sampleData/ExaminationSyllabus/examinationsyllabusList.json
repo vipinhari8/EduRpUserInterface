@@ -1,0 +1,32 @@
+﻿{
+  "results": [
+    {
+      "Batch": "Batch1",
+      "Subject": "Chemistry",
+      "Topics": "Organic Chemistry",
+      "Reference": "Barik Das Sharma Publication"
+
+    },
+    {
+      "Batch": "Batch1",
+      "Subject": "Math",
+      "Topics": "Quadratic Equation",
+      "Reference": "R D Sharma Publication"
+
+    },
+    {
+      "Batch": "Batch2",
+      "Subject": "Physics",
+      "Topics": "Electric Charge",
+      "Reference": "HSC Publication"
+
+    },
+    {
+      "Batch": "Batch3",
+      "Subject": "Geography",
+      "Topics": "Manuscripts ",
+      "Reference": "Barik Das Sharma Publication"
+
+    }
+  ]
+}

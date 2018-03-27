@@ -1,0 +1,83 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="Modals.closeTeachernoteContainer()">x</button>
+
+    <h4 class="modal-title">
+        <span data-ng-if="modalType ==='add'">Add New TeacherNote</span>
+        <span data-ng-if="modalType ==='update'">Update TeacherNote</span>
+    </h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="p-20">
+                <form name="addTeachernoteForm" novalidate>
+
+                    <div class="row">
+                       
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Batch">Batch <span class="text-danger">*</span></label>
+                                <input type="text" name="Batch" parsley-trigger="change" required placeholder="Enter Batch" class="form-control" data-ng-model="$parent.modTeachernoteObj.Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Date">Date<span class="text-danger">*</span></label>
+                                <input type="text" name="Date" parsley-trigger="change" required placeholder="Enter Date" class="form-control" data-ng-model="$parent.modTeachernoteObj.Class">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Grade">Grade<span class="text-danger">*</span></label>
+                                <input type="text" name="Grade" parsley-trigger="change" required placeholder="Enter Grade " class="form-control" data-ng-model="$parent.modTeachernoteObj.Things">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="Section">Section<span class="text-danger">*</span></label>
+                            <input type="text" name="Section" parsley-trigger="change" required placeholder="Enter Section " class="form-control" data-ng-model="$parent.modTeachernoteObj.Date">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="Subject">Subject<span class="text-danger">*</span></label>
+                        <input type="text" name="Subject" parsley-trigger="change" required placeholder="Enter Subject " class="form-control" data-ng-model="$parent.modTeachernoteObj.Date">
+
+                    </div>
+            </div>
+            <div class="col-md-6">
+                <label for="Description">Description<span class="text-danger">*</span></label>
+                <input type="text" name="Description" parsley-trigger="change" required placeholder="Enter Description " class="form-control" data-ng-model="$parent.modTeachernoteObj.Date">
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="Attachments">Attachments<span class="text-danger">*</span></label>
+            <input type="text" name="Attachments" parsley-trigger="change" required placeholder="Enter Attachments " class="form-control" data-ng-model="$parent.modTeachernoteObj.Date">
+
+        </div>
+
+       
+            </div>
+
+
+        </div>
+<div class="modal-footer">
+</div>
+<div class="form-group m-b-0 text-right">
+    <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="updateTeachernoteDetails(addLessonPlanForm)" data-ng-if="modalType ==='update'">
+        Save Details
+    </button>
+    <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="addTeachernoteDetails(addLessonPlanForm)" data-ng-if="modalType ==='add'">
+        Submit
+    </button>
+    <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.closeTeachernoteContainer()">Close</button>
+</div>
+        </form>
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
+

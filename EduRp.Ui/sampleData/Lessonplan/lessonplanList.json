@@ -1,0 +1,23 @@
+﻿{
+  "results": [
+    {
+      "Subject": "Chemistry",
+      "Teacher": "Mrs. Esther",
+      "Grade": "SH 2"
+     
+
+    },
+    {
+      "Subject": "Chemistry",
+      "Teacher": "Mr. Kevin Mathew",
+      "Grade": "JH 1"
+
+    },
+    {
+      "Subject": "Chemistry",
+      "Teacher": "Mrs. Sheela Mathew",
+      "Grade": "JH 1"
+
+    }
+  ]
+}

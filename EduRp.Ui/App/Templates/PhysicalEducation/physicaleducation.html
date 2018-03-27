@@ -1,0 +1,315 @@
+﻿
+<div class="wrapper">
+    <div class="container">
+
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="btn-group pull-left">
+                        <ol class="breadcrumb hide-phone p-0 m-0">
+                            <li>
+                                <a href="#">EDuRP</a>
+                            </li>
+                            <li>
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                Physical Education
+
+                            </li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title end breadcrumb -->
+
+
+        <div class="row">
+            <!-- end col -->
+            <div class="col-lg-12">
+                <div class="card-box">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h4 class="m-t-0 header-title"></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-4">
+                            <label for="userName">Batch<span class="text-danger">*</span></label>
+                            <select id="heard" class="form-control">
+                                <option value="">--Select Batch--</option>
+                                <option value="2018-A-C">2018-A-C</option>
+                                <option value="2018-A-G">2018-A-G</option>
+                                <option value="2018-A-T">2018-A-T</option>
+                                <option value="2018-A-P">2018-A-P</option>
+                                <option value="2018-A-D">2018-A-D</option>
+                                <option value="other">Other..</option>
+                            </select>
+                            <!--<select id="heard" class="form-control" data-ng-model="selectedBatch" data-ng-options="fps.BatchName for fps in batchList" ng-change="fetchProgramStudyByBatchId(selectedBatch)">
+                                <option value="" disabled="" selected="" class="ng-binding">Please select Batch</option>
+                            </select>-->
+                        </div>
+
+                        <div class="col-lg-4">
+                            <label for="userName">Grade<span class="text-danger">*</span></label>
+                            <select id="heard" class="form-control">
+                                <option value="">--Select Grade--</option>
+                                <option value="2018-A-C">JH 1</option>
+                                <option value="2018-A-G">JH 2</option>
+                                <option value="2018-A-T">SH 1</option>
+                                <option value="2018-A-P">SH 2</option>
+                                <option value="2018-A-D">KG 1</option>
+                                <option value="other">Other..</option>
+                            </select>
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <label for="userName">Section<span class="text-danger">*</span></label>
+                            <select id="heard" class="form-control">
+                                <option value="">--Select Section--</option>
+                                <option value="2018-A-C">JH 1-A</option>
+                                <option value="2018-A-G">JH 2-A</option>
+                                <option value="2018-A-T">SH 1-B</option>
+                                <option value="2018-A-P">SH 2-C</option>
+                                <option value="2018-A-D">KG 1-A</option>
+                                <option value="other">Other..</option>
+                            </select>
+                            <!--<select id="heard" class="form-control" data-ng-model="selectedCourse" data-ng-options="fps.CourseName for fps in courseData">
+                                <option value="" disabled="" selected="" class="ng-binding">Please select Section</option>
+                                <option value="">{{'selectASection'| translate}}</option>
+                            </select>-->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 pull-left">
+                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-xl m-b-5" data-ng-click="fetchStudentDataByCriteria()">Go</button>
+                    </div>
+
+
+                    <div class="col-lg-2 pull-right">
+                        <button class="btn btn-teal btn-bordered waves-light waves-effect w-md m-b-5" data-toggle="modal" data-target="#con-close-modal">Apply Leave</button>
+                    </div>
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <div class="panel-group" role="tablist" aria-multiselectable="true">
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab">
+                                        <h4 class="panel-title" data-ng-click="toggleFilterPanel()">
+                                            <a ng-class="!filterPanel ? 'collapsed': ''" aria-expanded="false" aria-controls="collapseThree">
+                                                Filters
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse" role="tabpanel" aria-labelledby="headingThree" data-ng-show="filterPanel">
+                                        <div class="panel-body">
+                                            <form action="#" data-parsley-validate="">
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="userName">Student Id</label>
+                                                            <input type="text" name="course_name_tobe_filtered" data-ng-model="course_name_tobe_filtered" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="userName">Student Name</label>
+                                                            <input type="text" name="course_name_tobe_filtered" data-ng-model="course_name_tobe_filtered" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="userName">Subject</label>
+                                                            <input type="text" name="course_name_tobe_filtered" data-ng-model="course_name_tobe_filtered" />
+                                                        </div>
+                                                    </div>
+                                                    
+
+                                                </div>
+
+
+
+                                                <div class="form-group text-right m-b-0">
+                                                    <button class="btn btn-teal btn-bordered waves-light waves-effect w-xs  m-b-2" type="button" data-ng-click="getFilteredData()">
+                                                        GO
+                                                    </button>
+                                                    <button type="reset" data-ng-click="toggleFilterPanel()" class="btn btn-default waves-effect m-l-5">
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- end col -->
+                        <div class="col-lg-12" style="margin-top:-30px">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="table-responsive">
+
+                                        <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed table-colored table-inverse">
+                                            <thead>
+                                                <tr>
+                                                    <th ng-click="orderByField='StudentId'; reverseSort = !reverseSort">
+                                                        StudentId
+                                                        <span ng-show="orderByField == 'StudentId'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='StudentName'; reverseSort = !reverseSort">
+                                                        Student Name
+                                                        <span ng-show="orderByField == 'StudentName'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='TechniqueofBleepTest'; reverseSort = !reverseSort">
+                                                        TechniqueofBleepTest
+                                                        <span ng-show="orderByField == 'TechniqueofBleepTest'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='SpeedofMovement'; reverseSort = !reverseSort">
+                                                        Speed of Movement
+                                                        <span ng-show="orderByField == 'SpeedofMovement'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='Endurance'; reverseSort = !reverseSort">
+                                                        Endurance
+                                                        <span ng-show="orderByField == 'Endurance'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='TOTAL'; reverseSort = !reverseSort">
+                                                        TOTAL
+                                                        <span ng-show="orderByField == 'TOTAL'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='Teacher'; reverseSort = !reverseSort">
+                                                        Teacher
+                                                        <span ng-show="orderByField == 'Teacher'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+                                                    <th ng-click="orderByField='Remarks'; reverseSort = !reverseSort">
+                                                        Remarks
+                                                        <span ng-show="orderByField == 'Remarks'">
+                                                            <span ng-show="!reverseSort">^</span>
+                                                            <span ng-show="reverseSort">v</span>
+                                                        </span>
+                                                    </th>
+
+
+
+
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr data-ng-repeat="ed in filteredphysicaleducationData|orderBy:orderByField:reverseSort">
+                                                    <td>{{ ed.StudentId}}</td>
+                                                    <td>{{ ed.StudentName}}</td>
+                                                    <td>{{ ed.TechniqueofBleepTest}}</td>
+                                                    <td>{{ ed.SpeedofMovement}}</td>
+                                                    <td>{{ ed.Endurance}}</td>
+                                                    <td>{{ ed.TOTAL}}</td>
+                                                    <td>{{ ed.Teacher}}</td>
+                                                    <td>{{ ed.Remarks}}</td>
+                                                    
+
+
+                                                    <td>
+                                                        <i class="fa fa-pencil-square-o m-r-5" data-ng-click="editphysicaleducationContainer(ed)" style="cursor: pointer;"></i>
+                                                        <i class="fa fa-trash-o fa-lg" data-ng-click="deletephysicaleducationContainer(cd)"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div> <!-- end card -->
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <div class="dataTables_length" id="datatable_length">
+
+                                        <label>
+                                            Show
+                                            <select name="datatable_length"
+                                                    aria-controls="datatable"
+                                                    class="form-control input-sm"
+                                                    data-ng-model="numPerPage"
+                                                    data-ng-options="x for x in showPerPageDataOptions"></select>
+                                            entries
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">
+                                        Showing {{currentPage*numPerPage - numPerPage  + 1}} to {{physicaleducationData.length > currentPage*numPerPage ? currentPage*numPerPage : physicaleducationData.length}} of {{physicaleducationData.length}} entries
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
+                                        <pagination ng-model="currentPage"
+                                                    total-items="physicaleducationData.length"
+                                                    max-size="maxSize"
+                                                    boundary-links="true"
+                                                    items-per-page="numPerPage">
+                                        </pagination>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- end col -->
+
+
+
+                    </div>
+                    <!-- end row -->
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+

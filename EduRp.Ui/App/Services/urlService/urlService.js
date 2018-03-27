@@ -2,7 +2,7 @@
 var apiPrefix = 'http://edurpwebapi20180213021849.azurewebsites.net';
 //http://localhost:50381 
 //http://edurpwebapi20180213021849.azurewebsites.net
-
+ 
 var urlService =
     {
 //------------------------------------------------------------------------Program Study Master---------------------------------------------------------------------------------------------
@@ -120,14 +120,53 @@ var urlService =
         //getTaskEmployeeList: localhost ? '' : apiPrefix + '/api/TaskStaffAssociations/GetSubjectChapterList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&taskid={{taskid}}',
 
 //-------------------------------------------------------------------------------------------------student admission form---------------------------------------------------------------------------------------
-        getDynamicFormData: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormDetail?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
+        getDynamicFormData: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormDetail?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{AdmissionNumber}}',
         getApplicationFormFeeDetail: localhost ? '/sampleData/StudentPortal/stdapplicationformdetail.json' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormFeeDetail?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
         getApplicationFormHeader: localhost ? '' : apiPrefix + '/api/StudentAdmissionForms/GetApplicationFormHeader?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&admissionnumber={{admissionnumber}}',
-        getAdmissionList: localhost ? '/sampleData/StudentPortal/studentPortal.json' : apiPrefix + '/api/StudentDashBoard/GetApplicationFormList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&batchid=1&psid=null&courseid=null',
+        getAdmissionList: localhost ? '/sampleData/StudentPortal/studentPortal.json' : apiPrefix + '/api/StudentDashBoard/GetApplicationFormList?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}&batchid=null&psid=null&courseid=null',
         //addStudentAdmissionForm: localhost ? '' : apiPrefix + '',
         getAdmissionNumber: localhost ? '' : apiPrefix + '/api/StudentDashBoard/GetAdmissionNumber?id={{UniversityId}}&userid={{UserId}}&tokenid={{TokenId}}',
         saveStudentAdmissionForm: localhost ? '' : apiPrefix + '/api/StudentAdmissionForms/UpdateApplicationForm',
         addStudentAdmissionForm: localhost ? '' : apiPrefix + '/api/StudentAdmissionForms/UpdateApplicationForm',
 
+
+        // Student Character Supervision
+
+        getstudentcharacterList: localhost ? '/sampleData/studentcharacterList.json' : '/sampleData/StudentCharacterSupervision/studentcharacterList.json',
+
+        // Merit and Demerit
+        getmeritanddemeritList: localhost ? '/sampleData/meritanddemeritList.json' : '/sampleData/MeritAndDemerit/meritanddemeritList.json',
+
+        //Loss And Found
+        getlossandfoundList: localhost ? '/sampleData/lossandfoundList.json' : '/sampleData/LossAndFound/lossandfoundList.json',
+
+        // Letter Permission
+        getletterpermissionList: localhost ? '/sampleData/letterpermissionList.json' : '/sampleData/LetterPermission/letterpermissionList.json',
+
+
+        // Mind Your language
+        getmindyourlanguageList: localhost ? '/sampleData/mindyourlanguageList.json' : '/sampleData/MindYourLanguage/mindyourlanguageList.json',
+
+        // Quz
+        getquizList: localhost ? '/sampleData/quizList.json' : '/sampleData/Quiz/quizList.json',
+
+
+        // StudentLeave
+        getstudentleaveList: localhost ? '/sampleData/studentleaveList.json' : '/sampleData/StudentLeave/studentleaveList.json',
+
+        // Student Diary
+        getstudentdiaryList: localhost ? '/sampleData/studentdiaryList.json' : '/sampleData/StudentDiary/studentdiaryList.json',
+
+        //Lesson plan
+        getlessonplanList: localhost ? '/sampleData/lessonplanList.json' : '/sampleData/Lessonplan/lessonplanList.json',
+
+        // Teacher note
+        getteachernoteList: localhost ? '/sampleData/teachernoteList.json' : '/sampleData/TeacherNote/teachernoteList.json',
+
+        // Physical Education
+        getphysicaleducationList: localhost ? '/sampleData/physicaleducationList.json' : '/sampleData/PhysicalEducation/physicaleducationList.json',
+
+        // Examination Syllabus
+        getexaminationsyllabusList: localhost ? '/sampleData/examinationsyllabusList.json' : '/sampleData/ExaminationSyllabus/examinationsyllabusList.json'
 
     };
