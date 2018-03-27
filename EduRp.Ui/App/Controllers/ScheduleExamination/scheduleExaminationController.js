@@ -333,25 +333,25 @@
             }
         }
 
-        function fetchSubjectByCourseId(selectedCourse) {
-            var selCourse = angular.copy(selectedCourse);
-            if (selectedCourse) {
-                $q.all([
-                    managecourseService.getCourseListItem(selectedCourse)
-                ]).then(function (data) {
-                    if (data !== null) {
-                        $scope.subjectData = data[0].results;
-                    }
-                },
-                    function (reason) {
-                        errorHandler.logServiceError('', reason)
-                    });
-            }
-            else {
-                alert("please select a subject");
-            }
+        //function fetchSubjectByCourseId(selectedCourse) {
+        //    var selCourse = angular.copy(selectedCourse);
+        //    if (selectedCourse) {
+        //        $q.all([
+        //            managecourseService.getCourseListItem(selectedCourse)
+        //        ]).then(function (data) {
+        //            if (data !== null) {
+        //                $scope.subjectData = data[0].results;
+        //            }
+        //        },
+        //            function (reason) {
+        //                errorHandler.logServiceError('', reason)
+        //            });
+        //    }
+        //    else {
+        //        alert("please select a subject");
+        //    }
 
-        }
+        //}
 //<------------------------------------------------------------------------filter drop downs ends here ----------------------------------------------------->
 
         $scope.Modals = {

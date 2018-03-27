@@ -1,0 +1,32 @@
+﻿{
+  "results": [
+    {
+      "StudentId": "0001",
+      "StudentName": "Rakesh Ranjan",
+      "Reason": "Sick Leave",
+      "Duration": "1"
+
+    },
+    {
+      "StudentId": "0001",
+      "StudentName": "Rakesh Ranjan",
+      "Reason": "Sick Leave",
+      "Duration": "1"
+
+    },
+    {
+      "StudentId": "0001",
+      "StudentName": "Rakesh Ranjan",
+      "Reason": "Sick Leave",
+      "Duration": "1"
+
+    },
+    {
+      "StudentId": "0001",
+      "StudentName": "Rakesh Ranjan",
+      "Reason": "Sick Leave",
+      "Duration": "1"
+
+    }
+  ]
+}

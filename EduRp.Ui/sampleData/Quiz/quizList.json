@@ -1,0 +1,31 @@
+﻿{
+  "results": [
+    {
+      "StudentId": "1235",
+      "StudentName": "Rajiv Ranjan",
+      "Subject": "Physics",
+      "Score": "7",
+      "Teacher": "Rohit Shetty",
+      "Remarks": "Good"
+
+    },
+    {
+      "StudentId": "1235",
+      "StudentName": "Rajiv Ranjan",
+      "Subject": "Physics",
+      "Score": "7",
+      "Teacher": "Rohit Shetty",
+      "Remarks": "Good"
+
+    },
+    {
+      "StudentId": "1235",
+      "StudentName": "Rajiv Ranjan",
+      "Subject": "Physics",
+      "Score": "7",
+      "Teacher": "Rohit Shetty",
+      "Remarks": "Good"
+
+    }
+  ]
+}

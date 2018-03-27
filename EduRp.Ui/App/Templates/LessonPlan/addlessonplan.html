@@ -1,0 +1,150 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-ng-click="Modals.closelessonplanContainer()">x</button>
+
+    <h4 class="modal-title">
+        <span data-ng-if="modalType ==='add'">Add New LessonPlan</span>
+        <span data-ng-if="modalType ==='update'">Update LessonPlan</span>
+    </h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="p-20">
+                <form name="addLessonPlanForm" novalidate>
+
+                    <div class="row">
+                        <label for="A. Identity">A. Identity <span class="text-danger">*</span></label>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Subject">Subject <span class="text-danger">*</span></label>
+                                <input type="text" name="Subject" parsley-trigger="change" required placeholder="Enter Subject" class="form-control" data-ng-model="$parent.modLessonplanObj.Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Semester">Semester<span class="text-danger">*</span></label>
+                                <input type="text" name="Semester" parsley-trigger="change" required placeholder="Enter Semester" class="form-control" data-ng-model="$parent.modLessonplanObj.Class">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Meeting">Meeting<span class="text-danger">*</span></label>
+                                <input type="text" name="Meeting" parsley-trigger="change" required placeholder="Enter Meeting " class="form-control" data-ng-model="$parent.modLessonplanObj.Things">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="StandardofCompetance">Standard of Competance<span class="text-danger">*</span></label>
+                            <input type="text" name="StandardofCompetance" parsley-trigger="change" required placeholder=" " class="form-control" data-ng-model="$parent.modLessonplanObj.Date">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="BasicCompetance">Basic Competance<span class="text-danger">*</span></label>
+                        <input type="text" name="BasicCompetance" parsley-trigger="change" required placeholder=" " class="form-control" data-ng-model="$parent.modLessonplanObj.Date">
+
+                    </div>
+            </div>
+            <div class="col-md-6">
+                <label for="Indicator">Indicator<span class="text-danger">*</span></label>
+                <input type="text" name="Indicator" parsley-trigger="change" required placeholder="Enter Indicator " class="form-control" data-ng-model="$parent.modLessonplanObj.Date">
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="TimeAllocation">Time Allocation<span class="text-danger">*</span></label>
+            <input type="text" name="TimeAllocation" parsley-trigger="change" required placeholder="Enter TimeAllocation " class="form-control" data-ng-model="$parent.modLessonplanObj.TimeAllocation">
+
+        </div>
+    
+    <div class="col-md-6">
+        <label for="B.Instructive Objective">B. Instructive Objective<span class="text-danger">*</span></label>
+        <input type="text" name="B.InstructiveObjective" parsley-trigger="change" required placeholder=" " class="form-control" data-ng-model="$parent.modLessonplanObj.B.InstructiveObjective">
+
+    </div>
+</div>
+<div class="col-md-6">
+    <label for="C. Teaching Material">C. Teaching Material<span class="text-danger">*</span></label>
+    <input type="text" name="Standard of Competance" parsley-trigger="change" required placeholder=" " class="form-control" data-ng-model="$parent.modLessonplanObj.Date">
+
+</div>
+    </div>
+<div class="col-md-6">
+    <label for="D. Teaching Method">D. Teaching Method<span class="text-danger">*</span></label>
+    <input type="text" name="Standard of Competance" parsley-trigger="change" required placeholder=" " class="form-control" data-ng-model="$parent.modLessonplanObj.Date">
+
+</div>
+            </div>
+<div class="col-md-6">
+    <label for="E. Character Implementation">E. Character Implementation<span class="text-danger">*</span></label>
+    <input type="text" name="Standard of Competance" parsley-trigger="change" required placeholder="" class="form-control" data-ng-model="$parent.modLessonplanObj.Date">
+
+</div>
+            </div>
+<div class="col-md-6">
+    <label for="F. Teaching Activity">F. Teaching Activity<span class="text-danger">*</span></label>
+    <input type="text" name="Standard of Competance" parsley-trigger="change" required placeholder=" " class="form-control" data-ng-model="$parent.modLessonplanObj.Date">
+
+</div>
+            </div>
+<div class="col-md-6">
+    <label for="MainActivity">Main Activity<span class="text-danger">*</span></label>
+    <input type="text" name="MainActivity" parsley-trigger="change" required placeholder="Enter MainActivity " class="form-control" data-ng-model="$parent.modLessonplanObj.Date">
+
+</div>
+            </div>
+<div class="col-md-6">
+    <label for="ClosingActivity">Closing Activity<span class="text-danger">*</span></label>
+    <input type="text" name="ClosingActivity" parsley-trigger="change" required placeholder="Enter ClosingActivity " class="form-control" data-ng-model="$parent.modLessonplanObj.Date">
+
+</div>
+            </div>
+
+<div class="col-md-6">
+    <label for="G. Learning Score">G. Learning Score<span class="text-danger">*</span></label>
+    <input type="text" name="Standard of Competance" parsley-trigger="change" required placeholder=" " class="form-control" data-ng-model="$parent.modLessonplanObj.Date">
+
+</div>
+            </div>
+
+<div class="col-md-6">
+    <label for="H. Assessment">H. Assessment<span class="text-danger">*</span></label>
+    <input type="text" name="Standard of Competance" parsley-trigger="change" required placeholder="" class="form-control" data-ng-model="$parent.modLessonplanObj.Date">
+
+</div>
+            </div>
+<div class="col-md-6">
+    <label for="SubjectTeacher">Subject Teacher<span class="text-danger">*</span>
+    </label>
+    <input type="text" name="SubjectTeacher" parsley-trigger="change" required placeholder="Enter Subject Teacher " class="form-control" data-ng-model="$parent.modLessonplanObj.Date">
+
+</div>
+            </div>
+
+
+        </div>
+
+
+
+<div class="modal-footer">
+
+
+</div>
+
+<div class="form-group m-b-0 text-right">
+    <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="updateLessonplanDetails(addLessonPlanForm)" data-ng-if="modalType ==='update'">
+        Save Details
+    </button>
+    <button class="btn btn-teal btn-bordered waves-light waves-effect w-sm m-b-5" data-ng-click="addLessonplanDetails(addLessonPlanForm)" data-ng-if="modalType ==='add'">
+        Submit
+    </button>
+    <button type="button" class="btn btn-default btn-bordered waves-effect w-md m-b-5" data-ng-click="Modals.closelessonplanContainer()">Close</button>
+</div>
+        </form>
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
+

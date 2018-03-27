@@ -1,0 +1,31 @@
+﻿{
+  "results": [
+    {
+      "Date": "15-02-2018",
+      "GoodConduct": "Completes all Notes on Time",
+      "MisConduct": "Pinched a boy in class",
+      "Teacher": "Mrs. Sheela Mathew",
+      "Venue": "R021",
+      "ClassMonitor": "Rohit Shetty",
+      "StudentInvolved": "PriyaRanjan Singh"
+    },
+    {
+      "Date": "16-02-2018",
+      "GoodConduct": "Very Good in ClassRoom Engagement Sessions",
+      "MisConduct": "Hit a Boy in class hours",
+      "Teacher": "Mrs. Kevin Mathew",
+      "Venue": "R021",
+      "ClassMonitor": "PriyaRanjan Singh",
+      "StudentInvolved": "Adam Glen"
+    },
+    {
+      "Date": "16-02-2018",
+      "GoodConduct": "Completes all his homework on Time",
+      "MisConduct": "Hit a Boy in class hours",
+      "Teacher": "Mrs. Kevin Mathew",
+      "Venue": "R021",
+      "ClassMonitor": "PriyaRanjan Singh",
+      "StudentInvolved": "Adam Glen"
+    }
+  ]
+}

@@ -73,6 +73,11 @@
                 var cd = this.fetchMainCookieData();
                 cd.taskid = data.TaskId;
                 return cd;
+            }else if([
+                'getDynamicFormData'].indexOf(url) !== -1) {
+                var admnum = this.fetchMainCookieData();
+                admnum.AdmissionNumber = data.AdmissionNumber;
+                return admnum;
             }
             else {
                 return this.fetchMainCookieData();

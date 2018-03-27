@@ -121,6 +121,54 @@
                     templateUrl: '/App/Templates/ReviewAndApprove/reviewandapprove.html',
                     controller: 'reviewandapproveController'
                 })
+                .when('/MeritAndDemerit', {
+                    templateUrl: '/App/Templates/MeritAndDemerits/meritanddemerit.html',
+                    controller: 'meritanddemeritController'
+                })
+                .when('/StudentCharacterSupervision', {
+                    templateUrl: '/App/Templates/StudentCharacterSupervision/studentcharacter.html',
+                    controller: 'studentcharacterController'
+                })
+                .when('/LossAndFound', {
+                    templateUrl: '/App/Templates/LossAndFound/lossandfound.html',
+                    controller: 'lossandfoundController'
+                })
+                .when('/LetterPermission', {
+                    templateUrl: '/App/Templates/LetterPermission/letterpermission.html',
+                    controller: 'letterpermissionController'
+                })
+                .when('/MindYourlanguage', {
+                    templateUrl: '/App/Templates/MindYourlanguage/mindyourlanguage.html',
+                    controller: 'mindyourlanguageController'
+                })
+                .when('/LessonPlan', {
+                    templateUrl: '/App/Templates/LessonPlan/lessonplan.html',
+                    controller: 'lessonplanController'
+                })
+                .when('/Quiz', {
+                    templateUrl: '/App/Templates/Quiz/quiz.html',
+                    controller: 'quizController'
+                })
+                .when('/StudentDiary', {
+                    templateUrl: '/App/Templates/StudentDiary/studentdiary.html',
+                    controller: 'studentdiaryController'
+                })
+                .when('/StudentLeaveApplication', {
+                    templateUrl: '/App/Templates/StudentLeaveApplication/studentleaveapplication.html',
+                    controller: 'studentleaveController'
+                })
+                .when('/TeacherNote', {
+                    templateUrl: '/App/Templates/TeacherNote/teachernotes.html',
+                    controller: 'teachernoteController'
+                })
+                .when('/PhysicalEducation', {
+                    templateUrl: '/App/Templates/PhysicalEducation/physicaleducation.html',
+                    controller: 'physicaleducationController'
+                })
+                .when('/ExaminationSyllabus', {
+                    templateUrl: '/App/Templates/ExaminationSyllabus/examinationsyllabus.html',
+                    controller: 'examinationsyllabusController'
+                })
                 .otherwise({
                     templateUrl: '/App/Templates/Shared/_404.html'
                 })

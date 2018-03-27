@@ -5,9 +5,9 @@
         .module('EduRpApp')
         .controller('StudentPortalController', StudentPortalController);
 
-    StudentPortalController.$inject = ['$scope', '$q', 'errorHandler', 'StudentPortalService', 'commonService', '$location', '$rootScope'];
+    StudentPortalController.$inject = ['$scope', '$q', 'errorHandler', 'StudentPortalService', 'commonService', '$location', '$rootScope', 'sharedpropertiesService','studentAdmissionFormService'];
 
-    function StudentPortalController($scope, $q, errorHandler, StudentPortalService, commonService, $location, $rootScope) {
+    function StudentPortalController($scope, $q, errorHandler, StudentPortalService, commonService, $location, $rootScope, sharedpropertiesService, studentAdmissionFormService) {
         $scope.title = 'StudentPortalController';
 
         $scope.stdPortalData = [];
@@ -17,6 +17,9 @@
             , $scope.maxSize = 5;
         $scope.orderByField = 'FormNo';
         $scope.reverseSort = false;
+        $scope.sharedproperties = null;
+
+        var vm = this;
 
         $scope.adjustStdPortalData = function () {
             var begin = (($scope.currentPage - 1) * $scope.numPerPage)
@@ -45,9 +48,23 @@
 
         $rootScope.$broadcast('topic', 'message');
 
-        $scope.addNewAdmissionForm = function () {
+        $scope.addNewAdmissionForm = function (data) {
+            $scope.sharedproperties = sharedpropertiesService.getadmissionnum(data);
             $location.path('/StudentAdmissionForm/');
         };
+        $scope.newAdmissionForm = function () { 
+            studentAdmissionFormService.getAdmissionNumber().then(admissionnumListSuccess, admissionnumListError)
+        }
+
+        function admissionnumListSuccess(response) {
+            $scope.sharedproperties = sharedpropertiesService.getadmissionnum(response.results[0]);
+            $location.path('/StudentAdmissionForm/');
+        };
+
+        function admissionnumListError(response) {
+            console.log("GetAdmissionNum error in studentPortalController");
+            $log.info("GetAdmissionNum error in studentPortalController");
+        }
 
         (function startup() {
 

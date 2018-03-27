@@ -68,9 +68,7 @@
                 }, function (error) {
                     alert("please try later");
                 });
-
             }
-
         };
 
         //update

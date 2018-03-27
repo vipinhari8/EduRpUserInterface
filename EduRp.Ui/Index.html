@@ -228,7 +228,7 @@
                                 </ul>
 
                             </li>
-                            
+
                         </ul>
                         <div class="menu-item">
                             <!-- Mobile menu toggle-->
@@ -253,27 +253,27 @@
                         <!-- Navigation Menu-->
                         <ul class="navigation-menu">
 
-                            <li class="has-submenu" ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')">
+                            <li class="has-submenu" ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')||(vm.roleId ==='2')">
                                 <a href="index.html"><i class="mdi mdi-view-dashboard"></i>Dashboard</a>
 
                             </li>
 
-                            <li class="has-submenu" ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')">
+                            <li class="has-submenu" ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')||(vm.roleId ==='2')">
                                 <a href="#"><i class="mdi mdi-settings"></i>Master Settings</a>
                                 <ul class="submenu">
                                     <li class="has-submenu">
                                         <a href="#">Academic Settings</a>
                                         <!--ng-hide="vm.userid === 4"-->
                                         <ul class="submenu">
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/BatchMaster')" href="" >Batch</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ProgramStudy')" href="" >Program Study</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/CourseList/')" href="" >Show Course</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Subject')" href="" >Subjects</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Chapters')" href="" >Chapters</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Employees')" href="" >Employees</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ExaminationType')" href="" >Examination Type</a></li>
-                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a ng-click="vm.goToPage('/ScheduleExamination')" href="" >Calendar</a></li>
-                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Task')" href="" >Task</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/BatchMaster')" href="">Batch</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ProgramStudy')" href="">Program Study</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/CourseList/')" href="">Show Course</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Subject')" href="">Subjects</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Chapters')" href="">Chapters</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Employees')" href="">Employees</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/ExaminationType')" href="">Examination Type</a></li>
+                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a ng-click="vm.goToPage('/ScheduleExamination')" href="">Calendar</a></li>
+                                            <li ng-if="vm.roleId ==='1'"><a ng-click="vm.goToPage('/Admin/Task')" href="">Task</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a href="#">Ranking Levels</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a href="#">Grading Levels</a></li>
                                             <li ng-if="vm.roleId ==='1'"><a href="#">Department</a></li>
@@ -282,14 +282,14 @@
                                     <li class="has-submenu" ng-if="vm.roleId ==='1'">
                                         <a href="#">Fees</a>
                                         <ul class="submenu">
-                                            <li><a ng-click="vm.goToPage('/Admin/Fees')" href="" >Fees</a></li>
+                                            <li><a ng-click="vm.goToPage('/Admin/Fees')" href="">Fees</a></li>
                                         </ul>
                                     </li>
 
                                     <li class="has-submenu" ng-if="vm.roleId ==='1'">
                                         <a href="#">Facilities</a>
                                         <ul class="submenu">
-                                            <li><a ng-click="vm.goToPage('/Admin/ClassRoom')" href="" >Class Room</a></li>
+                                            <li><a ng-click="vm.goToPage('/Admin/ClassRoom')" href="">Class Room</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu" ng-if="vm.roleId ==='1'">
@@ -299,35 +299,35 @@
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="#">Students</a>
+                                        <a href=" " ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')||(vm.roleId ==='2')">Students</a>
                                         <ul class="submenu">
-                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')"><a ng-click="vm.goToPage('/StudentProfile')" href="" >Student Profile</a></li>
+                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')||(vm.roleId ==='2')"><a ng-click="vm.goToPage('/StudentProfile')" href="">Student Profile</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu" ng-if="vm.roleId ==='1'">
                                         <a href="#">Manage Settings</a>
                                         <ul class="submenu">
                                             <!--<li><a href="#">Manage Subject</a></li>-->
-                                            <li><a ng-click="vm.goToPage('/ManageCourses')" href="" >Manage Courses</a></li>
-                                            <li><a ng-click="vm.goToPage('/ManageProgramStudy')" href="" >Manage Program Study</a></li>
-                                            <li><a ng-click="vm.goToPage('/ManageTask')" href="" >Manage Task</a></li>
-                                            <li><a ng-click="vm.goToPage('/ManageSubject')" href="" >Manage  Subject</a></li>
-                                        </ul>                                                                                                               
+                                            <li><a ng-click="vm.goToPage('/ManageCourses')" href="">Manage Courses</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageProgramStudy')" href="">Manage Program Study</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageTask')" href="">Manage Task</a></li>
+                                            <li><a ng-click="vm.goToPage('/ManageSubject')" href="">Manage  Subject</a></li>
+                                        </ul>
                                     </li>
 
 
                                 </ul>
                             </li>
 
-                            <li class="has-submenu" ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')">
+                            <li class="has-submenu" ng-if="(vm.roleId ==='1')||(vm.roleId ==='4')">
                                 <a href="#"><i class="mdi  mdi-clipboard-account"></i>Admissions</a>
                                 <ul class="submenu megamenu">
                                     <li>
                                         <ul>
-                                            <li><a ng-click="vm.goToPage('/Admin/CreateBatch')" href="" >Create Batch</a></li>
-                                            <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')" href="" ><a ng-click="vm.goToPage('/StudentAdmissionForm')">Admission Forms</a></li>
-                                            <li><a ng-click="vm.goToPage('/ManageStudentCounsellingDetail')" href="">Councelling</a></li>
-                                            <li><a ng-click="vm.goToPage('/ReviewAndApprove')" href="" >Review And Approve</a></li>
+                                            <li><a ng-click="vm.goToPage('/Admin/CreateBatch')" href="" ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')">Create Batch</a></li>
+                                            <!--<li ng-if="(vm.roleId ==='1')||(vm.roleId ==='3')" href=""><a ng-click="vm.goToPage('/StudentAdmissionForm')">Admission Forms</a></li>-->
+                                            <li><a ng-click="vm.goToPage('/ManageStudentCounsellingDetail')" href="" ng-if="(vm.roleId ==='1')||(vm.roleId ==='4')">Councelling</a></li>
+                                            <li><a ng-click="vm.goToPage('/ReviewAndApprove')" href="">Review And Approve</a></li>
                                             <li><a href="#">ID Cards</a></li>
 
                                         </ul>
@@ -376,11 +376,11 @@
                                     <li class="has-submenu">
                                         <a href="#">Conduct</a>
                                         <ul class="submenu">
-                                            <li><a href="#">Student Character Supervision</a></li>
-                                            <li><a href="#">Merit and demerits</a></li>
-                                            <li><a href="#">Loss and Found</a></li>
-                                            <li><a href="#">Letter for Permission</a></li>
-                                            <li><a href="#">Mind Your Language</a></li>
+                                            <li><a ng-click="vm.goToPage('')" href="">Student Character Supervision</a></li>
+                                            <li><a ng-click="vm.goToPage('/MeritAndDemerit')" href="">Merit and demerits</a></li>
+                                            <li><a ng-click="vm.goToPage('/LossAndFound')" href="">Loss and Found</a></li>
+                                            <li><a ng-click="vm.goToPage('/LetterPermission')" href="">Letter for Permission</a></li>
+                                            <li><a ng-click="vm.goToPage('/MindYourlanguage')" href="">Mind Your Language</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
@@ -393,18 +393,12 @@
                                         <a href="#">Assignment</a>
 
                                     </li>
-                                    <li>
-                                        <a href="#">Lesson Plan</a>
+                                    <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='4')"><a ng-click="vm.goToPage('/LessonPlan')">Lesson Plan</a></li>
+                                    <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='4')"><a ng-click="vm.goToPage('/StudentDiary')">Student Diary</a></li>
+                                    <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='4')"><a ng-click="vm.goToPage('/StudentLeaveApplication')">StudentLeave Application</a></li>
 
-                                    </li>
-                                    <li>
-                                        <a href="#">Student Diary</a>
+                                    <li ng-if="(vm.roleId ==='1')||(vm.roleId ==='4')"><a ng-click="vm.goToPage('/TeacherNote')">Teacher Note</a> </li>
 
-                                    </li>
-                                    <li>
-                                        <a href="#">Teacher Notes</a>
-
-                                    </li>
                                     <li class="has-submenu">
                                         <a href="#">Health Care</a>
                                         <ul class="submenu">
@@ -529,6 +523,7 @@
     <script src="App/Services/urlService/urlService.js"></script>
     <script src="App/Services/Contact/contactService.js"></script>
     <script src="App/Services/Common/services.js"></script>
+    <script src="App/Services/SharedProperty/sharedpropertiesService.js"></script>
     <script src="App/Services/Course/courseListService.js"></script>
     <script src="App/Services/BatchMaster/batchMasterService.js"></script>
     <script src="App/Services/ProgramStudyMaster/PrgmStudyMasterService.js"></script>
@@ -552,7 +547,21 @@
     <script src="App/Services/StudentAdmissionForm/studentAdmissionFormService.js"></script>
     <script src="App/Services/ManageStudentCounsellingDetail/manageStudentCounsellingDetailService.js"></script>
     <script src="App/Services/ReviewAndApprove/reviewandapproveService.js"></script>
+    <script src="App/Services/ExaminationSyllabus/examinationsyllabusService.js"></script>
+    <script src="App/Services/LessonPlan/lessonplanService.js"></script>
+    <script src="App/Services/LetterPermission/letterpermissionService.js"></script>
+    <script src="App/Services/LossAndFound/lossandfoundService.js"></script>
+    <script src="App/Services/MeritAndDemerit/meritanddemeritService.js"></script>
+    <script src="App/Services/MindYourLanguage/mindyourlanguageService.js"></script>
+    <script src="App/Services/NotificationType/notificationTypeService.js"></script>
+    <script src="App/Services/PhysicalEducation/physicaleducationService.js"></script>
+    <script src="App/Services/StudentCharacterSupervision/studentcharacterService.js"></script>
+    <script src="App/Services/StudentDiary/studentdiaryService.js"></script>
+    <script src="App/Services/StudentLeave/studentleaveService.js"></script>
+    <script src="App/Services/TeacherNote/teachernoteService.js"></script>
+    <script src="App/Services/Quiz/quizService.js"></script>
     <script src="App/Directives/common.js"></script>
+    <script src="App/Directives/fileUpload.js"></script>
 
     <script src="App/Controllers/Global/globalController.js"></script>
     <script src="App/Controllers/Account/loginController.js"></script>
@@ -580,9 +589,21 @@
     <script src="App/Controllers/ScheduleExamination/scheduleExaminationController.js"></script>
     <script src="App/Controllers/BulkUpload/bulkUploadModuleController.js"></script>
     <script src="App/Controllers/StudentPortal/StudentPortalController.js"></script>
-    <script src="App/Controllers/StudentAdmissionForm/studentadmissionformController.js"></script>
     <script src="App/Controllers/ManageStudentCounsellingDetail/manageStudentCounsellingDetailController.js"></script>
     <script src="App/Controllers/ReviewAndApprove/reviewandapproveController.js"></script>
+    <script src="App/Controllers/StudentAdmissionForm/studentadmissionformController.js"></script>
+    <script src="App/Controllers/ExaminationSyllabus/examinationsyllabusController.js"></script>
+    <script src="App/Controllers/LessonPlan/lessonplanController.js"></script>
+    <script src="App/Controllers/LetterPermission/letterpermissionController.js"></script>
+    <script src="App/Controllers/LossAndFound/lossandfoundController.js"></script>
+    <script src="App/Controllers/MindYourLanguage/mindyourlanguageController.js"></script>
+    <script src="App/Controllers/NotificationType/notificationTypeController.js"></script>
+    <script src="App/Controllers/PhysicalEducation/physicaleducationController.js"></script>
+    <script src="App/Controllers/Quiz/quizController.js"></script>
+    <script src="App/Controllers/StudentCharacterSupervision/studentcharacterController.js"></script>
+    <script src="App/Controllers/StudentDiary/studentdiaryController.js"></script>
+    <script src="App/Controllers/Studentleave/studentleaveController.js"></script>
+    <script src="App/Controllers/TeacherNote/teachernoteController.js"></script>
     <script src="App/User/registrationController.js"></script>
 
     <script type="text/javascript">

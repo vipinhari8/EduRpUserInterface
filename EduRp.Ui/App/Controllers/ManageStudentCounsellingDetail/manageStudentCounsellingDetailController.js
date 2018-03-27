@@ -5,9 +5,9 @@
         .module('EduRpApp')
         .controller('manageStudentCounsellingDetailController', manageStudentCounsellingDetailController);
 
-    manageStudentCounsellingDetailController.$inject = ['$scope', '$q', 'manageStudentCounsellingDetailService', 'errorHandler', 'commonService','programStudyService'];
+    manageStudentCounsellingDetailController.$inject = ['$scope', '$q', 'manageStudentCounsellingDetailService', 'errorHandler', 'commonService', 'programStudyService', 'sharedpropertiesService', '$location', '$rootScope'];
 
-    function manageStudentCounsellingDetailController($scope, $q, manageStudentCounsellingDetailService, errorHandler, commonService, programStudyService) {
+    function manageStudentCounsellingDetailController($scope, $q, manageStudentCounsellingDetailService, errorHandler, commonService, programStudyService, sharedpropertiesService, $location, $rootScope) {
         $scope.title = 'manageStudentCounsellingDetailController';
 
         activate();
@@ -40,6 +40,11 @@
             $scope.adjustStdCouncellingList();
         });
 
+        $scope.addNewAdmissionForm = function (data) {
+            $scope.sharedproperties = sharedpropertiesService.getadmissionnum(data);
+            $location.path('/StudentAdmissionForm/');
+        };
+
         $scope.showPerPageDataOptions = [5, 10, 25, 50, 100];
 
         $scope.filterPanel = false;
@@ -62,11 +67,10 @@
                 errorHandler.logServiceNotify('manageStudentCounsellingDetailController', update);
             });
 
-           
+
         })();
 
-
-        $scope.fetchProgramStudyByBatchId= function (batchData) {
+        $scope.fetchProgramStudyByBatchId = function (batchData) {
             var selBatch = angular.copy(batchData);
             if (selBatch) {
                 $q.all([
@@ -128,6 +132,6 @@
                 });
             }
         };
+    };
 
-    }
 })();
